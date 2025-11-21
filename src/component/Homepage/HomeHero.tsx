@@ -78,7 +78,7 @@ interface CircularPlayBadgeProps {
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="relative overflow-hidden px-4 py-8 sm:px-6 lg:px-8 md:py-15">
+    <section className="relative overflow-hidden px-4 py-8 sm:px-6 lg:px-8 md:pt-30">
       {/* soft background wash */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <motion.div
