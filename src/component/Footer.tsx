@@ -30,26 +30,23 @@ const Footer: React.FC = () => {
       {/* top border glow */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-[#ffd740] to-transparent opacity-60" />
 
-      <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         {/* top row */}
         <div className="grid gap-10 md:grid-cols-5 md:gap-8">
           {/* brand */}
           <div className="md:col-span-2">
             <div className="mb-4 flex items-center gap-2">
-              <div className="grid w-80 place-items-center rounded-xl font-black">
+              <div className="grid w-70 place-items-center rounded-xl font-black">
                 <img
                   src={logo}
                   alt="Logo"
-                  width={140}
-                  height={60}
+                  width={190}
+                  height={80}
                 />
               </div>
             </div>
 
-            <p className="max-w-sm text-white/75">
-              Building innovative software solutions for modern businesses — cloud,
-              apps, and delightful UX.
-            </p>
+    
 
             <div className="mt-5 flex items-center gap-3 text-sm text-white/70">
               <MapPin className="h-4 w-4 text-[#ffd740]" />
@@ -73,18 +70,18 @@ const Footer: React.FC = () => {
 
             <form
               onSubmit={(e) => e.preventDefault()}
-              className="flex w-full max-w-xl items-center gap-3 rounded-2xl bg-white/5 p-2 ring-1 ring-white/15 backdrop-blur"
+              className="flex w-full max-w-2xl items-center gap-3 rounded-2xl bg-white/5 p-1 ring-1 ring-white/15 backdrop-blur"
             >
               <input
                 type="email"
                 required
                 placeholder="Enter your email"
-                className="flex-1 bg-transparent px-3 py-3 text-sm text-white placeholder:text-white/50 outline-none"
+                className="flex-1 bg-transparent px-3 py-1 text-sm text-white placeholder:text-white/50 outline-none"
               />
 
               <button
                 type="submit"
-                className="group inline-flex items-center gap-2 rounded-xl bg-[#ffd740] px-4 py-3 text-sm font-semibold text-[#262755] hover:bg-[#ffd740]/90"
+                className="group inline-flex items-center gap-2 rounded-xl bg-[#ffd740] px-4 py-2 text-sm font-semibold text-[#262755] hover:bg-[#ffd740]/90"
               >
                 Join newsletter
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />

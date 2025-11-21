@@ -592,7 +592,7 @@ const FeatureCard: React.FC<{ feature: Feature; onClick?: () => void }> = ({
       className="group flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-black/40 bg-white/80 shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:shadow-emerald-200/50"
     >
       {/* Image */}
-      <div className="relative h-40 w-full overflow-hidden bg-gradient-to-br from-emerald-50 via-slate-50 to-sky-50">
+      <div className="relative h-40 w-full overflow-hidden bg-linear-to-br from-emerald-50 via-slate-50 to-sky-50">
         <div className="absolute inset-0 opacity-50 transition-opacity duration-300 group-hover:opacity-100">
           <div className="absolute -left-10 top-6 h-24 w-24 rounded-full bg-emerald-300/60 blur-2xl transition-all duration-300 group-hover:-left-5" />
           <div className="absolute right-0 bottom-0 h-28 w-28 rounded-full bg-sky-300/70 blur-2xl transition-all duration-300 group-hover:right-5" />

@@ -67,11 +67,11 @@ export default function Header() {
         showNavbar ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-0">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Logo" className="h-[30px] w-auto" />
+            <img src={logo} alt="Logo" className="h-[50px] w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
