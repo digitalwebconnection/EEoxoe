@@ -8,6 +8,7 @@ type Feature = {
   imageAlt: string;
   imageSrc: string;
   badge?: "Available" | "Coming Soon";
+  eta?: string; // for roadmap transparency
 };
 
 const coreFeatures: Feature[] = [
@@ -137,7 +138,8 @@ const coreFeatures: Feature[] = [
     description:
       "Manage multiple companies or branches under one system, maintaining separate profiles and data for each.",
     imageAlt: "Multiple companies or buildings illustration",
-    imageSrc: "https://www.shutterstock.com/shutterstock/videos/3653370435/thumb/1.jpg?ip=x480",
+    imageSrc:
+      "https://www.shutterstock.com/shutterstock/videos/3653370435/thumb/1.jpg?ip=x480",
     badge: "Available",
   },
   {
@@ -185,6 +187,7 @@ const upcomingFeatures: Feature[] = [
     imageSrc:
       "https://backend.traviyo.com/Images/Blogss/Amar_10431/638744390051478358_temp.jpg",
     badge: "Coming Soon",
+    eta: "Beta access: Q1 2026",
   },
   {
     id: 18,
@@ -195,6 +198,7 @@ const upcomingFeatures: Feature[] = [
     imageSrc:
       "https://www.coherentlab.com/BlogPost/FeaturedGallery/a4a522ca-8d9b-4ef0-88d1-b5a77a5f050a.jpg",
     badge: "Coming Soon",
+    eta: "Planned: 2026 intake season",
   },
   {
     id: 19,
@@ -205,6 +209,7 @@ const upcomingFeatures: Feature[] = [
     imageSrc:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTefNU_VlK3nLCQKCDuNiq19qvEY8nf8psA4g&s",
     badge: "Coming Soon",
+    eta: "Roadmap: 2026",
   },
   {
     id: 20,
@@ -215,6 +220,7 @@ const upcomingFeatures: Feature[] = [
     imageSrc:
       "https://bigestate-network-upload.s3.ap-south-1.amazonaws.com/f1037ab5-5f23-4285-a50a-86e0e7deb029.png",
     badge: "Coming Soon",
+    eta: "Private beta: 2025–26",
   },
 ];
 
@@ -239,21 +245,148 @@ const ExcelintFeaturesPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
-      <main className="mx-auto max-w-6xl px-4 py-10 lg:px-6 lg:py-12">
-        {/* PAGE TITLE + INTRO */}
-        <header className={`mb-8 space-y-2 ${entranceClasses(pageLoaded, "delay-100")}`}>
+      <main className="mx-auto max-w-7xl px-4 py-10 lg:px-6 lg:py-12">
+        {/* PAGE TITLE + INTRO – SEO + value prop */}
+        <header
+          className={`mb-8 space-y-2 ${entranceClasses(
+            pageLoaded,
+            "delay-100"
+          )}`}
+        >
           <p className="text-sm font-semibold uppercase tracking-[0.15em] text-emerald-600">
             Excelint – CRM Portal for Agents
           </p>
           <h1 className="text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
-            Features Overview
+            Excelint CRM Features – Student Application Management Software
           </h1>
           <p className="max-w-3xl text-sm text-slate-600 md:text-base">
-            Explore everything your team, agents, and partners can manage inside
-            Excelint — from student data and applications to security, backups,
-            and upcoming self-service portals.
+            Excelint is a CRM built specifically for{" "}
+            <strong className="font-semibold">
+              education consultants, study-abroad agents, and recruitment
+              partners
+            </strong>
+            — not a generic sales tool. Replace scattered Excel sheets, emails
+            and WhatsApp chats with one connected portal for students,
+            universities, and commissions.
           </p>
         </header>
+
+        {/* VALUE PROP STRIP – how Excelint is different */}
+        <section
+          className={`mb-10 rounded-2xl bg-blue-900 px-5 py-6 text-emerald-50 shadow-md md:px-7 md:py-7 ${entranceClasses(
+            pageLoaded,
+            "delay-150"
+          )}`}
+        >
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <h2 className="text-base font-semibold md:text-lg">
+                CRM for Education & Study Abroad Agents – built for your
+                workflows
+              </h2>
+              <p className="mt-1 max-w-3xl text-xs text-emerald-100 md:text-sm">
+                Unlike generic CRMs, Excelint ships with student lifecycle,
+                agent commission, and university management flows out of the
+                box, so your team can go live in days, not months.
+              </p>
+            </div>
+            <span className="inline-flex items-center rounded-full bg-yellow-500 px-3 py-1 text-xs font-medium uppercase tracking-wide text-black">
+              Faster onboarding · Education-first UX
+            </span>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-3">
+            <div className="rounded-xl bg-yellow-400 p-4 text-black">
+              <p className="text-xs font-semibold uppercase tracking-wide ">
+                01 · Faster deployment
+              </p>
+              <p className="mt-2 text-sm font-semibold">
+                Ready-made education workflows
+              </p>
+              <p className="mt-1 text-xs ">
+                Student, agent, and commission modules are pre-built — no
+                complex configuration needed.
+              </p>
+            </div>
+            <div className="rounded-xl bg-yellow-400 p-4 text-black ">
+              <p className="text-xs font-semibold uppercase tracking-wide ">
+                02 · Better user experience
+              </p>
+              <p className="mt-2 text-sm font-semibold">
+                Designed for counsellors, not coders
+              </p>
+              <p className="mt-1 text-xs ">
+                Clean screens, simple filters, and clear timelines so counsellors
+                know exactly what to do next.
+              </p>
+            </div>
+            <div className="rounded-xl bg-yellow-400 p-4 text-black ">
+              <p className="text-xs font-semibold uppercase tracking-wide ">
+                03 · Industry-specific insights
+              </p>
+              <p className="mt-2 text-sm font-semibold">
+                Education-focused reporting
+              </p>
+              <p className="mt-1 text-xs ">
+                Track intakes, offers, visa outcomes, and agent-wise revenue —
+                not just generic “deals won”.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* VISUAL / DEMO SECTION */}
+        <section
+          className={`mb-10 grid gap-6 rounded-2xl bg-white p-5 shadow-sm md:grid-cols-2 md:p-7 ${entranceClasses(
+            pageLoaded,
+            "delay-180"
+          )}`}
+        >
+          <div className="relative overflow-hidden rounded-xl bg-slate-900/90">
+            {/* big screenshot placeholder */}
+            <img
+              src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              alt="Excelint CRM dashboard preview"
+              className="h-full w-full object-cover opacity-90"
+            />
+            {/* play overlay */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 shadow-lg">
+                <span className="ml-0.5 translate-x-px text-2xl text-yellow-500">
+                  ►
+                </span>
+              </div>
+              <p className="mt-3 text-xs font-medium uppercase tracking-wide text-slate-100">
+                Watch product walkthrough (2 min)
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col justify-center gap-3">
+            <h2 className="text-lg font-semibold text-slate-900 md:text-xl">
+              See how Excelint connects students, agents & universities in one
+              view
+            </h2>
+            <p className="text-sm text-slate-600">
+              Walk through the live dashboard, student profiles, commission
+              reports and upcoming portals in a guided demo. Understand how your
+              current Excel + email + WhatsApp workflow maps into Excelint.
+            </p>
+            <ul className="mt-1 list-disc space-y-1 pl-5 text-xs text-slate-600 md:text-sm">
+              <li>Track complete student journey from enquiry to visa.</li>
+              <li>View agent performance and payouts in real time.</li>
+              <li>See how follow-ups and reminders keep your team on track.</li>
+            </ul>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <button className="rounded-full bg-blue-600 px-5 py-2.5 text-xs font-semibold text-white shadow-sm transition">
+                Book a live demo
+              </button>
+              <button className="rounded-full border border-blue-500 bg-white px-5 py-2.5 text-xs font-semibold  transition hover:bg-yellow-500 hover:text-white">
+                Download product brochure (PDF)
+              </button>
+            </div>
+          </div>
+        </section>
 
         {/* CORE FEATURES (only 3 visible, then View all) */}
         <FeatureSection
@@ -278,16 +411,102 @@ const ExcelintFeaturesPage: React.FC = () => {
         {/* UPCOMING FEATURES (3 visible then View all) */}
         <FeatureSection
           title="Coming Soon – Future Enhancements"
-          subtitle="Features in the roadmap designed to extend Excelint from a back-office engine to a full self-service ecosystem for agents and students."
+          subtitle="Future modules that extend Excelint from a back-office engine into a full self-service ecosystem for agents and students."
           features={upcomingFeatures}
           maxVisible={3}
           wrapperClassName={`mb-4 border-t border-slate-200 pt-8 ${entranceClasses(
             pageLoaded,
-            "delay-500"
+            "delay-350"
           )}`}
           badgeLabel="Roadmap"
           onFeatureClick={setSelectedFeature}
         />
+
+        {/* ROADMAP BETA CTA */}
+        <section
+          className={`mb-10 rounded-2xl bg-blue-50 px-5 py-6 text-slate-900 md:px-0 md:py-7 ${entranceClasses(
+            pageLoaded,
+            "delay-400"
+          )}`}
+        >
+          <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center p-5">
+            <div>
+              <h2 className="text-base font-semibold md:text-lg">
+                Join the Excelint roadmap beta
+              </h2>
+              <p className="mt-1 max-w-xl text-xs text-slate-700 md:text-sm">
+                Get early access to upcoming features like agent / student
+                portals and leads CRM. Share your workflows and help us shape
+                what ships next.
+              </p>
+            </div>
+            <button className="rounded-full bg-blue-600 px-5 py-2.5 text-xs font-semibold text-white shadow-sm transition ">
+              Apply for beta access
+            </button>
+          </div>
+        </section>
+
+        {/* CLIENT SUCCESS STORIES */}
+        <section
+          className={`mb-10 rounded-2xl bg-white px-5 py-7 shadow-sm md:px-0 md:py-9 ${entranceClasses(
+            pageLoaded,
+            "delay-450"
+          )}`}
+        >
+          <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <h2 className="text-lg font-semibold text-slate-900 md:text-xl">
+                Client success stories
+              </h2>
+              <p className="mt-1 max-w-2xl text-xs text-slate-600 md:text-sm">
+                Overseas education firms use Excelint to standardise operations,
+                reduce manual work, and give students a more professional
+                experience.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-3">
+            <div className="flex flex-col rounded-xl border border-slate-600/50 bg-slate-50 p-4">
+              <p className="text-xs text-slate-700 md:text-sm">
+                “We moved from four Excel files and two WhatsApp groups to one
+                Excelint dashboard. The team finally sees the same numbers.”
+              </p>
+              <div className="mt-3 text-xs text-slate-500">
+                <p className="font-semibold text-slate-800">
+                  Mumbai-based education consultant
+                </p>
+                <p>25+ counsellors · 3 branches</p>
+              </div>
+            </div>
+            <div className="flex flex-col rounded-xl border border-slate-600/50 bg-slate-50 p-4">
+              <p className="text-xs text-slate-700 md:text-sm">
+                “Commission tracking for agents used to take us 3–4 days every
+                month. With Excelint reports, it’s a 30-minute task.”
+              </p>
+              <div className="mt-3 text-xs text-slate-500">
+                <p className="font-semibold text-slate-800">
+                  Regional master franchise partner
+                </p>
+                <p>40+ active agent relationships</p>
+              </div>
+            </div>
+            <div className="flex flex-col rounded-xl border border-slate-600/50 bg-slate-50 p-4">
+              <p className="text-xs text-slate-700 md:text-sm">
+                “The team finally has proper follow-ups. Students feel the whole
+                journey is organised and transparent.”
+              </p>
+              <div className="mt-3 text-xs text-slate-500">
+                <p className="font-semibold text-slate-800">
+                  Study abroad brand (India–UAE)
+                </p>
+                <p>3x increase in active pipeline visibility</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      
       </main>
 
       {/* POPUP MODAL */}
@@ -373,7 +592,7 @@ const FeatureCard: React.FC<{ feature: Feature; onClick?: () => void }> = ({
       className="group flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-black/40 bg-white/80 shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:shadow-emerald-200/50"
     >
       {/* Image */}
-      <div className="relative h-40 w-full overflow-hidden bg-linear-to-br from-emerald-50 via-slate-50 to-sky-50">
+      <div className="relative h-40 w-full overflow-hidden bg-gradient-to-br from-emerald-50 via-slate-50 to-sky-50">
         <div className="absolute inset-0 opacity-50 transition-opacity duration-300 group-hover:opacity-100">
           <div className="absolute -left-10 top-6 h-24 w-24 rounded-full bg-emerald-300/60 blur-2xl transition-all duration-300 group-hover:-left-5" />
           <div className="absolute right-0 bottom-0 h-28 w-28 rounded-full bg-sky-300/70 blur-2xl transition-all duration-300 group-hover:right-5" />
@@ -404,6 +623,11 @@ const FeatureCard: React.FC<{ feature: Feature; onClick?: () => void }> = ({
         <p className="flex-1 text-xs text-slate-600 md:text-sm">
           {feature.description}
         </p>
+        {feature.badge === "Coming Soon" && feature.eta && (
+          <p className="text-[11px] font-medium text-amber-700">
+            {feature.eta}
+          </p>
+        )}
       </div>
       <div className="h-1 w-full origin-left scale-x-0 bg-emerald-500 transition-all duration-300 group-hover:scale-x-100" />
     </article>
@@ -431,7 +655,7 @@ const FeatureModal: React.FC<{ feature: Feature; onClose: () => void }> = ({
         onClick={onClose}
         aria-hidden="true"
       />
-      <div className="relative z-10 w-full  max-w-5xl overflow-hidden rounded-2xl bg-white shadow-2xl">
+      <div className="relative z-10 w-full max-w-5xl overflow-hidden rounded-2xl bg-white shadow-2xl">
         <button
           type="button"
           onClick={onClose}
@@ -464,6 +688,11 @@ const FeatureModal: React.FC<{ feature: Feature; onClose: () => void }> = ({
               {feature.title}
             </h3>
             <p className="text-sm text-slate-700">{feature.description}</p>
+            {feature.badge === "Coming Soon" && feature.eta && (
+              <p className="text-xs font-medium text-amber-700">
+                Roadmap update: {feature.eta}
+              </p>
+            )}
           </div>
         </div>
       </div>

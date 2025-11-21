@@ -1,3 +1,4 @@
+
 import React from "react";
 import { motion, type Variants } from "framer-motion";
 
@@ -68,8 +69,8 @@ const item: Variants = {
 
 const ProgramsSection: React.FC = () => {
   return (
-    <section className="relative overflow-hidden bg-white">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 md:py-28 lg:grid-cols-2 lg:px-8">
+    <section className="relative overflow-visible bg-white">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8 md:py-28">
         {/* Left copy */}
         <motion.div
           variants={container}
@@ -134,23 +135,23 @@ const ProgramsSection: React.FC = () => {
 
         {/* Right orbit */}
         <div className="relative flex items-center justify-center">
-          {/* Orbit container – fixed, not huge */}
-          <div className="relative h-80 w-[320px] md:h-[380px] md:w-[380px]">
+          <div className="relative h-112 w-md md:h-128 md:w-lg">
             {/* Outer rings */}
             <div className="absolute inset-0 rounded-full border-2 border-dashed border-gray-200" />
-            <div className="absolute inset-6 md:inset-8 rounded-full border border-gray-200" />
+            <div className="absolute inset-10 rounded-full border border-gray-200" />
 
             {/* Soft inner halo */}
             <div
-              className="absolute inset-12 md:inset-14 rounded-full"
+              className="absolute inset-20 rounded-full"
               style={{
-                boxShadow: "inset 0 0 80px 10px rgba(38,39,85,0.08)",
+                boxShadow:
+                  "inset 0 0 80px 10px rgba(38,39,85,0.08)",
               }}
             />
 
             {/* Center disk */}
-            <div className="absolute left-1/2 top-1/2 flex h-32 w-32 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-center ring-1 ring-gray-200 shadow-[0_20px_60px_rgba(0,0,0,0.06)] md:h-40 md:w-40">
-              <span className="text-xl font-black tracking-wide text-[#262755] md:text-2xl">
+            <div className="absolute left-1/2 top-1/2 flex h-40 w-40 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-center ring-1 ring-gray-200 shadow-[0_20px_60px_rgba(0,0,0,0.06)]">
+              <span className="text-2xl font-black tracking-wide text-[#262755]">
                 SAASOFT
               </span>
             </div>
@@ -167,9 +168,9 @@ const ProgramsSection: React.FC = () => {
             >
               {logos.map((logo, i) => {
                 const angle = (i / logos.length) * 360;
-                const radius = 120; // smaller radius so everything stays inside
-                const x = Math.cos((angle * Math.PI) / 180) * radius;
-                const y = Math.sin((angle * Math.PI) / 180) * radius;
+                const r = 220;
+                const x = Math.cos((angle * Math.PI) / 180) * r;
+                const y = Math.sin((angle * Math.PI) / 180) * r;
 
                 return (
                   <motion.div
@@ -187,7 +188,7 @@ const ProgramsSection: React.FC = () => {
                         duration: 28,
                         ease: "linear",
                       }}
-                      className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-white ring-2 ring-gray-900/60 shadow-[0_8px_24px_rgba(0,0,0,0.08)] md:h-16 md:w-16"
+                      className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-white ring-2 ring-gray-900/60 shadow-[0_8px_24px_rgba(0,0,0,0.08)]"
                     >
                       <img
                         src={logo.src}
@@ -195,7 +196,7 @@ const ProgramsSection: React.FC = () => {
                         width={36}
                         height={36}
                         loading="lazy"
-                        className="max-h-full max-w-full object-contain"
+                        className="object-contain"
                       />
                     </motion.div>
                   </motion.div>
