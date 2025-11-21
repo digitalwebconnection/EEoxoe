@@ -166,7 +166,7 @@ const HeroSection: React.FC = () => {
                 </span>
               </div>
               <p className="mb-5 max-w-[34ch] text-sm text-slate-600">
-                Websites & media that move users to action. Plans and creatives that
+                Websites & media that move users to action. Plans and creatives that+
                 scale.
               </p>
 
