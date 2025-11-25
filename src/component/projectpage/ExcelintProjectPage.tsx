@@ -448,7 +448,7 @@ const ExcelintFeaturesPage: React.FC = () => {
 
         {/* CLIENT SUCCESS STORIES */}
         <section
-          className={`mb-10 rounded-2xl bg-white px-5 py-7 shadow-sm md:px-0 md:py-9 ${entranceClasses(
+          className={`mb-10 rounded-2xl bg-white px-5 py-7 shadow-sm md:px-10 md:py-9 ${entranceClasses(
             pageLoaded,
             "delay-450"
           )}`}

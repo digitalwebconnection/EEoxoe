@@ -46,7 +46,7 @@ const services: Service[] = [
     description:
       "Build powerful applications for iOS, Android, and Web platforms.",
     image:
-      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+      "https://www.mindinventory.com/blog/wp-content/uploads/2018/12/benefits-of-mobile-app-for-business.webp",
   },
   {
     icon: Cloud,
@@ -54,7 +54,7 @@ const services: Service[] = [
     description:
       "Seamlessly integrate cloud solutions for scalability and reliability.",
     image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80",
+      "https://bernardmarr.com/img/The%205%20Biggest%20Cloud%20Computing%20Trends%20In%202021.jpg",
   },
 ];
 

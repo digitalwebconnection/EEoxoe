@@ -39,7 +39,7 @@ const badgeVariants: Variants = {
   hidden: { opacity: 0, scale: 0.1, rotate: 90 },
   show: {
     opacity: 1,
-    scale: 1.2,
+    scale: 1.1,
     rotate: 0,
     transition: { duration: 0.1, type: "spring", stiffness: 200 },
   },
@@ -141,10 +141,10 @@ const HeroSection: React.FC = () => {
         </motion.div>
 
         {/* RIGHT: decorative badge + overlapping cards */}
-        <div className="relative mx-auto w-full max-w-xl">
+        <div className="relative mx-auto w-full max-w-2xl">
           {/* Circular text badge with play */}
           <CircularPlayBadge
-            className="absolute -right-6 -top-10 z-10 hidden sm:block"
+            className="absolute  -right-6 -top-7 z-10 hidden sm:block"
             variants={badgeVariants}
           />
 
@@ -253,13 +253,19 @@ const CircularPlayBadge: React.FC<CircularPlayBadgeProps> = ({
       <div className="absolute inset-0 rounded-full bg-white/80 shadow-[0_8px_30px_rgba(0,0,0,0.08)] backdrop-blur" />
 
       {/* circular text via SVG */}
-      <svg viewBox="0 0 200 200" className="absolute inset-0 h-full w-full">
+      <svg
+        viewBox="0 0 200 200"
+        className="absolute inset-0 h-full w-full"
+        style={{ overflow: "visible" }} // <-- important so text isn’t clipped
+      >
         <defs>
+          {/* slightly smaller radius so text sits further inside */}
           <path
             id="circlePath"
-            d="M 100, 100 m -78, 0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0"
+            d="M 100,100 m -70,0 a 70,70 0 1,1 140,0 a 70,70 0 1,1 -140,0"
           />
         </defs>
+
         <motion.text
           fill="#1C2250"
           fontSize="10"
@@ -279,7 +285,7 @@ const CircularPlayBadge: React.FC<CircularPlayBadgeProps> = ({
           boxShadow: "0 0 20px rgba(59, 130, 246, 0.5)",
         }}
         whileTap={{ scale: 0.95 }}
-        className="absolute left-1/2 top-1/2 h-14 w-14 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#262755] text-white shadow-md transition"
+        className="absolute left-1/2 top-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#262755] text-white shadow-md transition"
         aria-label="Play"
       >
         <Play className="mx-auto h-5 w-5" />
