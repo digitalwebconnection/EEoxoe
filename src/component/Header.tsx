@@ -48,24 +48,21 @@ export default function Header() {
 
   const linkBaseClasses = "text-lg transition-colors";
   const desktopLink = ({ isActive }: { isActive: boolean }) =>
-    `${linkBaseClasses} ${
-      isActive
-        ? "text-[#262755] font-semibold"
-        : "text-gray-900 hover:text-[#262755]"
+    `${linkBaseClasses} ${isActive
+      ? "text-[#262755] font-semibold"
+      : "text-gray-900 hover:text-[#262755]"
     }`;
 
   const mobileLink = ({ isActive }: { isActive: boolean }) =>
-    `block rounded-lg px-4 py-2 text-sm ${
-      isActive
-        ? "bg-gray-100 text-[#262755] font-semibold"
-        : "hover:bg-gray-100"
+    `block rounded-lg px-4 py-2 text-sm ${isActive
+      ? "bg-gray-100 text-[#262755] font-semibold"
+      : "hover:bg-gray-100"
     }`;
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 border-b border-[#262755]/20 bg-white/90 backdrop-blur shadow-sm transition-transform duration-300 ${
-        showNavbar ? "translate-y-0" : "-translate-y-full"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 border-b border-[#262755]/20 bg-white/90 backdrop-blur shadow-sm transition-transform duration-300 ${showNavbar ? "translate-y-0" : "-translate-y-full"
+        }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-0">
         <div className="flex h-16 items-center justify-between">
@@ -79,28 +76,26 @@ export default function Header() {
             <NavLink to="/services" className={desktopLink}>
               Services
             </NavLink>
-            <NavLink to="/solutions" className={desktopLink}>
-              Solutions
-            </NavLink>
             <NavLink to="/projects" className={desktopLink}>
               Project
             </NavLink>
             <NavLink to="/blog" className={desktopLink}>
               Blog
             </NavLink>
-            <NavLink to="/contact" className={desktopLink}>
-              Contact
+            <NavLink to="/case-Studies" className={desktopLink}>
+              Case Studies
+            </NavLink>
+            <NavLink to="/events" className={desktopLink}>
+              Events
+            </NavLink>
+            <NavLink to="/job-openings" className={desktopLink}>
+              Job Openings
+            </NavLink>
+            <NavLink to="/contact-us" className={desktopLink}>
+              <div className="rounded-md bg-[#262755] px-4 py-1 text-white">Contact Us</div>
             </NavLink>
 
-            {/* Desktop Button */}
-            <div className="ml-4 flex items-center gap-3">
-              <Link
-                to="/contact"
-                className="rounded-md bg-[#262755] px-4 py-2 text-sm text-white shadow-md transition-all hover:bg-[#ffd740] hover:text-[#262755]"
-              >
-                Get Started
-              </Link>
-            </div>
+            
           </nav>
 
           {/* Mobile Menu Button */}
