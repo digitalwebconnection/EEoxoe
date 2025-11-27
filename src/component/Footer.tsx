@@ -26,7 +26,7 @@ interface SocialProps {
 
 const Footer: React.FC = () => {
   return (
-    <footer className="relative overflow-hidden mt-10 bg-black text-white">
+    <footer className="relative overflow-hidden  bg-black text-white">
       {/* top border glow */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-[#ffd740] to-transparent opacity-60" />
 

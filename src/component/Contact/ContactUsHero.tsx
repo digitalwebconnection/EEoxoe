@@ -5,19 +5,19 @@ import { motion } from "framer-motion";
 
 const ContactUsHero: React.FC = () => {
   return (
-    <section className="relative overflow-hidden bg-slate-900 text-white">
+    <section className="relative py-22 overflow-hidden bg-slate-900 text-white">
       {/* Animated background image */}
       <div className="absolute inset-0">
         <motion.img
-          src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1600"
+          src="https://wordpress.themehour.net/webteck/wp-content/uploads/2024/02/breadcumb-bg.jpg"
           alt="Team working on software"
           className="h-full w-full object-cover"
-          initial={{ scale: 1.05 }}
-          animate={{ scale: [1.05, 1.1, 1.05] }}
+          initial={{ scale: 1 }}
+          animate={{ scale: [1, 1.1, 1.05] }}
           transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
         />
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-slate-950/75" />
+        <div className="absolute inset-0 bg-slate-950/55" />
       </div>
 
       {/* Floating background glows */}
@@ -47,7 +47,7 @@ const ContactUsHero: React.FC = () => {
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
       >
         <motion.p
-          className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-200/90"
+          className="text-lg font-semibold uppercase tracking-[0.2em] text-slate-200/90"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.15, duration: 0.4 }}
@@ -56,7 +56,7 @@ const ContactUsHero: React.FC = () => {
         </motion.p>
 
         <motion.h1
-          className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl"
+          className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.25, duration: 0.5 }}

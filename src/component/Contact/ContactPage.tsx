@@ -1,160 +1,211 @@
-"use client";
+"use client"
 
-import React from "react";
+import React, { useState } from "react"
+import { MapPin, Phone, Mail, ArrowRight } from "lucide-react"
 
 const ContactPage: React.FC = () => {
+  const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    phone: "",
+    message: "",
+  })
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target
+    setFormState((prev) => ({ ...prev, [name]: value }))
+  }
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    // handle form here
+    alert("Thank you! Your message has been received.")
+  }
+
   return (
-    <main className="min-h-screen bg-white text-slate-900">
-      {/* Page Container */}
-      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-        
-        {/* Header Section - Minimal + Premium */}
-        <div className="mb-14 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
-            Contact eeoxoe
-          </p>
-          <h1 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-            We’d love to hear from you.
-          </h1>
-          <p className="mx-auto mt-3 max-w-xl text-sm text-slate-600 sm:text-base">
-            Whether you're planning a new software product, improving internal tools,
-            or integrating Odoo — eeoxoe is here to help.
-          </p>
-        </div>
+    <main className="w-full bg-white text-gray-900">
 
-        {/* NEW STRUCTURE — 3 Equal Columns */}
-        <div className="grid gap-8 rounded-3xl bg-slate-50 p-8 ring-1 ring-slate-200 md:grid-cols-3">
-          
-          {/* Contact Box 1 */}
-          <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-600/30">
-            <h3 className="text-lg font-semibold text-slate-900">Email</h3>
-            <p className="mt-2 text-sm text-slate-600">
-              Reach us anytime, we usually reply within 24 hours.
-            </p>
-            <a
-              href="mailto:info@eeoxoe.com"
-              className="mt-4 inline-block text-sm font-medium text-sky-600 hover:underline"
-            >
-              info@eeoxoe.com
-            </a>
-          </div>
+      {/* =======================
+          1. TOP INFO CARDS
+      ======================== */}
+      <section className="w-full bg-white pt-10 ">
+        <div className="max-w-7xl mx-auto px-4 md:px-0">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:mt-10">
+            {/* Card 1 */}
+            <div className="bg-white shadow-xl rounded-lg px-6 py-5 flex items-center gap-4 border border-gray-800/40">
+              <div className="bg-[#0a007e] text-yellow-400 p-4 rounded-lg shadow-md">
+                <MapPin className="w-6 h-6" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg">Our Office Address</h3>
+                <p className="text-sm text-gray-600">
+                  St. Petersburg, USA
+                </p>
+              </div>
+            </div>
 
-          {/* Contact Box 2 */}
-          <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-600/30">
-            <h3 className="text-lg font-semibold text-slate-900">Phone & WhatsApp</h3>
-            <p className="mt-2 text-sm text-slate-600">
-              Talk directly with our project team.
-            </p>
-            <p className="mt-4 text-sm font-medium text-slate-700">
-              +91 00000 00000
-            </p>
-          </div>
+            {/* Card 2 */}
+            <div className="bg-white shadow-xl rounded-lg px-6 py-5 flex items-center gap-4 border border-gray-800/40">
+              <div className="bg-[#0a007e] text-yellow-400 p-4 rounded-lg shadow-md">
+                <Phone className="w-6 h-6" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg">Call Us Anytime</h3>
+                <p className="text-sm text-gray-600">
+                  +1 (800) 123-4567
+                </p>
+              </div>
+            </div>
 
-          {/* Contact Box 3 */}
-          <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-600/30">
-            <h3 className="text-lg font-semibold text-slate-900">Office Hours</h3>
-            <p className="mt-2 text-sm text-slate-600">
-              Monday – Friday  
-              <br />10:00 AM – 6:30 PM IST
-            </p>
+            {/* Card 3 */}
+            <div className="bg-white shadow-xl rounded-lg px-6 py-5 flex items-center gap-4 border border-gray-800/40">
+              <div className="bg-[#0a007e] text-yellow-400 p-4 rounded-lg shadow-md">
+                <Mail className="w-6 h-6" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg">Send an Email</h3>
+                <p className="text-sm text-gray-600">
+                  info@webteck.com
+                </p>
+              </div>
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* NEW FULL WIDTH MAP */}
-        <div className="mt-14 overflow-hidden rounded-3xl shadow-md ring-1 ring-slate-800/50">
+      {/* =======================
+          2. CONTACT FORM + IMAGE
+      ======================== */}
+      <section
+        className="w-full  py-16 md:py-10 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage:
+            "url('https://wordpress.themehour.net/webteck/wp-content/uploads/2024/02/contact_bg_1.png')",
+        }}
+      >
+
+        <div className="max-w-7xl mx-auto px-4 md:px-0 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
+          {/* Left: Form block */}
+          <div className="bg-transparent  px-8 py-10  ">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#12059c] mb-2">
+              Contact With Us
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-3">
+              Have Any Questions?
+            </h2>
+            <p className="text-sm md:text-base text-gray-500 mb-8 max-w-md">
+              We&apos;re always happy to talk through your requirements.
+              Drop us a message and our team will get back to you quickly.
+            </p>
+
+            <form onSubmit={handleSubmit} className="space-y-5 ">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input
+                  name="name"
+                  value={formState.name}
+                  onChange={handleInputChange}
+                  placeholder="Enter Your Name"
+                  className="w-full rounded-md border border-gray-500 bg-[#f8f9ff] px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#1505c5] focus:border-[#3626eb]"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  value={formState.email}
+                  onChange={handleInputChange}
+                  placeholder="Enter Your Email"
+                  className="w-full rounded-md border border-gray-500 bg-[#f8f9ff] px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#1505c5] focus:border-[#3626eb]"
+                />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input
+                  name="subject"
+                  value={formState.subject}
+                  onChange={handleInputChange}
+                  placeholder="Subject"
+                  className="w-full rounded-md border border-gray-500 bg-[#f8f9ff] px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#1505c5] focus:border-[#3626eb]"
+                />
+                <input
+                  name="phone"
+                  value={formState.phone}
+                  onChange={handleInputChange}
+                  placeholder="Phone Number"
+                  className="w-full rounded-md border border-gray-500 bg-[#f8f9ff] px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#1505c5] focus:border-[#3626eb]"
+                />
+              </div>
+
+              <textarea
+                name="message"
+                value={formState.message}
+                onChange={handleInputChange}
+                rows={5}
+                placeholder="Write your message..."
+                className="w-full rounded-md border border-gray-500 bg-[#f8f9ff] px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#1505c5] focus:border-[#3626eb]"
+              />
+
+              <button
+                type="submit"
+                className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-md bg-[#1b0cc5] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-md hover:bg-[rgb(8,0,82)] transition"
+              >
+                Make Appointment
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* =======================
+          3. LARGE MAP SECTION
+      ======================== */}
+      <section className="w-full">
+        <div className="w-full h-[360px] md:h-[420px] grayscale">
           <iframe
-            title="office-map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.2581307492546!2d72.51579287505295!3d23.05099621526737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b701695c397%3A0x37f7eac0feed6e52!2sTitanium%20Square!5e0!3m2!1sen!2sin!4v1764159178772!5m2!1sen!2sin"
-            className="h-80 w-full sm:h-[420px]"
-            style={{ border: 0 }}
+            title="Office location"
+            src="https://maps.google.com/maps?q=Frankfurt&t=&z=9&ie=UTF8&iwloc=&output=embed"
+            className="w-full h-full border-0"
             loading="lazy"
           />
         </div>
-
-        {/* NEW FORM SECTION — Centered + Card Style */}
-        <div className="mx-auto mt-14 max-w-3xl rounded-3xl bg-white p-8 shadow-lg ring-1 ring-slate-200">
-          <h2 className="text-center text-2xl font-semibold text-slate-900">
-            Send us a message
-          </h2>
-          <p className="mt-2 text-center text-sm text-slate-600">
-            Tell us what you're looking for, and our team will get back to you.
-          </p>
-
-          {/* Form */}
-          <form
-            className="mt-8 space-y-6"
-            onSubmit={(e) => {
-              e.preventDefault();
-              alert("Form submitted!");
-            }}
-          >
-            {/* Row 1 */}
-            <div className="grid gap-4 sm:grid-cols-2">
-              <input
-                type="text"
-                required
-                placeholder="Your Name *"
-                className="rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-sky-500 focus:bg-white focus:ring-2 focus:ring-sky-200"
-              />
-              <input
-                type="email"
-                required
-                placeholder="Work Email *"
-                className="rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-sky-500 focus:bg-white focus:ring-2 focus:ring-sky-200"
-              />
-            </div>
-
-            {/* Row 2 */}
-            <div className="grid gap-4 sm:grid-cols-2">
-              <input
-                type="text"
-                placeholder="Company Name"
-                className="rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-sky-500 focus:bg-white focus:ring-2 focus:ring-sky-200"
-              />
-              <select
-                className="rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-sky-500 focus:bg-white focus:ring-2 focus:ring-sky-200"
-                defaultValue=""
-              >
-                <option value="" disabled>
-                  Type of Work
-                </option>
-                <option>Web Application</option>
-                <option>Mobile App</option>
-                <option>Odoo / ERP</option>
-                <option>Automation & Integrations</option>
-              </select>
-            </div>
-
-            {/* Message */}
-            <textarea
-              rows={4}
-              required
-              placeholder="Tell us about your project *"
-              className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-sky-500 focus:bg-white focus:ring-2 focus:ring-sky-200"
-            />
-
-            {/* Checkbox */}
-            <label className="flex items-start gap-2 text-xs text-slate-500">
-              <input
-                type="checkbox"
-                required
-                className="mt-0.5 h-4 w-4 rounded border-slate-300 text-sky-600 focus:ring-sky-500"
-              />
-              I agree to be contacted by eeoxoe for this enquiry.
-            </label>
-
-            {/* Submit */}
-            <button
-              type="submit"
-              className="w-full rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
-            >
-              Send Message
-            </button>
-          </form>
-        </div>
       </section>
-    </main>
-  );
-};
 
-export default ContactPage;
+      {/* =======================
+          4. PURPLE FOOTER BAR
+      ======================== */}
+      <footer className="relative w-full bg-[#0b0080] text-white py-4 md:py-5 overflow-hidden">
+        {/* angled left shape */}
+        <div className="absolute left-0 top-0 h-full w-40 bg-[#e7d803] -skew-x-12 -translate-x-8" />
+
+        <div className="relative max-w-6xl mx-auto px-4 md:px-0 flex flex-col md:flex-row items-center justify-between gap-4">
+          {/* Brand */}
+          <div className="flex  items-center gap-2 font-semibold text-lg">
+            <span className="inline-block ms-10 rounded-full border border-white/70 px-3 py-1 text-sm mr-1">
+              Web Teck
+            </span>
+          </div>
+
+          {/* Contact items */}
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 text-sm">
+            <div className="flex items-center gap-2">
+              <Phone className="w-4 h-4" />
+              <span>+1 (800) 123-4567</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Mail className="w-4 h-4" />
+              <span>info@webteck.com</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <MapPin className="w-4 h-4" />
+              <span>St. Petersburg, USA</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  )
+}
+
+export default ContactPage

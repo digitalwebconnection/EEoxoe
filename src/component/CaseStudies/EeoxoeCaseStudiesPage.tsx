@@ -179,7 +179,7 @@ const EeoxoeCaseStudiesPage: React.FC = () => {
             </motion.h1>
           </motion.div>
 
-    
+
         </motion.section>
 
         {/* 2. Metrics strip */}
@@ -365,90 +365,158 @@ const EeoxoeCaseStudiesPage: React.FC = () => {
 
         {/* 5. Testimonials + CTA */}
         <motion.section
-          className="rounded-3xl border border-slate-200 bg-slate-50/70 p-6 shadow-2xl shadow-slate-300/40 sm:p-8"
-          variants={sectionContainer}
-          initial="hidden"
-          whileInView="visible"
+          className="relative mt-10 overflow-hidden rounded-3xl bg-white p-6  sm:p-10"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
-          <motion.div
-            className="flex flex-col gap-8 md:flex-row md:items-start"
-            variants={sectionContainer}
-          >
-            <motion.div className="md:w-1/2" variants={item}>
-              <h2 className="text-3xl font-bold text-[#0B1531]">
-                What eeoxoe’s clients say
-              </h2>
-              <p className="mt-2 text-base text-slate-700">
-                We judge success by how much calmer your day feels – not just by
-                how polished the interface looks.
-              </p>
+          {/* soft background accents */}
+          <div className="pointer-events-none absolute inset-0 -z-10">
+            <div className="absolute -left-24 top-10 h-64 w-64 rounded-full bg-[#0B1531]/5 blur-3xl" />
+            <div className="absolute -right-10 bottom-0 h-40 w-40 rounded-full bg-[#FACC15]/15 blur-2xl" />
+          </div>
 
-              <div className="mt-6 space-y-4">
-                {testimonials.map((t) => (
+          <div className="flex flex-col gap-10 lg:flex-row lg:items-stretch">
+            {/* LEFT: Heading + testimonials */}
+            <div className="flex flex-1 flex-col justify-between gap-6">
+              {/* heading + intro */}
+              <div className="max-w-xl">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                  CLIENT STORIES
+                </p>
+                <h2 className="mt-2 text-3xl font-bold text-[#0B1531]">
+                  What eeoxoe’s clients say
+                </h2>
+                <p className="mt-3 text-sm text-slate-700">
+                  We judge success by how much calmer your day feels – not just by how
+                  polished the interface looks. The real win is when approvals, inventory
+                  and reporting stop feeling “heavy”.
+                </p>
+              </div>
+
+              {/* testimonials cards */}
+              <div className="mt-2 grid gap-4 md:grid-cols-2">
+                {testimonials.slice(0, 4).map((t, index) => (
                   <motion.blockquote
-                    key={t.name}
-                    variants={item}
-                    whileHover={{ y: -4, rotate: -0.5 }}
-                    className="relative rounded-2xl bg-white p-5 text-sm text-slate-700 shadow-lg ring-1 ring-slate-200"
+                    key={t.name + index}
+                    whileHover={{
+                      y: -4,
+                      boxShadow: "0 18px 40px rgba(15,23,42,0.18)",
+                    }}
+                    className={`relative flex h-full flex-col rounded-2xl bg-slate-50 p-5 text-sm text-slate-700 ring-1 ring-slate-200 ${index === 0 ? "md:col-span-2" : ""
+                      }`}
                   >
-                    <span className="absolute -top-3 left-4 text-4xl font-serif text-yellow-400/80">
+                    <span className="absolute -top-4 left-4 text-4xl font-serif text-yellow-400/70">
                       “
                     </span>
-                    <p className="pt-1 text-sm italic">{t.quote}</p>
-                    <p className="mt-3 text-xs font-semibold text-slate-500">
-                      — {t.name}
-                    </p>
+                    <p className="pt-2 text-sm italic leading-relaxed">{t.quote}</p>
+                    <div className="mt-3 flex items-center justify-between gap-3">
+                      <p className="text-xs font-semibold text-[#0B1531]">
+                        {t.name}
+                      </p>
+                      <span className="rounded-full bg-white px-3 py-1 text-[11px] font-semibold text-slate-500 ring-1 ring-slate-200">
+                        Verified client
+                      </span>
+                    </div>
                   </motion.blockquote>
                 ))}
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div className="md:w-1/2 md:mt-8" variants={item}>
+            {/* RIGHT: Image + CTA card */}
+            <div className="flex w-full flex-col gap-4 lg:w-[40%]">
+              {/* image block */}
+              <div className="relative mt-15 h-46 overflow-hidden rounded-3xl bg-slate-900 sm:h-54 lg:h-[200px]">
+                {/* TODO: replace src with your real eeoxoe image / illustration */}
+                <img
+                  src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                  alt="Product team reviewing eeoxoe dashboards"
+                  className="h-full w-full object-cover opacity-75"
+                />
+
+                {/* overlay gradient */}
+                <div className="pointer-events-none absolute inset-0 bg-linear-to-tr from-[#0B1531]/80 via-transparent to-transparent" />
+
+                {/* small label */}
+                <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-slate-100 backdrop-blur">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#FACC15]" />
+                  From chaos to calm workflows
+                </div>
+
+                {/* mini before/after text */}
+                <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-white/95 p-4 text-xs text-slate-700 shadow-lg">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+                    BEFORE → AFTER
+                  </p>
+                  <div className="mt-2 flex flex-col gap-2 text-[11px] sm:flex-row sm:items-start sm:justify-between">
+                    <div>
+                      <p className="text-xs font-semibold text-[#0B1531]">
+                        Before eeoxoe
+                      </p>
+                      <p className="text-slate-500">
+                        Approvals in email threads, inventory in spreadsheets, reporting in
+                        5 different tools.
+                      </p>
+                    </div>
+                    <div className="hidden h-10 w-px bg-slate-200 sm:block" />
+                    <div>
+                      <p className="text-xs font-semibold text-[#0B1531]">
+                        After eeoxoe
+                      </p>
+                      <p className="text-slate-500">
+                        One calm, trackable system your whole team actually likes using.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* CTA card */}
               <motion.div
-                className="sticky top-10 rounded-3xl bg-[#0B1531] p-6 text-white shadow-xl"
-                initial={{ opacity: 0, y: 20 }}
+                className="rounded-3xl bg-[#0B1531] px-5 py-5 text-white shadow-xl"
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: easeOutExpo }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               >
-                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-yellow-400">
-                  Ready for your own before / after story?
+                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-yellow-300">
+                  READY FOR YOUR BEFORE / AFTER?
                 </p>
-                <p className="mt-3 text-base text-slate-300">
-                  Tell us where things feel slow – approvals, inventory,
-                  reporting, onboarding – and we’ll map a realistic path to a
-                  working system, not a never-ending project.
+                <p className="mt-2 text-sm text-slate-200">
+                  Tell us where things feel slow – approvals, inventory, reporting,
+                  onboarding – and we’ll map a realistic path to a working system,
+                  not a never-ending project.
                 </p>
-                <div className="mt-6 flex flex-col gap-3">
+
+                <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center">
                   <motion.a
                     href="mailto:info@eeoxoe.com"
                     whileHover={{
-                      scale: 1.02,
-                      backgroundColor: "#e0ac00",
+                      scale: 1.03,
+                      backgroundColor: "#FACC15",
                       boxShadow: "0 18px 40px rgba(0,0,0,0.35)",
                     }}
-                    whileTap={{ scale: 0.98 }}
-                    className="inline-flex items-center justify-center rounded-full bg-[#FACC15] px-6 py-3 text-base font-bold text-[#0B1531] shadow-lg transition"
+                    whileTap={{ scale: 0.97 }}
+                    className="inline-flex flex-1 items-center justify-center rounded-full bg-yellow-400 px-5 py-2.5 text-xs font-bold text-[#0B1531]"
                   >
-                    Schedule a call with eeoxoe
+                    Schedule a 20-min intro call
                   </motion.a>
                   <motion.button
                     type="button"
                     whileHover={{
-                      scale: 1.02,
-                      borderColor: "#FACC15",
+                      scale: 1.03,
                       backgroundColor: "#020617",
                     }}
-                    whileTap={{ scale: 0.98 }}
-                    className="inline-flex items-center justify-center rounded-full border border-slate-500 bg-transparent px-6 py-3 text-base font-semibold text-slate-100 transition"
+                    whileTap={{ scale: 0.97 }}
+                    className="inline-flex flex-1 items-center justify-center rounded-full border border-slate-500 bg-transparent px-5 py-2.5 text-xs font-semibold text-slate-100"
                   >
                     Send us your brief →
                   </motion.button>
                 </div>
               </motion.div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </motion.section>
       </div>
     </main>
