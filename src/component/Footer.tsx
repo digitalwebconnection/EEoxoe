@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
           {/* brand */}
           <div className="md:col-span-2">
             <div className="mb-4 flex items-center gap-2">
-              <div className="grid w-70 place-items-center rounded-xl font-black">
+              <div className="grid w-70 -ms-12 place-items-center rounded-xl font-black">
                 <img
                   src={logo}
                   alt="Logo"
