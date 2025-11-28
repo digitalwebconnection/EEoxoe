@@ -231,8 +231,6 @@ const ContactPage: React.FC = () => {
       ======================== */}
       <footer className="relative w-full bg-[#262753] text-white py-4 md:py-5 overflow-hidden">
         {/* Yellow angle shape */}
-        <div className="absolute left-0 top-0 h-full w-40 bg-[#FDD53D] -skew-x-12 -translate-x-8" />
-
         <div className="relative max-w-6xl mx-auto px-4 md:px-0 flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Brand */}
           <div className="flex items-center gap-2 font-semibold text-lg">

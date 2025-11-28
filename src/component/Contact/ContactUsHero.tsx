@@ -52,7 +52,7 @@ const ContactUsHero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.15, duration: 0.4 }}
         >
-          Contact eeoxoe
+          Contact Éxochos
         </motion.p>
 
         <motion.h1

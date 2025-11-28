@@ -10,7 +10,7 @@ import {
   ArrowRight,
     type LucideIcon,
 } from "lucide-react";
-import logo from "../assets/image1.png";
+import logo from "../assets/image2.png";
 
 
 interface FooterColProps {
