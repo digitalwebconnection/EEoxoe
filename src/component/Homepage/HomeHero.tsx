@@ -122,7 +122,7 @@ const HeroSection: React.FC = () => {
             variants={itemVariants}
             className="mb-8 max-w-xl text-lg text-slate-600"
           >
-            We turn your ideas into high-performance software built for scalability and business growth. At EXOCOSE, our experts blend technology and creativity to deliver solutions that give you a competitive edge.
+            We turn your ideas into high-performance software built for scalability and business growth. At EXOCHOS, our experts blend technology and creativity to deliver solutions that give you a competitive edge.
           </motion.p>
 
           {/* CTAs */}
@@ -196,7 +196,7 @@ const HeroSection: React.FC = () => {
             animate="show"
             transition={{ delay: 0.6 }}
             whileHover={{ y: -5, transition: { type: "spring", stiffness: 300 } }}
-            className="absolute bottom-0 left-0 w-[68%] rounded-3xl border border-slate-800/50 bg-white p-2 shadow-2xl shadow-black/80 sm:p-3"
+            className="absolute bottom-0 left-0 w-[68%] rounded-3xl border border-slate-800/50 bg-white p-3 shadow-2xl shadow-black/80 sm:p-5"
           >
             <motion.div
               variants={floatingVariants}

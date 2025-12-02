@@ -288,8 +288,8 @@ const ContactPage: React.FC = () => {
           {/* ===== RIGHT CARDS ===== */}
           <div className=" max-w-xl mx-auto">
             <div className=" mt-0 md:mt-44 flex flex-col gap-10 justify-center ">
-              <div className="bg-[#262753] w-80 h-25 shadow-xl rounded-lg px-4 py-4 flex items-center gap-4">
-                <div className="ps-2 ">
+              <div className="bg-[#262753] w-90 h-25 shadow-xl rounded-lg px-5 py-4 flex items-center gap-4">
+                <div className=" ">
                   <MapPin className="w-10 h-10 text-[#FDD53D]" />
                 </div>
                 <div>
@@ -300,7 +300,7 @@ const ContactPage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-[#262753] w-80 h-25 rounded-lg px-6 py-5 flex items-center gap-4 shadow-xl">
+              <div className="bg-[#262753] w-90 h-25 rounded-lg px-6 py-5 flex items-center gap-4 shadow-xl">
                 <div className="  ">
                   <Phone className="w-10 h-10 text-[#FDD53D]" />
                 </div>
@@ -312,7 +312,7 @@ const ContactPage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-[#262753] w-80 h-25 rounded-lg px-6 py-5 flex items-center gap-4 shadow-xl">
+              <div className="bg-[#262753] w-90 h-25 rounded-lg px-6 py-5 flex items-center gap-4 shadow-xl">
                 <div className=" ">
                   <Mail className="w-10 h-10 text-[#FDD53D]" />
                 </div>
