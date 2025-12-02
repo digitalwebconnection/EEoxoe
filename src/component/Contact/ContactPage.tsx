@@ -1,7 +1,14 @@
 "use client"
 
 import React, { useState, useEffect } from "react"
-import { MapPin, Phone, Mail, ArrowRight } from "lucide-react"
+import {
+  MapPin, Phone, Mail, ArrowRight, Facebook,
+  Twitter,
+  Github,
+  Linkedin, type LucideIcon
+} from "lucide-react"
+// Replace this file in your project assets with the new image.
+// e.g. move /mnt/data/d618725a-e5fa-46c7-88cc-594a4f0984aa.png -> ./assets/contact_bg_2.png
 import bgImage from "../../assets/contact_bg_1.png"
 
 const ContactPage: React.FC = () => {
@@ -11,9 +18,12 @@ const ContactPage: React.FC = () => {
     subject: "",
     phone: "",
     countryCode: "+91",
+    service: "", // new
+    companySize: "", // new
     message: "",
     captcha: "",
   })
+
 
   // ============================
   // COUNTRY CODES
@@ -44,7 +54,9 @@ const ContactPage: React.FC = () => {
             })
           })
           .filter((item: { code: string }) => item.code && item.code !== "+")
-          .sort((a: { label: string }, b: { label: any }) => a.label.localeCompare(b.label))
+          .sort((a: { label: string }, b: { label: any }) =>
+            a.label.localeCompare(b.label)
+          )
 
         setCountryCodes(list)
       } catch (error) {
@@ -93,6 +105,7 @@ const ContactPage: React.FC = () => {
       return
     }
 
+    // Here you can call your API to send the form data
     alert("Thank you! Your message has been received.")
 
     setFormState({
@@ -101,6 +114,8 @@ const ContactPage: React.FC = () => {
       subject: "",
       phone: "",
       countryCode: "+91",
+      service: "",
+      companySize: "",
       message: "",
       captcha: "",
     })
@@ -198,6 +213,36 @@ const ContactPage: React.FC = () => {
                 </div>
               </div>
 
+              {/* Service + Company Size (NEW) */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <select
+                  name="service"
+                  value={formState.service}
+                  onChange={handleInputChange}
+                  className="w-full rounded-md border border-gray-400 bg-[#f8f9ff] px-4 py-3 text-sm"
+                >
+                  <option value="">Select Service</option>
+                  <option value="web-development">Web Development</option>
+                  <option value="seo">SEO</option>
+                  <option value="ppc">PPC / Ads</option>
+                  <option value="branding">Branding & Design</option>
+                  <option value="solar">Solar Solutions</option>
+                  <option value="other">Other</option>
+                </select>
+
+                <select
+                  name="companySize"
+                  value={formState.companySize}
+                  onChange={handleInputChange}
+                  className="w-full rounded-md border border-gray-400 bg-[#f8f9ff] px-4 py-3 text-sm"
+                >
+                  <option value="">Company Size</option>
+                  <option value="0-10">0 - 10 employees</option>
+                  <option value="10-50">10 - 50 employees</option>
+                  <option value="50-plus">50+ employees</option>
+                </select>
+              </div>
+
               {/* Message */}
               <textarea
                 name="message"
@@ -244,36 +289,36 @@ const ContactPage: React.FC = () => {
           <div className=" max-w-xl mx-auto">
             <div className=" mt-0 md:mt-44 flex flex-col gap-10 justify-center ">
               <div className="bg-[#262753] w-80 h-25 shadow-xl rounded-lg px-4 py-4 flex items-center gap-4">
-                <div className="bg-[#FDD53D] text-[#262753] p-4 rounded-lg shadow-md">
-                  <MapPin className="w-6 h-6" />
+                <div className="ps-2 ">
+                  <MapPin className="w-10 h-10 text-[#FDD53D]" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg text-white">
-                    Our Office Address
+                    Flat-105, Khoni Palava Phase-2
                   </h3>
-                  <p className="text-sm text-gray-200">St. Petersburg, USA</p>
+                  <p className="text-sm text-gray-200">Kalyan Thane-421204 Address</p>
                 </div>
               </div>
 
               <div className="bg-[#262753] w-80 h-25 rounded-lg px-6 py-5 flex items-center gap-4 shadow-xl">
-                <div className="bg-[#FDD53D] text-[#262753] p-4 rounded-lg shadow-md">
-                  <Phone className="w-6 h-6" />
+                <div className="  ">
+                  <Phone className="w-10 h-10 text-[#FDD53D]" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg text-white">
                     Call Us Anytime
                   </h3>
-                  <p className="text-sm text-gray-200">+1 (800) 123-4567</p>
+                  <p className="text-sm text-gray-200">+91 99309 93212 </p>
                 </div>
               </div>
 
               <div className="bg-[#262753] w-80 h-25 rounded-lg px-6 py-5 flex items-center gap-4 shadow-xl">
-                <div className="bg-[#FDD53D] text-[#262753] p-4 rounded-lg shadow-md">
-                  <Mail className="w-6 h-6" />
+                <div className=" ">
+                  <Mail className="w-10 h-10 text-[#FDD53D]" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg text-white">Send an Email</h3>
-                  <p className="text-sm text-gray-200">info@webteck.com</p>
+                  <p className="text-sm text-gray-200">management@exochostech.com</p>
                 </div>
               </div>
             </div>
@@ -294,33 +339,50 @@ const ContactPage: React.FC = () => {
       </section>
 
       {/* FOOTER */}
-      <footer className="relative w-full bg-[#262753] text-white py-4 md:py-5 overflow-hidden">
+      <footer className="relative w-full bg-[#262753] text-white py-4 md:py-6 overflow-hidden">
         <div className="absolute left-0 top-0 h-full w-36 bg-[#FDD53D] -skew-x-35 -translate-x-8 z-10"></div>
-        <div className="relative max-w-6xl mx-auto px-4 md:px-0 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2 font-semibold text-lg">
-            <span className="inline-block ms-10 rounded-full border border-white/70 px-3 py-1 text-sm mr-1">
-              Web Teck
-            </span>
+
+        <div className="relative max-w-6xl mx-auto px-4 md:px-0 
+      flex flex-col md:flex-row items-center justify-between gap-6">
+
+          {/* BRAND */}
+          <div className="font-semibold text-lg ms-10 tracking-wide">
+            Web Teck Software
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 text-sm">
-            <div className="flex items-center gap-2">
-              <Phone className="w-4 h-4" />
-              <span>+1 (800) 123-4567</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Mail className="w-4 h-4" />
-              <span>info@webteck.com</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4" />
-              <span>St. Petersburg, USA</span>
-            </div>
+        
+
+          {/* SOCIAL ICONS (YOUR BLOCK) */}
+          <div className="flex items-center gap-8">
+            <Social href="#" label="LinkedIn" Icon={Linkedin} />
+            <Social href="#" label="Twitter" Icon={Twitter} />
+            <Social href="#" label="GitHub" Icon={Github} />
+            <Social href="#" label="Facebook" Icon={Facebook} />
           </div>
+
         </div>
       </footer>
+
+
     </main>
   )
 }
 
 export default ContactPage
+interface SocialProps {
+  href: string;
+  label: string;
+  Icon: LucideIcon;
+}
+
+const Social: React.FC<SocialProps> = ({ href, label, Icon }) => {
+  return (
+    <a
+      href={href}
+      aria-label={label}
+      className="group inline-flex items-center justify-center rounded-lg p-2 ring-1 ring-white/10 transition hover:bg-white/10"
+    >
+      <Icon className="h-5 w-5 text-white transition group-hover:text-[#ffd740]" />
+    </a>
+  );
+};

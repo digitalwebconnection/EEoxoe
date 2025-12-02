@@ -109,21 +109,20 @@ const HeroSection: React.FC = () => {
           {/* H1 Title */}
           <motion.h1
             variants={itemVariants}
-            className="mb-5 text-4xl font-extrabold leading-tight text-[#262755] sm:text-5xl md:text-6xl"
+            className="mb-4 font-extrabold leading-[1.1] text-[#262755] text-4xl sm:text-5xl md:text-6xl"
           >
-            Transform Ideas Into
-            <br className="hidden sm:block" />
-            Innovative Solutions
+            Transform Ideas<br />
+            <span className="text-[#FDD53D]">Into Powerful</span><br />
+            <span>Digital Solutions</span>
           </motion.h1>
+
 
           {/* Description */}
           <motion.p
             variants={itemVariants}
             className="mb-8 max-w-xl text-lg text-slate-600"
           >
-            We transform your idea into innovative software solutions that propel
-            business growth. Our knowledgeable staff blends technology and
-            creativity.
+            We turn your ideas into high-performance software built for scalability and business growth. At EXOCOSE, our experts blend technology and creativity to deliver solutions that give you a competitive edge.
           </motion.p>
 
           {/* CTAs */}
@@ -159,7 +158,7 @@ const HeroSection: React.FC = () => {
           >
             <motion.div variants={floatingVariants} animate="float" className="h-full">
               <div className="mb-3 flex items-center justify-between">
-                <h3 className="text-xl font-bold text-[#1C2250]">Digital Marketing</h3>
+                <h3 className="text-xl font-bold text-[#1C2250]">software development  </h3>
                 <span className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-[#262755]">
                   <BarChart2 className="h-4 w-4" />
                   Read More
@@ -170,21 +169,21 @@ const HeroSection: React.FC = () => {
                 scale.
               </p>
 
-              {/* Illustration Placeholder */}
-              <div className="relative grid grid-cols-12 items-center gap-3 rounded-2xl border border-slate-500 bg-linear-to-br from-slate-50 to-purple-50 p-4">
-                <div className="col-span-8">
-                  <div className="mb-2 h-3 w-10/12 rounded bg-slate-500" />
-                  <div className="mb-2 h-3 w-8/12 rounded bg-slate-200" />
-                  <div className="mb-4 h-3 w-6/12 rounded bg-slate-200" />
-                  <div className="flex gap-2">
-                    <div className="h-20 w-28 rounded-md bg-white shadow-inner" />
-                    <div className="h-20 w-28 rounded-md bg-white shadow-inner" />
-                  </div>
+              {/* Illustration Placeholder — image fills the whole box */}
+              <div className="relative grid grid-cols-12 items-center gap-3 rounded-2xl border border-slate-500 bg-linear-to-br from-slate-50 to-purple-50 p-0 overflow-hidden">
+                {/* left: image (fills) */}
+                <div className="col-span-12 w-full h-40 sm:h-36 md:h-44 lg:h-52 overflow-hidden">
+                  <img
+                    src="https://res.cloudinary.com/dbyrbuqbg/image/upload/v1742114306/web-dev-banner_gyciet.png"
+                    alt="Illustration"
+                    className="w-full h-full object-cover object-center block"
+                    loading="lazy"
+                  />
                 </div>
-                <div className="col-span-4 flex flex-col items-center">
-                  <div className="h-14 w-14 rounded-full bg-white shadow-inner" />
-                </div>
+
+
               </div>
+
 
               <div className="mt-2 text-center text-xs text-slate-500" />
             </motion.div>
@@ -197,7 +196,7 @@ const HeroSection: React.FC = () => {
             animate="show"
             transition={{ delay: 0.6 }}
             whileHover={{ y: -5, transition: { type: "spring", stiffness: 300 } }}
-            className="absolute bottom-0 left-0 w-[78%] rounded-3xl border border-slate-800/50 bg-white p-5 shadow-2xl shadow-black/80 sm:p-6"
+            className="absolute bottom-0 left-0 w-[68%] rounded-3xl border border-slate-800/50 bg-white p-2 shadow-2xl shadow-black/80 sm:p-3"
           >
             <motion.div
               variants={floatingVariants}
@@ -205,7 +204,7 @@ const HeroSection: React.FC = () => {
               transition={{ delay: 1 }}
               className="h-full"
             >
-              <div className="mb-3 flex items-center justify-between">
+              <div className="mb-2 flex items-center justify-between">
                 <h3 className="text-lg font-bold text-[#1C2250]">Programming</h3>
                 <span className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-[#262755]">
                   <Code className="h-4 w-4" />
@@ -213,16 +212,24 @@ const HeroSection: React.FC = () => {
                 </span>
               </div>
 
-              <p className="mb-4 max-w-[30ch] text-sm text-slate-600">
+              <p className="mb-1 max-w-[50ch] text-sm text-slate-600">
                 Modern stacks, clean patterns & scalable codebase.
               </p>
 
-              <div className="grid grid-cols-3 gap-2">
-                <div className="h-16 rounded-md bg-linear-to-br from-slate-50 to-indigo-50" />
-                <div className="h-16 rounded-md bg-linear-to-br from-slate-50 to-indigo-50" />
-                <div className="h-16 rounded-md bg-linear-to-br from-slate-50 to-indigo-50" />
-              </div>
+              {/* Illustration Placeholder — image fills the whole box */}
+              <div className="relative grid grid-cols-12 items-center gap-3 rounded-2xl border border-slate-500 bg-linear-to-br from-slate-50 to-purple-50 p-0 overflow-hidden">
+                {/* left: image (fills) */}
+                <div className="col-span-12 h-20 sm:h-24 md:h-28 lg:h-32 overflow-hidden">
+                  <img
+                    src="https://www.bmcoder.com/storage/images/4.jpg"
+                    alt="Illustration"
+                    className="w-full h-full object-cover object-center block"
+                    loading="lazy"
+                  />
+                </div>
 
+
+              </div>
               <div className="mt-2 text-center text-xs text-slate-500" />
             </motion.div>
           </motion.div>

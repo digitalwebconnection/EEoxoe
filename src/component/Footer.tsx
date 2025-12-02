@@ -1,14 +1,11 @@
 import React from "react";
 import {
-  Facebook,
-  Twitter,
-  Github,
-  Linkedin,
+
   Mail,
   MapPin,
   Phone,
   ArrowRight,
-    type LucideIcon,
+
 } from "lucide-react";
 import logo from "../assets/image2.png";
 
@@ -18,11 +15,7 @@ interface FooterColProps {
   links: string[];
 }
 
-interface SocialProps {
-  href: string;
-  label: string;
-  Icon: LucideIcon;
-}
+
 
 const Footer: React.FC = () => {
   return (
@@ -50,15 +43,15 @@ const Footer: React.FC = () => {
 
             <div className="mt-5 flex items-center gap-3 text-sm text-white/70">
               <MapPin className="h-4 w-4 text-[#ffd740]" />
-              Remote-first • Global clients
+              Casa lakeside A wing, Flat-105, Khoni Palava Phase-2, Dombivli East, Kalyan Thane-421204 
             </div>
 
             <div className="mt-2 flex items-center gap-3 text-sm text-white/70">
-              <Phone className="h-4 w-4 text-[#ffd740]" /> +91 74474 01177
+              <Phone className="h-4 w-4 text-[#ffd740]" /> +91 99309 93212 
             </div>
 
             <div className="mt-2 flex items-center gap-3 text-sm text-white/70">
-              <Mail className="h-4 w-4 text-[#ffd740]" /> info@saasoft.dev
+              <Mail className="h-4 w-4 text-[#ffd740]" />management@exochostech.com
             </div>
           </div>
 
@@ -108,12 +101,6 @@ const Footer: React.FC = () => {
             © {new Date().getFullYear()} EEOXOE. All rights reserved.
           </p>
 
-          <div className="flex items-center gap-2">
-            <Social href="#" label="LinkedIn" Icon={Linkedin} />
-            <Social href="#" label="Twitter" Icon={Twitter} />
-            <Social href="#" label="GitHub" Icon={Github} />
-            <Social href="#" label="Facebook" Icon={Facebook} />
-          </div>
         </div>
       </div>
     </footer>
@@ -138,16 +125,6 @@ const FooterCol: React.FC<FooterColProps> = ({ title, links }) => {
   );
 };
 
-const Social: React.FC<SocialProps> = ({ href, label, Icon }) => {
-  return (
-    <a
-      href={href}
-      aria-label={label}
-      className="group inline-flex items-center justify-center rounded-lg p-2 ring-1 ring-white/10 transition hover:bg-white/10"
-    >
-      <Icon className="h-5 w-5 text-white transition group-hover:text-[#ffd740]" />
-    </a>
-  );
-};
+
 
 export default Footer;

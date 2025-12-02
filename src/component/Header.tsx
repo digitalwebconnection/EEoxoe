@@ -61,7 +61,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 border-b border-[#262755]/20 bg-white/90 backdrop-blur shadow-sm transition-transform duration-300 ${showNavbar ? "translate-y-0" : "-translate-y-full"
+      className={`fixed top-0 left-0 right-0 z-50 border-b bg-white  border-[#262755]/20  backdrop-blur shadow-sm transition-transform duration-300 ${showNavbar ? "translate-y-0" : "-translate-y-full"
         }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-0">
