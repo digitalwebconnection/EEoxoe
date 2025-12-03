@@ -103,7 +103,7 @@ const HeroSection: React.FC = () => {
             variants={itemVariants}
             className="mb-4 text-xs font-semibold tracking-[0.2em] text-slate-500"
           >
-            BUILDING SOFTWARE, BUILDING SUCCESS
+            INNOVATING TOMORROW, TODAY.
           </motion.p>
 
           {/* H1 Title */}
@@ -111,9 +111,9 @@ const HeroSection: React.FC = () => {
             variants={itemVariants}
             className="mb-4 font-extrabold leading-[1.1] text-[#262755] text-4xl sm:text-5xl md:text-6xl"
           >
-            Transform Ideas<br />
-            <span className="text-[#FDD53D]">Into Powerful</span><br />
-            <span>Digital Solutions</span>
+            Turning Vision<br />
+            <span className="text-[#FDD53D]">Into High-Impact</span><br />
+            <span>Digital Reality.</span>
           </motion.h1>
 
 

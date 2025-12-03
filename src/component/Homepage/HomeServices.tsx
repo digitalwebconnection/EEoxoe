@@ -5,7 +5,6 @@ import {
   Code,
   Palette,
   Smartphone,
-  Cloud,
   type LucideIcon,
 } from "lucide-react";
 import {
@@ -26,36 +25,30 @@ interface Service {
 const services: Service[] = [
   {
     icon: Code,
-    title: "Software Development",
+    title: "Web Application",
     description:
       "Create beautiful, user-centric designs that engage and inspire .",
     image:
-      "https://media.istockphoto.com/id/1075599562/photo/programmer-working-with-program-code.jpg?s=612x612&w=0&k=20&c=n3Vw5SMbMCWW1YGG6lnTfrwndNQ8B_R4Vw-BN7LkqpA=",
-  },
-  {
-    icon: Palette,
-    title: "Product Design",
-    description:
-      "Create beautiful, user-centric designs that engage and inspire .",
-    image:
-      "https://as1.ftcdn.net/jpg/02/59/51/26/1000_F_259512677_UynSpsczLyClBmci2W2lewuAutVsTlpo.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQOxDfO4qUx41Cda-UkJITyrtH3P6YdVI3Qg&s",
   },
   {
     icon: Smartphone,
-    title: "App Development",
+
+    title: "Mobile Application",
+    description:
+      "Create beautiful, user-centric designs that engage and inspire .",
+    image:
+      "https://media.istockphoto.com/id/1174690086/photo/software-developer-freelancer-working-at-home.jpg?s=612x612&w=0&k=20&c=loFqul06ggwtkwqSmzZnYfA72Vk7nFQOvDSzAN6YbtQ=",
+  },
+  {
+    icon: Palette,
+    title: " Odoo",
     description:
       "Build powerful applications for iOS, Android, and Web platforms.",
     image:
-      "https://www.mindinventory.com/blog/wp-content/uploads/2018/12/benefits-of-mobile-app-for-business.webp",
+      "https://www.odoo-bs.com/unsplash/cYyqhdbJ9TI/1557287/software%20development.jpg?unique=e480ac25",
   },
-  {
-    icon: Cloud,
-    title: "Cloud Integration",
-    description:
-      "Seamlessly integrate cloud solutions for scalability and reliability.",
-    image:
-      "https://bernardmarr.com/img/The%205%20Biggest%20Cloud%20Computing%20Trends%20In%202021.jpg",
-  },
+
 ];
 
 // ===== Animations =====
@@ -124,7 +117,7 @@ export default function ServicesSection() {
       id="services"
       className="bg-[#f8f8fc] px-4 py-10 sm:px-6 lg:px-0 md:py-12"
     >
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-6xl">
         {/* Heading */}
         <div className="mb-16 text-center">
           <motion.h2
@@ -134,7 +127,7 @@ export default function ServicesSection() {
             transition={{ type: "spring", stiffness: 90, damping: 12 }}
             className="mb-4 text-4xl font-extrabold text-[#262755] md:text-5xl"
           >
-            Crafting Custom Software To Meet Challenges
+            Built To Tackle Complex Challenges
           </motion.h2>
 
           {/* Underline */}
@@ -167,7 +160,7 @@ export default function ServicesSection() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid gap-6 md:grid-cols-2 lg:grid-cols-4"
+          className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
         >
           {services.map((service) => (
             <motion.div key={service.title} variants={item} className="flex">
