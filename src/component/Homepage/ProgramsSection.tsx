@@ -1,7 +1,7 @@
 
 import React from "react";
 import { motion, type Variants } from "framer-motion";
-
+import logo from "../../assets/image1.png";
 interface Logo {
   src: string;
   alt: string;
@@ -9,36 +9,44 @@ interface Logo {
 
 const logos: Logo[] = [
   {
-    src: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/openai-icon.png",
-    alt: "OpenAI",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC4ABCGrqFRMCJaFGeEL6tnPbMu387NHZQKQ&s",
+    alt: "python",
   },
   {
-    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2sSeQqjaUTuZ3gRgkKjidpaipF_l6s72lBw&s",
-    alt: "Google",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3NkSbg9iOD3ZdGDssZpiRjR94S8RgZNr3Ow&s",
+    alt: "Django ",
   },
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg",
-    alt: "TensorFlow",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHNIdnt1kk5NWuSM91gwvKGUZJP1p2ADDFZA&s",
+    alt: "fastapi",
   },
   {
-    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaMGPiFs5SYXY6mkKcTIQWDHaoijHwXhNqeg&s",
-    alt: "Microsoft Loop",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWyRrjrzABhrUhMOyZ8P8fMJ6e8zaEzAgQHw&s",
+    alt: "odoo",
   },
   {
-    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1vpn5kgG_HOT4bK9KnvcE3SpgsAvqoP9sNA&s",
-    alt: "Microsoft Edge",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOJnmLpgWHeDOXireAPVxm8P2zkYPf8QGpuw&s",
+    alt: "js",
   },
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Firefox_logo%2C_2019.svg/250px-Firefox_logo%2C_2019.svg.png",
-    alt: "Firefox",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa7ECW4xHgJyeIQexegqGhxgHGknkobmD0xA&s",
+    alt: "react js ",
   },
   {
-    src: "https://images.seeklogo.com/logo-png/44/1/nvidia-logo-png_seeklogo-443363.png",
-    alt: "NVIDIA",
+    src: "https://icon2.cleanpng.com/20180315/ifq/avedfehlg.webp",
+    alt: "Postgresql",
   },
   {
-    src: "https://icon2.cleanpng.com/lnd/20250227/oj/3097474f030647ff3ddecef3e542e0.webp",
-    alt: "Databricks",
+    src: "https://w7.pngwing.com/pngs/503/133/png-transparent-ubuntu-plain-logo-icon.png",
+    alt: "ubuntu",
+  },
+    {
+    src: "https://img.freepik.com/premium-vector/ai-banner-concept-digital-style-generative-ideas-design-element-internet-technology_208588-4267.jpg?semt=ais_se_enriched&w=740&q=80",
+    alt: "Ai",
+  },
+  {
+    src: "https://img.icons8.com/color/1200/nginx.jpg",
+    alt: "nginx ",
   },
 ];
 
@@ -70,7 +78,7 @@ const item: Variants = {
 const ProgramsSection: React.FC = () => {
   return (
     <section className="relative overflow-visible bg-white">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8 md:py-28">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-4 md:py-28">
         {/* Left copy */}
         <motion.div
           variants={container}
@@ -82,26 +90,23 @@ const ProgramsSection: React.FC = () => {
             variants={item}
             className="mb-4 text-xs font-semibold tracking-[0.2em] text-[#262755]/60"
           >
-            COLLABORATION TOOLS
+            Build Modern Software, Faster — From APIs to AI
           </motion.p>
 
           <motion.h2
             variants={item}
             className="mb-5 text-4xl font-extrabold leading-[1.05] text-[#262755] md:text-6xl"
           >
-            Programs For Modern{" "}
+            A Smarter Stack for{" "}
             <br className="hidden md:block" />
-            Software Agencies
+           <span className="text-[#FDD53D]">Faster Development</span> 
           </motion.h2>
 
           <motion.p
             variants={item}
             className="mb-8 max-w-xl text-base text-[#262755]/70 md:text-lg"
           >
-            Provides deadlines, task dependencies, and integrations to assist
-            teams in managing and coordinating tasks and projects. These
-            initiatives aid in streamlining operations for contemporary
-            agencies.
+           We combine best-in-class tools to accelerate development, reduce ops friction and unlock intelligent features. Whether you're building enterprise ERPs, high-performance APIs, or interactive frontends, our stack gives your team the speed, stability and observability needed to deliver on time — every time.
           </motion.p>
 
           {/* Email capture */}
@@ -150,9 +155,9 @@ const ProgramsSection: React.FC = () => {
             />
 
             {/* Center disk */}
-            <div className="absolute left-1/2 top-1/2 flex h-40 w-40 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-center ring-1 ring-gray-200 shadow-[0_20px_60px_rgba(0,0,0,0.06)]">
-              <span className="text-2xl font-black tracking-wide text-[#262755]">
-                SAASOFT
+            <div className="absolute left-1/2 top-1/2 flex h-50 w-50 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-center ring-1 ring-gray-200 shadow-[0_20px_60px_rgba(0,0,0,0.06)]">
+              <span className=" tracking-wide text-[#262755]">
+                 <img src={logo} alt="Logo" className="h-[60px] w-70 " />
               </span>
             </div>
 
@@ -193,10 +198,10 @@ const ProgramsSection: React.FC = () => {
                       <img
                         src={logo.src}
                         alt={logo.alt}
-                        width={36}
-                        height={36}
+                        width={56}
+                        height={56}
                         loading="lazy"
-                        className="object-contain"
+                        className="object-contain  rounded-full"
                       />
                     </motion.div>
                   </motion.div>
