@@ -2,10 +2,7 @@
 
 import React, { useState, useEffect } from "react"
 import {
-  MapPin, Phone, Mail, ArrowRight, Facebook,
-  Twitter,
-  Github,
-  Linkedin, type LucideIcon
+  MapPin, Phone, Mail, ArrowRight, 
 } from "lucide-react"
 // Replace this file in your project assets with the new image.
 // e.g. move /mnt/data/d618725a-e5fa-46c7-88cc-594a4f0984aa.png -> ./assets/contact_bg_2.png
@@ -338,30 +335,7 @@ const ContactPage: React.FC = () => {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="relative w-full bg-[#262753] text-white py-4 md:py-6 overflow-hidden">
-        <div className="absolute left-0 top-0 h-full w-36 bg-[#FDD53D] -skew-x-35 -translate-x-8 z-10"></div>
-
-        <div className="relative max-w-6xl mx-auto px-4 md:px-0 
-      flex flex-col md:flex-row items-center justify-between gap-6">
-
-          {/* BRAND */}
-          <div className="font-semibold text-lg ms-10 tracking-wide">
-            Web Teck Software
-          </div>
-
-        
-
-          {/* SOCIAL ICONS (YOUR BLOCK) */}
-          <div className="flex items-center gap-8">
-            <Social href="#" label="LinkedIn" Icon={Linkedin} />
-            <Social href="#" label="Twitter" Icon={Twitter} />
-            <Social href="#" label="GitHub" Icon={Github} />
-            <Social href="#" label="Facebook" Icon={Facebook} />
-          </div>
-
-        </div>
-      </footer>
+    
 
 
     </main>
@@ -369,20 +343,5 @@ const ContactPage: React.FC = () => {
 }
 
 export default ContactPage
-interface SocialProps {
-  href: string;
-  label: string;
-  Icon: LucideIcon;
-}
 
-const Social: React.FC<SocialProps> = ({ href, label, Icon }) => {
-  return (
-    <a
-      href={href}
-      aria-label={label}
-      className="group inline-flex items-center justify-center rounded-lg p-2 ring-1 ring-white/10 transition hover:bg-white/10"
-    >
-      <Icon className="h-5 w-5 text-white transition group-hover:text-[#ffd740]" />
-    </a>
-  );
-};
+
