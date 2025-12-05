@@ -1,5 +1,6 @@
 import CloudSection from "./CloudSection"
 import HeroSection from "./HomeHero"
+import HeroSectionhome from "./HomeHero2"
 import ServicesSection from "./HomeServices"
 import InterfacesSection from "./InterfacesSection"
 import ProgramsSection from "./ProgramsSection"
@@ -12,13 +13,13 @@ import WorkflowSection from "./WorkflowSection"
 const HomeMain = () => {
   return (
     <>
-      <ProgramsSection/>
+      <HeroSectionhome/>
       <HeroSection/>
       <ServicesSection/>
       <StatsSection/>
       <SolutionsSection/>
       <CloudSection/>
-    
+    <ProgramsSection/>
       <WorkflowSection/>
       <InterfacesSection/>
       <TestimonialsSection/>
