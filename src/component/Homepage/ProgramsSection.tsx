@@ -99,7 +99,7 @@ const ProgramsSection: React.FC = () => {
           >
             A Smarter Stack for{" "}
             <br className="hidden md:block" />
-           <span className="text-[#FDD53D]">Faster Development</span> 
+           <span className="text-[#FDD53D] text-shadow-black text-shadow-md">Faster Development</span> 
           </motion.h2>
 
           <motion.p
@@ -123,7 +123,7 @@ const ProgramsSection: React.FC = () => {
             </div>
             <button
               type="button"
-              className="rounded-full bg-[#ffd740] px-6 py-3 text-sm font-semibold text-[#262755] transition hover:bg-[#ffd740]/90"
+              className="rounded-full relative md:-ms-38 bg-[#ffd740] px-8 py-2 text-sm font-semibold text-[#262755] hover:text-[#ffd740]  transition hover:bg-[#262755]/90 hover:shadow-xl hover:shadow-[#ffd740]/80"
             >
               Try for free
             </button>
