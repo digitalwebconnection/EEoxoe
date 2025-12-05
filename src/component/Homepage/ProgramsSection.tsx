@@ -155,9 +155,9 @@ const ProgramsSection: React.FC = () => {
             />
 
             {/* Center disk */}
-            <div className="absolute left-1/2 top-1/2 flex h-50 w-50 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-center ring-1 ring-gray-200 shadow-[0_20px_60px_rgba(0,0,0,0.06)]">
+            <div className="absolute left-1/2 top-1/2 flex h-40 w-40 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-center ring-1 ring-gray-200 shadow-[0_20px_60px_rgba(0,0,0,0.06)]">
               <span className=" tracking-wide text-[#262755]">
-                 <img src={logo} alt="Logo" className="h-[60px] w-70 " />
+                 <img src={logo} alt="Logo" className="h-[50px] w-50 " />
               </span>
             </div>
 

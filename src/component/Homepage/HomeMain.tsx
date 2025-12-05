@@ -12,12 +12,13 @@ import WorkflowSection from "./WorkflowSection"
 const HomeMain = () => {
   return (
     <>
+      <ProgramsSection/>
       <HeroSection/>
       <ServicesSection/>
       <StatsSection/>
       <SolutionsSection/>
       <CloudSection/>
-      <ProgramsSection/>
+    
       <WorkflowSection/>
       <InterfacesSection/>
       <TestimonialsSection/>
