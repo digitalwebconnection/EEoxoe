@@ -1,7 +1,7 @@
 import React from "react";
-import { Play, ArrowRight, BarChart2, Code } from "lucide-react";
+import {  ArrowRight, BarChart2, Code } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
-
+// Play, for lucide react
 // Animation Variants for staggered content
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -35,15 +35,15 @@ const cardVariants: Variants = {
 };
 
 // Circular Badge Animation Variants
-const badgeVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.1, rotate: 90 },
-  show: {
-    opacity: 1,
-    scale: 1.1,
-    rotate: 0,
-    transition: { duration: 0.1, type: "spring", stiffness: 200 },
-  },
-};
+// const badgeVariants: Variants = {
+//   hidden: { opacity: 0, scale: 0.1, rotate: 90 },
+//   show: {
+//     opacity: 1,
+//     scale: 1.1,
+//     rotate: 0,
+//     transition: { duration: 0.1, type: "spring", stiffness: 200 },
+//   },
+// };
 
 // Background blob animation variants (using easing array instead of string)
 const blobVariants: Variants = {
@@ -71,14 +71,14 @@ const floatingVariants: Variants = {
   },
 };
 
-interface CircularPlayBadgeProps {
-  className?: string;
-  variants: Variants;
-}
+// interface CircularPlayBadgeProps {
+//   className?: string;
+//   variants: Variants;
+// }
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="relative overflow-hidden px-4 py-8 sm:px-6 lg:px-8 md:pt-30">
+    <section className="relative overflow-hidden px-4 py-8 sm:px-6 lg:px-8 ">
       {/* soft background wash */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <motion.div
@@ -95,7 +95,7 @@ const HeroSection: React.FC = () => {
       </div>
 
       {/* Main Content Grid */}
-      <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2">
+      <div className="mx-auto grid max-w-7xl items-center py-12 gap-12 md:grid-cols-2">
         {/* LEFT: copy + CTAs */}
         <motion.div variants={containerVariants} initial="hidden" animate="show">
           {/* Pre-Header */}
@@ -130,7 +130,7 @@ const HeroSection: React.FC = () => {
             variants={itemVariants}
             className="flex flex-col gap-3 sm:flex-row sm:items-center"
           >
-            <button className="h-12 rounded-full bg-[#262755] px-6 text-sm font-semibold text-white transition hover:bg-[#1b1e48]">
+            <button className="h-12 rounded-full bg-[#262755] px-6 text-sm font-semibold text-white transition-all duration-300 hover:scale-110 hover:bg-[#ffd740] hover:text-[#262755] hover:shadow-lg hover:shadow-[#ffd740]/50">
               Get Started
             </button>
             <button className="inline-flex h-12 items-center rounded-full px-6 text-sm font-semibold text-[#262755] transition hover:bg-[#262755]/5">
@@ -140,12 +140,12 @@ const HeroSection: React.FC = () => {
         </motion.div>
 
         {/* RIGHT: decorative badge + overlapping cards */}
-        <div className="relative mx-auto w-full max-w-2xl">
+        <div className="relative mt-35 mx-auto w-full max-w-2xl">
           {/* Circular text badge with play */}
-          <CircularPlayBadge
+          {/* <CircularPlayBadge
             className="absolute  -right-6 -top-7 z-10 hidden sm:block"
             variants={badgeVariants}
-          />
+          /> */}
 
           {/* big card: Digital Marketing */}
           <motion.div
@@ -242,63 +242,63 @@ const HeroSection: React.FC = () => {
 /**
  * Circular text badge with a centered play button.
  */
-const CircularPlayBadge: React.FC<CircularPlayBadgeProps> = ({
-  className = "",
-  variants,
-}) => {
-  const text = " THE INTELLIGENCE REVOLUTION WITH AI •";
-  const repeated = Array(6).fill(text).join("");
+// const CircularPlayBadge: React.FC<CircularPlayBadgeProps> = ({
+//   className = "",
+//   variants,
+// }) => {
+//   const text = " THE INTELLIGENCE REVOLUTION WITH AI •";
+//   const repeated = Array(6).fill(text).join("");
 
-  return (
-    <motion.div
-      variants={variants}
-      initial="hidden"
-      animate="show"
-      className={`relative h-40 w-40 ${className}`}
-    >
-      {/* circle outline */}
-      <div className="absolute inset-0 rounded-full bg-white/80 shadow-[0_8px_30px_rgba(0,0,0,0.08)] backdrop-blur" />
+//   return (
+//     <motion.div
+//       variants={variants}
+//       initial="hidden"
+//       animate="show"
+//       className={`relative h-40 w-40 ${className}`}
+//     >
+//       {/* circle outline */}
+//       <div className="absolute inset-0 rounded-full bg-white/80 shadow-[0_8px_30px_rgba(0,0,0,0.08)] backdrop-blur" />
 
-      {/* circular text via SVG */}
-      <svg
-        viewBox="0 0 200 200"
-        className="absolute inset-0 h-full w-full"
-        style={{ overflow: "visible" }} // <-- important so text isn’t clipped
-      >
-        <defs>
-          {/* slightly smaller radius so text sits further inside */}
-          <path
-            id="circlePath"
-            d="M 100,100 m -70,0 a 70,70 0 1,1 140,0 a 70,70 0 1,1 -140,0"
-          />
-        </defs>
+//       {/* circular text via SVG */}
+//       <svg
+//         viewBox="0 0 200 200"
+//         className="absolute inset-0 h-full w-full"
+//         style={{ overflow: "visible" }} // <-- important so text isn’t clipped
+//       >
+//         <defs>
+//           {/* slightly smaller radius so text sits further inside */}
+//           <path
+//             id="circlePath"
+//             d="M 100,100 m -70,0 a 70,70 0 1,1 140,0 a 70,70 0 1,1 -140,0"
+//           />
+//         </defs>
 
-        <motion.text
-          fill="#1C2250"
-          fontSize="10"
-          fontWeight={700}
-          letterSpacing="1.5"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-        >
-          <textPath href="#circlePath">{repeated}</textPath>
-        </motion.text>
-      </svg>
+//         <motion.text
+//           fill="#1C2250"
+//           fontSize="10"
+//           fontWeight={700}
+//           letterSpacing="1.5"
+//           animate={{ rotate: 360 }}
+//           transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+//         >
+//           <textPath href="#circlePath">{repeated}</textPath>
+//         </motion.text>
+//       </svg>
 
-      {/* play button */}
-      <motion.button
-        whileHover={{
-          scale: 1.1,
-          boxShadow: "0 0 20px rgba(59, 130, 246, 0.5)",
-        }}
-        whileTap={{ scale: 0.95 }}
-        className="absolute left-1/2 top-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#262755] text-white shadow-md transition"
-        aria-label="Play"
-      >
-        <Play className="mx-auto h-5 w-5" />
-      </motion.button>
-    </motion.div>
-  );
-};
+//       {/* play button */}
+//       <motion.button
+//         whileHover={{
+//           scale: 1.1,
+//           boxShadow: "0 0 20px rgba(59, 130, 246, 0.5)",
+//         }}
+//         whileTap={{ scale: 0.95 }}
+//         className="absolute left-1/2 top-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#262755] text-white shadow-md transition"
+//         aria-label="Play"
+//       >
+//         <Play className="mx-auto h-5 w-5" />
+//       </motion.button>
+//     </motion.div>
+//   );
+// };
 
 export default HeroSection;

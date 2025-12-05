@@ -1,11 +1,36 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const images = [
+  // You can replace these URLs with your preferred images (or local imports)
+  // 1) Example: screenshot / hero image (you provided one at /mnt/data)
+  "https://thumbs.dreamstime.com/b/management-team-meeting-45717787.jpg",
+
+  // 2) Resource Allocation
+  "https://cuttingedgepr.com/wp-content/uploads/2022/12/Resource-allocation-3-AdobeStock_420664886.jpeg",
+
+  // 3) Workflow Automation
+  "https://miro.medium.com/v2/resize:fit:1224/0*PtODZg1PWfA2nVTr.png",
+
+  // 4) Client Communication
+  "https://www.lystloc.com/blog/wp-content/uploads/2023/07/How-To-Prepare-Effectively-For-A-Client-Sales-Meetings.webp",
+];
 
 const SolutionsSection: React.FC = () => {
+  const [index, setIndex] = useState(0);
+
+  // auto-rotate every 3s
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section
       id="solutions"
-      className="relative overflow-hidden px-4 py-10 sm:px-6 lg:px-8 md:py-12"
+      className="relative overflow-hidden px-4 py-10 sm:px-6 lg:px-8 md:py-6"
       style={{ backgroundColor: "#f9f9fb" }}
     >
       {/* Soft decorative blobs (brand-tinted) */}
@@ -93,7 +118,7 @@ const SolutionsSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right - Dashboard Preview */}
+          {/* Right - Dashboard Preview (auto-rotating images) */}
           <motion.div
             className="relative"
             initial={{ opacity: 0, y: 30 }}
@@ -115,30 +140,45 @@ const SolutionsSection: React.FC = () => {
               transition={{ type: "spring", stiffness: 200, damping: 18 }}
               className="relative"
             >
-              {/* Card replacement (no UI library) */}
+              {/* Card wrapper */}
               <div
-                className="group relative flex h-96 items-center justify-center overflow-hidden rounded-3xl border bg-white p-8 shadow-[0_10px_25px_rgba(0,0,0,0.06)]"
+                className="group relative flex h-96 items-center justify-center overflow-hidden rounded-3xl border bg-white p-0 shadow-[0_10px_25px_rgba(0,0,0,0.06)]"
                 style={{
-                  backgroundImage:
-                    "url('https://as1.ftcdn.net/jpg/02/59/51/26/1000_F_259512677_UynSpsczLyClBmci2W2lewuAutVsTlpo.jpg'), linear-gradient(135deg,#ffffff,#f7f7fa)",
-                  backgroundSize: "cover, auto",
-                  backgroundPosition: "center, center",
-                  backgroundRepeat: "no-repeat, no-repeat",
                   borderColor: "#26275533",
                 }}
               >
-                {/* Readability overlay (visible, stronger on hover) */}
+                {/* Animated image swap using AnimatePresence */}
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={index}
+                    src={images[index]}
+                    alt={`preview-${index}`}
+                    className="absolute inset-0 h-full w-full object-cover rounded-3xl"
+                    initial={{ opacity: 0, scale: 1.02 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.98 }}
+                    transition={{ duration: 0.7, ease: "easeInOut" }}
+                    style={{ willChange: "opacity, transform" }}
+                  />
+                </AnimatePresence>
+
+                {/* subtle overlay for better contrast (keeps same look as screenshot) */}
                 <motion.div
-                  className="absolute inset-0 rounded-3xl"
-                  initial={{ opacity: 0.35 }}
-                  whileHover={{ opacity: 0.55 }}
-                  transition={{ duration: 0.4 }}
+                  className="absolute inset-0 rounded-3xl pointer-events-none"
+                  initial={{ opacity: 0.06 }}
+                  animate={{ opacity: 0.08 }}
+                  transition={{ duration: 0.6 }}
                   style={{
                     background:
-                      "linear-gradient(80deg, #000000, #000000 85%, #000000)",
+                      "linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06))",
                   }}
                 />
-                {/* You can add inner content here if needed */}
+
+                {/* Optionally: corner watermark or subtle caption */}
+                <div className="absolute left-4 bottom-4 rounded-md bg-white/80 px-3 py-1 text-xs font-medium text-slate-700">
+                  {/* show label that maps to the left list */}
+                  {["Team Management", "Resource Allocation", "Workflow Automation", "Client Communication"][index]}
+                </div>
               </div>
             </motion.div>
           </motion.div>

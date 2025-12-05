@@ -506,7 +506,6 @@ const ExcelintFeaturesPage: React.FC = () => {
           </div>
         </section>
 
-      
       </main>
 
       {/* POPUP MODAL */}
@@ -624,9 +623,7 @@ const FeatureCard: React.FC<{ feature: Feature; onClick?: () => void }> = ({
           {feature.description}
         </p>
         {feature.badge === "Coming Soon" && feature.eta && (
-          <p className="text-[11px] font-medium text-amber-700">
-            {feature.eta}
-          </p>
+          <p className="text-[11px] font-medium text-amber-700">{feature.eta}</p>
         )}
       </div>
       <div className="h-1 w-full origin-left scale-x-0 bg-emerald-500 transition-all duration-300 group-hover:scale-x-100" />
@@ -649,31 +646,24 @@ const FeatureModal: React.FC<{ feature: Feature; onClose: () => void }> = ({
   }, [onClose]);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-      <div
-        className="absolute inset-0"
-        onClick={onClose}
-        aria-hidden="true"
-      />
-      <div className="relative z-10 w-full max-w-5xl overflow-hidden rounded-2xl bg-white shadow-2xl">
-        <button
-          type="button"
-          onClick={onClose}
-          className="absolute right-3 top-3 rounded-full bg-black/60 px-2.5 py-1 text-xs font-semibold text-white hover:bg-black"
-        >
-          ✕
-        </button>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
+      {/* backdrop click */}
+      <div className="absolute inset-0" onClick={onClose} aria-hidden="true" />
 
-        <div className="grid gap-0 md:grid-cols-2">
-          <div className="relative h-52 w-full md:h-full">
+      {/* Modal card */}
+      <div className="relative z-10 w-full max-w-4xl transform overflow-hidden rounded-2xl border-amber-400 border-2 bg-white shadow-2xl transition-all duration-300 hover:scale-[1.01]">
+        {/* Top decorative header */}
+        <div className="flex h-40 items-stretch">
+          <div className="relative w-1/2 overflow-hidden bg-linear-to-br from-emerald-600 to-sky-500">
             <img
               src={feature.imageSrc}
               alt={feature.imageAlt}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover opacity-90"
             />
+            <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent" />
             {feature.badge && (
               <span
-                className={`absolute left-3 top-3 rounded-full px-2.5 py-1 text-xs font-medium ${
+                className={`absolute left-4 top-4 inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold shadow-lg ${
                   feature.badge === "Available"
                     ? "bg-emerald-500 text-white"
                     : "bg-amber-400 text-amber-900"
@@ -683,18 +673,92 @@ const FeatureModal: React.FC<{ feature: Feature; onClose: () => void }> = ({
               </span>
             )}
           </div>
-          <div className="flex flex-col gap-3 p-6">
-            <h3 className="text-lg font-semibold text-slate-900">
-              {feature.title}
-            </h3>
-            <p className="text-sm text-slate-700">{feature.description}</p>
+
+          <div className="flex w-1/2 flex-col justify-center gap-3 bg-linear-to-l from-white/60 to-transparent p-5">
+            <h3 className="text-lg font-semibold text-slate-900">{feature.title}</h3>
+            <p className="text-xs text-slate-600">{feature.description}</p>
             {feature.badge === "Coming Soon" && feature.eta && (
-              <p className="text-xs font-medium text-amber-700">
-                Roadmap update: {feature.eta}
+              <p className="rounded-md bg-amber-50 px-2 py-1 text-[12px] font-medium text-amber-700">
+                Roadmap: {feature.eta}
               </p>
             )}
           </div>
         </div>
+
+        {/* Body with details and actions */}
+        <div className="grid gap-6 md:grid-cols-2 p-6">
+          <div className="space-y-4">
+            <p className="text-sm text-slate-700 leading-relaxed">
+              {feature.description}
+            </p>
+
+            {/* Example detail rows */}
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div className="flex items-start gap-3 rounded-lg border border-slate-100 bg-slate-50 p-3">
+                <svg className="h-5 w-5 shrink-0 text-emerald-600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12h14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M12 5v14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                <div>
+                  <p className="text-xs font-semibold text-slate-800">Integrations</p>
+                  <p className="text-[12px] text-slate-600">SIS, Email providers, Payment gateways</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 rounded-lg border border-slate-100 bg-slate-50 p-3">
+                <svg className="h-5 w-5 shrink-0 text-sky-600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 3v18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M3 12h18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                <div>
+                  <p className="text-xs font-semibold text-slate-800">Permissions</p>
+                  <p className="text-[12px] text-slate-600">Role-based access & audit logs</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <p className="text-xs font-semibold text-slate-800">Quick links</p>
+              <div className="flex flex-wrap gap-2">
+                <button className="rounded-full border border-slate-200 px-3 py-1 text-xs font-medium text-slate-700">View docs</button>
+                <button className="rounded-full border border-slate-200 px-3 py-1 text-xs font-medium text-slate-700">Request demo</button>
+                <button className="rounded-full border border-slate-200 px-3 py-1 text-xs font-medium text-slate-700">Report issue</button>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <div className="rounded-xl border border-slate-100 bg-linear-to-b from-white to-slate-50 p-4">
+              <p className="text-xs font-semibold text-slate-800">Status</p>
+              <div className="mt-2 flex items-center gap-3">
+                <span className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium ${feature.badge === "Available" ? "bg-emerald-500 text-white" : "bg-amber-400 text-amber-900"}`}>
+                  {feature.badge}
+                </span>
+                {feature.eta && <p className="text-[12px] text-slate-600">{feature.eta}</p>}
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-slate-100 bg-slate-50 p-4">
+              <p className="text-xs font-semibold text-slate-800">Take action</p>
+              <div className="mt-3 flex flex-col gap-3">
+                <button className="w-full rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:brightness-95">Request beta access</button>
+                <button className="w-full rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium hover:bg-slate-100">Add to roadmap vote</button>
+              </div>
+            </div>
+
+          
+          </div>
+        </div>
+
+        {/* Close button (floating) */}
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close modal"
+          className="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/80 p-1 text-sm font-semibold text-slate-800 shadow-md hover:bg-white"
+        >
+          ✕
+        </button>
       </div>
     </div>
   );

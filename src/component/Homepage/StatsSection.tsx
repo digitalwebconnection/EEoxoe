@@ -232,7 +232,7 @@ export default function StatsSection() {
             className="mb-4 text-4xl font-bold md:text-5xl"
             style={{ color: "#262755" }}
           >
-            Innovate, Integrate With Our Software Solutions
+            Smart Solutions. Strong Results.
           </motion.h2>
 
           <motion.div

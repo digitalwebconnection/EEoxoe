@@ -277,7 +277,7 @@ const ContactPage: React.FC = () => {
               {/* Button */}
               <button
                 type="submit"
-                className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-md bg-[#262753] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-md hover:bg-[#1c1f3f]"
+                className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-md bg-[#262753] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:scale-110 hover:bg-[#ffd740] hover:text-[#262755] hover:shadow-lg hover:shadow-[#ffd740]/50"
               >
                 Make Appointment
                 <ArrowRight className="w-4 h-4" />

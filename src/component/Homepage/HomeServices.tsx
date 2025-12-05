@@ -115,11 +115,11 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="bg-[#f8f8fc] px-4 py-10 sm:px-6 lg:px-0 md:py-12"
+      className="bg-[#f8f8fc] px-4 py-10 sm:px-6 lg:px-0 md:py-6"
     >
       <div className="mx-auto max-w-6xl">
         {/* Heading */}
-        <div className="mb-16 text-center">
+        <div className="mb-5 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -191,15 +191,17 @@ export default function ServicesSection() {
                     {/* Hover background image */}
                     <div
                       className="absolute inset-0 z-0 rounded-2xl opacity-0 transition-opacity duration-700 group-hover:opacity-100"
-                      style={{
-                        backgroundImage: `url(${service.image})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                      }}
+                   
                     />
 
                     {/* Gradient overlay */}
-                    <div className="absolute inset-0 z-1 rounded-2xl bg-[#262755] transition-colors duration-500 group-hover:bg-[#000000ad]" />
+                    <div className="absolute inset-0 z-1 rounded-2xl bg-[#262755] transition-colors duration-500 group-hover:bg-[#000000]"
+                       style={{
+                        backgroundImage: `url(${service.image})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                      }} />
+                     < div className="absolute inset-0 z-1 rounded-2xl  transition-colors bg-[#000000a9]"/>
 
                     {/* Content */}
                     <div className="relative z-2 flex h-full flex-col justify-between text-white">

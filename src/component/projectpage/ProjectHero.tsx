@@ -12,7 +12,7 @@ const HeroSection: React.FC = () => {
       <div className="pointer-events-none absolute -right-24 top-10 -z-10 h-56 w-56 rounded-full bg-[#ffd740]/30 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-24 left-1/2 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-[#262755]/5 blur-3xl" />
 
-      <div className="mx-auto max-w-7xl px-6 py-12 md:py-16 lg:px-0">
+      <div className="mx-auto max-w-7xl px-6 py-12 md:py-20 lg:px-0">
         <div className="grid items-center gap-12 md:grid-cols-2">
           {/* LEFT TEXT CONTENT */}
           <div>
