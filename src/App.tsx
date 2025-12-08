@@ -1,6 +1,4 @@
-
 import { Routes, Route } from "react-router-dom";
-
 import Footer from "./component/Footer";
 import Header from "./component/Header";
 import HomeMain from "./component/Homepage/HomeMain";
