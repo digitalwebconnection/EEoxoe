@@ -2,10 +2,8 @@
 
 import React, { useState, useEffect } from "react"
 import {
-  MapPin, Phone, Mail, ArrowRight, 
+  MapPin, Phone, Mail, ArrowRight,
 } from "lucide-react"
-// Replace this file in your project assets with the new image.
-// e.g. move /mnt/data/d618725a-e5fa-46c7-88cc-594a4f0984aa.png -> ./assets/contact_bg_2.png
 import bgImage from "../../assets/contact_bg_1.png"
 
 const ContactPage: React.FC = () => {
@@ -334,10 +332,6 @@ const ContactPage: React.FC = () => {
           />
         </div>
       </section>
-
-    
-
-
     </main>
   )
 }

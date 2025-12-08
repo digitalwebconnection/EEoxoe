@@ -1,5 +1,5 @@
-import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import { Routes, Route } from "react-router-dom";
 
 import Footer from "./component/Footer";
 import Header from "./component/Header";
@@ -11,25 +11,21 @@ import ContactUsMain from "./component/Contact/ContactUsMain";
 
 const BlogPage = () => <div className="min-h-[60vh] p-8">Blog Page</div>;
 
-function App() {
+export default function App() {
   return (
     <>
-      <Router>
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<HomeMain />} />
-            <Route path="/services" element={<ServicesMain />} />
-            <Route path="/projects" element={<ProjectMain />} />
-            <Route path="/case-Studies" element={<CaseStudiesMain />} />
-            <Route path="/blog" element={<BlogPage />} />
-            <Route path="/contact-us" element={<ContactUsMain />} />
-          </Routes>
-        </main>
-        <Footer />
-      </Router>
+      <Header />
+      <main>
+        <Routes>
+          <Route path="/" element={<HomeMain />} />
+          <Route path="/services" element={<ServicesMain />} />
+          <Route path="/projects" element={<ProjectMain />} />
+          <Route path="/case-Studies" element={<CaseStudiesMain />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/contact-us" element={<ContactUsMain />} />
+        </Routes>
+      </main>
+      <Footer />
     </>
   );
 }
-
-export default App;

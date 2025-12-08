@@ -18,8 +18,6 @@ interface FooterColProps {
   links: string[];
 }
 
-
-
 const Footer: React.FC = () => {
   return (
     <>  {/* FOOTER */}
@@ -41,7 +39,6 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-
           {/* SOCIAL ICONS (YOUR BLOCK) */}
           <div className="flex items-center gap-8">
             <Social href="#" label="LinkedIn" Icon={Linkedin} />
@@ -57,12 +54,7 @@ const Footer: React.FC = () => {
         <div className="h-px w-full bg-linear-to-r from-transparent via-[#ffd740] to-transparent opacity-60" />
 
         <div className="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-          {/* top row */}
-
-
-
-
-
+  
           {/* link columns */}
           <div className=" grid gap-10 sm:grid-cols-2 md:grid-cols-4">
             <FooterCol title="Company" links={["About", "Careers", "Blog", "Press"]} />
