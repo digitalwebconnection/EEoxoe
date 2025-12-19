@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
           <div className="font-semibold text-lg ms-10 tracking-wide">
             <div className="grid   place-items-center rounded-xl font-black">
               <Link to="/" className="flex  items-center gap-3">
-                Exochos Innovating Tomorrow Today
+                Exochos Technologies LLP Innovating Tomorrow, Today 
               </Link>
             </div>
           </div>
@@ -95,7 +95,8 @@ const Footer: React.FC = () => {
           {/* bottom bar */}
           <div className="mt-10 border-t border-white/10 pt-6 text-center md:flex md:justify-between md:text-left">
             <p className="text-sm text-white/70">
-              © {new Date().getFullYear()} Exochos . All rights reserved.
+              © {new Date().getFullYear()} Exochos Technologies LLP
+              Innovating Tomorrow, Today . All rights reserved.
             </p>
           </div>
         </div>
