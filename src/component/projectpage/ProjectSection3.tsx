@@ -373,7 +373,7 @@ const ExcelintFeaturesPage: React.FC = () => {
 
                                 {/* Gradient Overlay */}
                                 <div className="absolute inset-0 opacity-0
-            bg-gradient-to-t from-black/40 via-transparent to-transparent
+            bg-linear-to-t from-black/40 via-transparent to-transparent
             transition-opacity duration-500 group-hover:opacity-100" />
                             </div>
 
