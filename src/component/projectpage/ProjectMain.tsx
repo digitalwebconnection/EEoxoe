@@ -1,12 +1,15 @@
-import ExcelintProjectPage from "./ExcelintProjectPage"
+
 import HeroSection from "./ProjectHero"
+import ExcelintFeaturesPage from "./ProjectSection3"
+import ExcelintGrowthSection from "./ProjectSetion2"
 
 
 const ProjectMain = () => {
     return (
         <>
-        <HeroSection/>
-        <ExcelintProjectPage/>
+            <HeroSection />
+            <ExcelintGrowthSection />
+            <ExcelintFeaturesPage />
         </>
     )
 }

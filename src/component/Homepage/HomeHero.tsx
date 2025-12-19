@@ -174,7 +174,7 @@ const HeroSection: React.FC = () => {
                 {/* left: image (fills) */}
                 <div className="col-span-12 w-full h-40 sm:h-36 md:h-44 lg:h-52 overflow-hidden">
                   <img
-                    src="https://res.cloudinary.com/dbyrbuqbg/image/upload/v1742114306/web-dev-banner_gyciet.png"
+                    src="https://blog.planview.com/wp-content/uploads/2020/01/Top-6-Software-Development-Methodologies.jpg"
                     alt="Illustration"
                     className="w-full h-full object-cover object-center block"
                     loading="lazy"

@@ -12,12 +12,12 @@ const BlogPage = () => <div className="min-h-[60vh] p-8">Blog Page</div>;
 export default function App() {
   return (
     <>
-      <Header />
+      <Header />  
       <main>
         <Routes>
           <Route path="/" element={<HomeMain />} />
           <Route path="/services" element={<ServicesMain />} />
-          <Route path="/projects" element={<ProjectMain />} />
+          <Route path="/product" element={<ProjectMain />} />
           <Route path="/case-Studies" element={<CaseStudiesMain />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/contact-us" element={<ContactUsMain />} />

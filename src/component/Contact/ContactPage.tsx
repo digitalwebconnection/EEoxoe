@@ -133,7 +133,7 @@ const ContactPage: React.FC = () => {
           {/* ===== LEFT: FORM ===== */}
           <div className=" bg-transparent px-4 lg:px-8 py-6 lg:py-10">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#262753] mb-2">
-              Contact With Us
+              Contact With Éxochos
             </p>
 
             <h2 className="text-3xl md:text-4xl font-bold mb-3">
@@ -289,7 +289,7 @@ const ContactPage: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg text-white">
-                    Flat-105, Khoni Palava Phase-2
+                  Khoni Palava Phase-2
                   </h3>
                   <p className="text-sm text-gray-200">Kalyan Thane-421204 Address</p>
                 </div>

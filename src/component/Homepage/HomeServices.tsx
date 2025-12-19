@@ -48,6 +48,14 @@ const services: Service[] = [
     image:
       "https://www.odoo-bs.com/unsplash/cYyqhdbJ9TI/1557287/software%20development.jpg?unique=e480ac25",
   },
+  {
+    icon: Palette,
+    title: " AI Integration",
+    description:
+      "AI integration that streamlines processes and drives intelligent",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJCH_Nj7fyYnIoO-PGBu_ekvo5cOi0hGZBfQ&s",
+  },
 
 ];
 
@@ -117,7 +125,7 @@ export default function ServicesSection() {
       id="services"
       className="bg-[#f8f8fc] px-4 py-10 sm:px-6 lg:px-0 md:py-6"
     >
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-7xl">
         {/* Heading */}
         <div className="mb-5 text-center">
           <motion.h2
@@ -160,7 +168,7 @@ export default function ServicesSection() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+          className="grid gap-6 md:grid-cols-2 lg:grid-cols-4"
         >
           {services.map((service) => (
             <motion.div key={service.title} variants={item} className="flex">

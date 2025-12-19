@@ -76,26 +76,26 @@ export default function Header() {
             <NavLink to="/services" className={desktopLink}>
               Services
             </NavLink>
-            <NavLink to="/projects" className={desktopLink}>
-              Project
-            </NavLink>
-            <NavLink to="/blog" className={desktopLink}>
-              Blog
-            </NavLink>
             <NavLink to="/case-Studies" className={desktopLink}>
               Case Studies
             </NavLink>
-            <NavLink to="/events" className={desktopLink}>
+            <NavLink to="/product" className={desktopLink}>
+              Product
+            </NavLink>
+            {/* <NavLink to="/events" className={desktopLink}>
               Events
+            </NavLink> */}
+            <NavLink to="/blog" className={desktopLink}>
+              Blog
             </NavLink>
-            <NavLink to="/job-openings" className={desktopLink}>
+            {/* <NavLink to="/job-openings" className={desktopLink}>
               Job Openings
-            </NavLink>
+            </NavLink> */}
             <NavLink to="/contact-us" className={desktopLink}>
               <div className="rounded-md bg-[#262755] px-4 py-1 text-white">Contact Us</div>
             </NavLink>
 
-            
+
           </nav>
 
           {/* Mobile Menu Button */}
