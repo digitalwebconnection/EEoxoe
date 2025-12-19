@@ -53,9 +53,9 @@ const ExcelintFeatureSection = () => {
           </h2>
 
           <p className="text-slate-500 text-lg leading-relaxed">
-            Empower your agency with a CRM designed for high-velocity sales. Excelint seamlessly integrates 
+            Empower your organization with a CRM designed for high-velocity sales. Excelint seamlessly integrates 
             client data, lead tracking, and performance analytics into one intuitive portal, 
-            allowing agents to focus on relationships rather than paperwork.
+            allowing partners to focus on relationships rather than paperwork.
           </p>
 
           <div className="space-y-8 pt-4">

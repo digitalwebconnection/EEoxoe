@@ -10,7 +10,7 @@ const services = [
     title: "Web Application Development",
     tagline: "From idea to a full-featured, secure web platform.",
     description:
-      "eeoxoe designs and develops custom web applications that match your exact business process. Instead of forcing your work into a ready-made tool, we build portals, dashboards and platforms that fit the way your team already works.",
+      "Exochos designs and develops custom web applications that match your exact business process. Instead of forcing your work into a ready-made tool, we build portals, dashboards and platforms that fit the way your team already works.",
     bullets: [
       "Custom business portals, admin panels and dashboards.",
       "Responsive design that works on desktop, tablet and mobile.",
@@ -46,7 +46,7 @@ const services = [
     title: "Odoo Implementation & Customization",
     tagline: "One system to manage sales, inventory, accounts and more.",
     description:
-      "eeoxoe helps you set up Odoo as the central system for your business operations. We map your current process, configure the right Odoo apps and customize only where it truly adds value.",
+      "Exochos helps you set up Odoo as the central system for your business operations. We map your current process, configure the right Odoo apps and customize only where it truly adds value.",
     bullets: [
       "Odoo for CRM, sales, inventory, accounting and HR.",
       "Custom modules based on your internal workflow.",
@@ -64,7 +64,7 @@ const services = [
     title: "Digital Marketing",
     tagline: "Strategy, content and campaigns designed to bring results.",
     description:
-      "Once your product is ready, eeoxoe helps you get it in front of the right people. We focus on performance-based digital marketing, combining content, ads and landing pages to attract leads and grow your brand.",
+      "Once your product is ready, Exochos helps you get it in front of the right people. We focus on performance-based digital marketing, combining content, ads and landing pages to attract leads and grow your brand.",
     bullets: [
       "Social media management and content calendars.",
       "Search and social ad campaigns focused on ROI.",
@@ -121,14 +121,14 @@ export default function EeoxoeServicesPage() {
               className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-medium uppercase tracking-wide text-slate-600 ring-1 ring-slate-200"
               variants={fadeUp}
             >
-              eeoxoe · Services
+              Exochos · Services
             </motion.p>
 
             <motion.h1
               className="mx-auto max-w-4xl text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl"
               variants={fadeUp}
             >
-              eeoxoe turns your{" "}
+              Exochos turns your{" "}
               <span className="bg-linear-to-r from-indigo-500 to-sky-500 bg-clip-text text-transparent">
                 ideas into working digital systems
               </span>{" "}
@@ -199,7 +199,7 @@ export default function EeoxoeServicesPage() {
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-black/35 via-black/10 to-transparent" />
                     <div className="absolute bottom-3 left-3 rounded-full bg-white/85 px-3 py-1 text-xs font-medium text-slate-800 shadow-sm">
-                      eeoxoe · {service.title}
+                      Exochos · {service.title}
                     </div>
                   </div>
                 </motion.div>
@@ -245,7 +245,7 @@ export default function EeoxoeServicesPage() {
         >
           <div className="mx-auto max-w-3xl text-center space-y-3">
             <h2 className="text-xl font-semibold tracking-tight text-slate-900 sm:text-2xl">
-              How eeoxoe works with your team
+              How Exochos works with your team
             </h2>
             <p className="text-sm text-slate-600 sm:text-base">
               Whether it’s a web app, mobile app, Odoo rollout or performance
@@ -362,7 +362,7 @@ export default function EeoxoeServicesPage() {
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-black/40 via-black/15 to-transparent" />
                   <div className="absolute bottom-3 left-3 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-slate-800 shadow-sm">
-                    eeoxoe · {activeService.title}
+                    Exochos · {activeService.title}
                   </div>
                 </div>
               </div>

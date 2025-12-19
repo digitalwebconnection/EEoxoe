@@ -212,7 +212,7 @@ const ExcelintFeaturesPage: React.FC = () => {
                     </h1>
 
                     <p className="mt-6 max-w-6xl mx-auto text-lg text-gray-600">
-                        Excelint is built to manage students, agents, commissions, teams,
+                        Excelint is built to manage students, partners, commissions, teams,
                         universities, security, and data protection — all from one powerful,
                         enterprise-grade platform.
                     </p>

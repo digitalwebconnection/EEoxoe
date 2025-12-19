@@ -117,12 +117,12 @@ const testimonials = [
   {
     name: "Head of Operations, Fintech client",
     quote:
-      "“Once eeoxoe launched the new approval portal, we finally saw where requests were stuck. Our team stopped chasing emails and started focusing on quality.”",
+      "“Once Exochos launched the new approval portal, we finally saw where requests were stuck. Our team stopped chasing emails and started focusing on quality.”",
   },
   {
     name: "Founder, B2B SaaS platform",
     quote:
-      "“We thought we needed more features. eeoxoe showed us we needed a clearer onboarding. The numbers changed in weeks, not months.”",
+      "“We thought we needed more features. Exochos showed us we needed a clearer onboarding. The numbers changed in weeks, not months.”",
   },
 ];
 
@@ -165,7 +165,7 @@ const EeoxoeCaseStudiesPage: React.FC = () => {
               variants={item}
               whileHover={{ scale: 1.05 }}
             >
-              eeoxoe · Results & case studies
+              Exochos · Results & case studies
             </motion.p>
             <motion.h1
               className="mx-auto max-w-4xl text-4xl font-bold tracking-tight text-blue-900 sm:text-5xl"
@@ -313,7 +313,7 @@ const EeoxoeCaseStudiesPage: React.FC = () => {
         >
           <motion.div className="space-y-2" variants={item}>
             <h2 className="text-3xl font-bold text-[#0B1531]">
-              How eeoxoe usually works with teams
+              How Exochos usually works with teams
             </h2>
             <p className="mx-auto max-w-4xl text-base text-slate-700">
               No black-box, year-long projects. Just a clear sequence that takes
@@ -386,7 +386,7 @@ const EeoxoeCaseStudiesPage: React.FC = () => {
                   CLIENT STORIES
                 </p>
                 <h2 className="mt-2 text-3xl font-bold text-[#0B1531]">
-                  What eeoxoe’s clients say
+                  What Exochos’s clients say
                 </h2>
                 <p className="mt-3 text-sm text-slate-700">
                   We judge success by how much calmer your day feels – not just by how
@@ -431,7 +431,7 @@ const EeoxoeCaseStudiesPage: React.FC = () => {
                 {/* TODO: replace src with your real eeoxoe image / illustration */}
                 <img
                   src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                  alt="Product team reviewing eeoxoe dashboards"
+                  alt="Product team reviewing Exochos dashboards"
                   className="h-full w-full object-cover opacity-75"
                 />
 
@@ -452,7 +452,7 @@ const EeoxoeCaseStudiesPage: React.FC = () => {
                   <div className="mt-2 flex flex-col gap-2 text-[11px] sm:flex-row sm:items-start sm:justify-between">
                     <div>
                       <p className="text-xs font-semibold text-[#0B1531]">
-                        Before eeoxoe
+                        Before Exochos
                       </p>
                       <p className="text-slate-500">
                         Approvals in email threads, inventory in spreadsheets, reporting in
@@ -462,7 +462,7 @@ const EeoxoeCaseStudiesPage: React.FC = () => {
                     <div className="hidden h-10 w-px bg-slate-200 sm:block" />
                     <div>
                       <p className="text-xs font-semibold text-[#0B1531]">
-                        After eeoxoe
+                        After Exochos
                       </p>
                       <p className="text-slate-500">
                         One calm, trackable system your whole team actually likes using.
@@ -491,7 +491,7 @@ const EeoxoeCaseStudiesPage: React.FC = () => {
 
                 <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center">
                   <motion.a
-                    href="mailto:info@eeoxoe.com"
+                    href="mailto:info@Exochos.com"
                     whileHover={{
                       scale: 1.03,
                       backgroundColor: "#FACC15",

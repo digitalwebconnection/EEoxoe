@@ -22,17 +22,16 @@ interface FooterColProps {
 const Footer: React.FC = () => {
   return (
     <>  {/* FOOTER */}
-      <footer className="relative w-full bg-[#262753] text-white py-2 md:py-4 overflow-hidden">
+      <footer className="relative w-full bg-[#262753] text-white py-2 md:py-2 overflow-hidden">
         <div className="absolute left-0 top-0 h-full w-36 bg-[#FDD53D] -skew-x-33 -translate-x-8 z-10"></div>
-
         <div className="relative max-w-6xl mx-auto px-4 md:px-0 flex flex-col md:flex-row items-center justify-between gap-6">
-
           {/* BRAND */}
-          <div className="font-semibold text-lg ms-10 tracking-wide">
+          <div className=" text-lg ms-15 tracking-wide">
             <div className="grid   place-items-center rounded-xl font-black">
-              <Link to="/" className="flex  items-center gap-3">
-                Exochos Technologies LLP Innovating Tomorrow, Today 
+              <Link to="/" className="flex text-2xl  items-center gap-3">
+                Exochos Technologies LLP
               </Link>
+              <span>  Innovating Tomorrow, Today </span>
             </div>
           </div>
 

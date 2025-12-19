@@ -120,10 +120,10 @@ export default function ServicesHero() {
             className="flex flex-wrap items-center gap-4"
             variants={itemVariants}
           >
-            <button className="rounded-full bg-blue-900 px-6 py-2.5 text-sm font-medium text-white shadow-lg shadow-indigo-500/40 transition hover:-translate-y-0.5  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950">
+            <button className="rounded-full bg-[#262755]  px-6 py-2.5 text-sm font-medium text-white shadow-lg shadow-indigo-500/40 transition hover:-translate-y-0.5  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950">
               Book a strategy call
             </button>
-            <button className="rounded-full border border-white/25 bg-black/30 px-6 py-2.5 text-sm font-medium text-slate-100/90 backdrop-blur transition hover:-translate-y-0.5 hover:border-emerald-300 hover:text-white">
+            <button className="rounded-full border border-white/25 bg-black/30 px-6 py-2.5 text-sm font-medium text-slate-100/90 backdrop-blur transition hover:-translate-y-0.5 hover:border-yellow-300 hover:text-white">
               Download services deck
             </button>
           </motion.div>

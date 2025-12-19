@@ -70,7 +70,7 @@ const ContactUsHero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.35, duration: 0.5 }}
         >
-          Share your requirements and our team at eeoxoe will get back to you
+          Share your requirements and our team at Exochos will get back to you
           with the next steps.
         </motion.p>
 
