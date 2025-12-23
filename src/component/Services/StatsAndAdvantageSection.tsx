@@ -113,7 +113,7 @@ export default function StatsAndAdvantageSection() {
             </div>
 
             <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-              The Webtech Advantage
+               Exochos Advantage
             </h2>
 
             <p className="mt-5 max-w-xl text-gray-600">
