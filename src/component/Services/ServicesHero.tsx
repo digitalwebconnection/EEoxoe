@@ -173,19 +173,7 @@ export default function ServicesHero() {
             high-performance web & mobile platforms.
           </p>
 
-          <div className="mt-10 flex gap-6">
-            <motion.button
-              whileHover={{ scale: 1.06 }}
-              whileTap={{ scale: 0.97 }}
-              className="rounded-full bg-indigo-600 px-8 py-4 text-sm font-bold hover:bg-indigo-500"
-            >
-              Book Strategy Call
-            </motion.button>
-
-            <span className="flex items-center gap-2 text-sm text-slate-300">
-              Download Deck →
-            </span>
-          </div>
+          
         </motion.div>
 
         {/* RIGHT CARDS */}
