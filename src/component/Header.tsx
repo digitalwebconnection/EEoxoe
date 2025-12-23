@@ -73,6 +73,9 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden items-center gap-8 md:flex">
+            <NavLink to="/" className={desktopLink}>
+              Home
+            </NavLink>
             <NavLink to="/services" className={desktopLink}>
               Services
             </NavLink>
@@ -110,6 +113,13 @@ export default function Header() {
         {/* Mobile Navigation */}
         {isOpen && (
           <nav className="space-y-2 pb-4 md:hidden animate-fade-in">
+            <NavLink
+              to="/"
+              className={mobileLink}
+              onClick={() => setIsOpen(false)}
+            >
+              Home
+            </NavLink>
             <NavLink
               to="/services"
               className={mobileLink}

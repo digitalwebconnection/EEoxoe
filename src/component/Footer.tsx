@@ -71,14 +71,7 @@ const Footer: React.FC = () => {
                   <span>management@exochostech.com</span>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <MapPin className="h-4 w-4 mt-0.5 text-[#ffd740]" />
-                  <span>
-                    Casa Lakeside A Wing,<br />
-                    Khoni Palava Phase-2,<br />
-                    Dombivli East, Thane-421204
-                  </span>
-                </div>
+
               </div>
             </div>
 
@@ -88,6 +81,23 @@ const Footer: React.FC = () => {
               <FooterCol title="Products" links={["Services", "Solutions", "Pricing", "Integrations"]} />
               <FooterCol title="Resources" links={["Docs", "Guides", "Status", "Community"]} />
               <FooterCol title="Legal" links={["Privacy", "Terms", "Security", "SLA"]} />
+            </div>
+          </div>
+
+          <div className="grid gap-10 md:grid-cols-2 pt-10">
+            <div className="flex items-start gap-3">
+              <MapPin className="h-4 w-4 mt-2 text-[#ffd740]" />
+              <span>
+                Casa Lakeside A Wing,
+                Khoni Palava Phase-2, <br />
+                Dombivli East, Thane-421204
+              </span>
+            </div>
+            <div className="flex items-start gap-3">
+              <MapPin className="h-4 w-4 mt-2 text-[#ffd740]" />
+              <span>
+                Elco Arcade, D Wing, F/45, First Floor, Near Almeida Park,<br /> Bandra West, Mumbai 400050
+              </span>
             </div>
           </div>
 

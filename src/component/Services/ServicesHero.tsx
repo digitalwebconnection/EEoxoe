@@ -1,192 +1,219 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Globe2, Smartphone, Boxes, Megaphone } from "lucide-react";
+import React, { useRef } from "react";
+import {
+  motion,
+  useSpring,
+  useTransform,
+  useMotionValue,
+  type Transition,
+} from "framer-motion";
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
+/* -------------------- GLOBAL TRANSITION -------------------- */
+const globalTransition: Transition = {
+  duration: 1.4,
+  ease: [0.22, 1, 0.36, 1],
 };
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-};
+/* -------------------- SERVICE CARD -------------------- */
+interface ServiceCardProps {
+  title: string;
+  desc: string;
+  delay: number;
+  className?: string;
+  icon: string;
+  active?: boolean;
+}
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.55, delay: i * 0.08 },
-  }),
-};
-
-const services = [
-  {
-    title: "Web Application",
-    desc: "Scalable, secure web apps that match your business logic.",
-    icon: Globe2,
-    tag: "Custom frontend & backend",
-  },
-  {
-    title: "Mobile Application",
-    desc: "Smooth Android & iOS apps built for performance and UX.",
-    icon: Smartphone,
-    tag: "Native & cross-platform",
-  },
-  {
-    title: "Odoo",
-    desc: "Implement, customize and integrate Odoo to automate your ops.",
-    icon: Boxes,
-    tag: "ERP, CRM & workflows",
-  },
-  {
-    title: "Digital Marketing",
-    desc: "ROI-focused campaigns to boost traffic, leads and revenue.",
-    icon: Megaphone,
-    tag: "Performance & branding",
-  },
-];
-
-export default function ServicesHero() {
-  const backgroundUrl =
-    "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1600";
-
+const ServiceCard = ({
+  title,
+  desc,
+  delay,
+  className,
+  icon,
+  active = false,
+}: ServiceCardProps) => {
   return (
-    <section className="relative overflow-hidden text-slate-50">
-      {/* Background image */}
-      <div className="pointer-events-none absolute inset-0">
-        <img
-          src={backgroundUrl}
-          alt="Digital services background"
-          className="h-full w-full object-cover"
-        />
-        {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-linear-to-br from-slate-950/55 via-slate-950/65 to-slate-900/70" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(129,140,248,0.28),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(45,212,191,0.18),transparent_55%)]" />
-
-        {/* Floating orbs */}
-        <div className="absolute -left-10 top-24 h-40 w-40 rounded-full bg-black/25 blur-xl" />
-        <div className="absolute -right-10 bottom-10 h-44 w-44 rounded-full bg-emerald-400/20 blur-3xl" />
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.1, delay, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={{ y: -6 }}
+      className={`flex w-72 items-center gap-4 rounded-2xl border p-5 backdrop-blur-xl transition-colors ${
+        active
+          ? "bg-white/10 border-white/30 shadow-2xl shadow-indigo-500/20"
+          : "bg-white/5 border-white/10 hover:border-white/20"
+      } ${className}`}
+    >
+      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-indigo-500/20 to-emerald-500/20 text-2xl ring-1 ring-white/10">
+        {icon}
       </div>
 
-      {/* Grain / noise layer (optional visual texture) */}
-      <div className="pointer-events-none absolute inset-0 opacity-40 mix-blend-soft-light [background-image:radial-gradient(circle,_rgba(255,255,255,0.09)_1px,_transparent_0)],[background-size:4px_4px]" />
+      <div>
+        <h3 className="font-semibold text-white">{title}</h3>
+        <p className="text-xs text-slate-400 leading-relaxed">{desc}</p>
+      </div>
+    </motion.div>
+  );
+};
 
-      {/* Main content */}
+/* -------------------- MAIN HERO -------------------- */
+export default function ServicesHero() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  /* Mouse motion */
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const onMouseMove = (e: React.MouseEvent) => {
+    mouseX.set(e.clientX / window.innerWidth - 0.5);
+    mouseY.set(e.clientY / window.innerHeight - 0.5);
+  };
+
+  /* Springs */
+  const springX = useSpring(useTransform(mouseX, [-0.5, 0.5], [-40, 40]), {
+    stiffness: 80,
+    damping: 20,
+  });
+
+  const springY = useSpring(useTransform(mouseY, [-0.5, 0.5], [-40, 40]), {
+    stiffness: 80,
+    damping: 20,
+  });
+
+  const reverseX = useTransform(springX, (v) => v * -1);
+  const reverseY = useTransform(springY, (v) => v * -1);
+
+  return (
+    <section
+      ref={sectionRef}
+      onMouseMove={onMouseMove}
+      className="relative min-h-[60vh] w-full overflow-hidden bg-black text-white"
+    >
+      {/* ---------------- BACKGROUND IMAGE ---------------- */}
       <motion.div
-        className="relative mx-auto flex max-w-7xl flex-col gap-10 px-6 py-16 sm:py-16 lg:flex-row lg:items-center lg:py-20"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
+        initial={{ scale: 1.15, x: -20 }}
+        animate={{ scale: 1, x: 0 }}
+        transition={{ duration: 6, ease: "easeOut" }}
+        className="absolute inset-0"
       >
-        {/* Left: Text + CTA */}
+        <motion.img
+          src="https://ibrinfotech.b-cdn.net/uploads/csd-compressed.jpg"
+          alt="Digital background"
+          className="h-full w-full object-cover"
+          animate={{ scale: [1, 1.05, 1] }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-linear-to-br from-black/90 via-black/80 to-black/80" />
+
+        {/* Vignette */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_35%,rgba(0,0,0,0.85)_75%)]" />
+
+        {/* Soft animated light */}
         <motion.div
-          className="lg:w-1/2 space-y-6"
-          variants={itemVariants}
+          className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(99,102,241,0.25),transparent_60%)]"
+          animate={{ opacity: [0.4, 0.7, 0.4] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </motion.div>
+
+      {/* ---------------- LIGHT & DEPTH EFFECTS ---------------- */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Parallax orbs */}
+        <motion.div
+          style={{ x: springX, y: springY }}
+          className="absolute top-[10%] -left-[5%] h-[480px] w-[480px] rounded-full bg-indigo-500/20 blur-[140px]"
+        />
+        <motion.div
+          style={{ x: reverseX, y: reverseY }}
+          className="absolute bottom-[10%] -right-[5%] h-[420px] w-[420px] rounded-full bg-emerald-400/10 blur-[120px]"
+        />
+
+        {/* Light sweep */}
+        <motion.div
+          className="absolute inset-0 bg-linear-to-r from-transparent via-white/5 to-transparent"
+          animate={{ x: ["-120%", "120%"] }}
+          transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
+        />
+
+        {/* Noise texture */}
+        <div
+          className="absolute inset-0 opacity-[0.08] mix-blend-overlay 
+          bg-[radial-gradient(circle,rgba(255,255,255,0.2)_1px,transparent_1px)]
+          bg-size-[3px_3px]"
+        />
+      </div>
+
+      {/* ---------------- CONTENT ---------------- */}
+      <div className="relative z-10 mx-auto max-w-7xl grid grid-cols-1 gap-16 px-6 py-20 lg:grid-cols-2">
+        {/* LEFT CONTENT */}
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={globalTransition}
         >
-          <div className="inline-flex items-center gap-2 rounded-full bg-black/80 px-3 py-1 text-xs font-medium text-white  ring-1 ring-white/10 backdrop-blur">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            End-to-end digital solutions
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/5 px-4 py-1.5">
+            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-emerald-400">
+              End-to-End Solutions
+            </span>
           </div>
 
-          <motion.h1
-            className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl"
-            variants={itemVariants}
-          >
-            Build, launch & grow your
-            <span className="block bg-linear-to-r  from-blue-600 via-sky-300 to-yellow-500 bg-clip-text text-transparent">
-              complete digital ecosystem.
+          <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold leading-[1.05]">
+            Modern <br />
+            <span className="bg-linear-to-r from-indigo-400 via-white to-emerald-400 bg-clip-text text-transparent">
+              Digital Craft.
             </span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            className="max-w-2xl text-sm text-slate-200/90 sm:text-base"
-            variants={itemVariants}
-          >
-            Web & mobile applications, Odoo implementations and performance
-            marketing — all under one expert team, so your business stays fast,
-            automated and visible online.
-          </motion.p>
+          <p className="mt-8 max-w-lg text-lg text-slate-300">
+            We design scalable digital ecosystems — from Odoo automation to
+            high-performance web & mobile platforms.
+          </p>
 
-          <motion.div
-            className="flex flex-wrap items-center gap-4"
-            variants={itemVariants}
-          >
-            <button className="rounded-full bg-[#262755]  px-6 py-2.5 text-sm font-medium text-white shadow-lg shadow-indigo-500/40 transition hover:-translate-y-0.5  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950">
-              Book a strategy call
-            </button>
-            <button className="rounded-full border border-white/25 bg-black/30 px-6 py-2.5 text-sm font-medium text-slate-100/90 backdrop-blur transition hover:-translate-y-0.5 hover:border-yellow-300 hover:text-white">
-              Download services deck
-            </button>
-          </motion.div>
+          <div className="mt-10 flex gap-6">
+            <motion.button
+              whileHover={{ scale: 1.06 }}
+              whileTap={{ scale: 0.97 }}
+              className="rounded-full bg-indigo-600 px-8 py-4 text-sm font-bold hover:bg-indigo-500"
+            >
+              Book Strategy Call
+            </motion.button>
 
-          <motion.div
-            className="mt-2 flex flex-wrap gap-3 text-xs text-slate-300/90"
-            variants={itemVariants}
-          >
-            <span className="rounded-full bg-black/40 px-3 py-1 ring-1 ring-white/10">
-              Product + marketing under one roof
+            <span className="flex items-center gap-2 text-sm text-slate-300">
+              Download Deck →
             </span>
-            <span className="rounded-full bg-black/40 px-3 py-1 ring-1 ring-white/10">
-              Custom, not copy-paste solutions
-            </span>
-          </motion.div>
+          </div>
         </motion.div>
 
-        {/* Right: Service cards */}
-        <div className="lg:w-1/2">
-          <div className="grid gap-4 sm:grid-cols-2">
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <motion.div
-                  key={service.title}
-                  className="relative group flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-white/8 p-5 backdrop-blur-md transition hover:-translate-y-2 hover:border-indigo-300 hover:bg-white/12"
-                  variants={cardVariants}
-                  custom={index}
-                  whileHover={{ y: -8, scale: 1.02 }}
-                  whileTap={{ scale: 0.99 }}
-                >
-                  {/* Glow border on hover */}
-                  <div className="pointer-events-none absolute inset-px rounded-2xl opacity-0 group-hover:opacity-100 group-hover:bg-linear-to-br from-indigo-400/40 via-sky-300/30 to-emerald-300/40 transition" />
-
-                  <div className="relative flex items-start gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-500/15 ring-1 ring-indigo-300/40">
-                      <Icon className="h-5 w-5 text-indigo-200" />
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-semibold sm:text-base">
-                        {service.title}
-                      </h3>
-                      <p className="mt-1 text-xs text-slate-200/90 sm:text-sm">
-                        {service.desc}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="relative mt-4 flex items-center justify-between text-xs text-slate-200/80">
-                    <span className="inline-flex items-center rounded-full bg-black/35 px-2.5 py-1 text-[11px] ring-1 ring-white/10">
-                      {service.tag}
-                    </span>
-                    <span className="inline-flex items-center text-[11px] font-medium text-indigo-200 group-hover:translate-x-0.5 group-hover:text-indigo-100 transition">
-                      Explore service
-                      <span className="ml-1 text-xs">→</span>
-                    </span>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
+        {/* RIGHT CARDS */}
+        <div className="flex flex-col items-center mt-30 lg:items-end gap-5">
+          <ServiceCard
+            title="Odoo ERP"
+            desc="Automated workflows & CRM"
+            delay={0.6}
+            icon="⚙️"
+            className="lg:-rotate-3"
+          />
+          <ServiceCard
+            title="Web & Mobile"
+            desc="React, Next & Native apps"
+            delay={0.8}
+            icon="📱"
+            active
+            className="lg:scale-110"
+          />
+          <ServiceCard
+            title="Growth"
+            desc="Performance marketing"
+            delay={1.0}
+            icon="📈"
+            className="lg:rotate-2"
+          />
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }
