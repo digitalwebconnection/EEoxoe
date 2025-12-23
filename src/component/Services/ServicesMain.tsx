@@ -1,7 +1,7 @@
 import EeoxoeServicesPage from "./EeoxoeServicesPage"
 import ServiceAboutSection from "./ServiceAboutSection"
 import ServicesHero from "./ServicesHero"
-import StatsAndAdvantageSection from "./StatsAndAdvantageSection"
+// import StatsAndAdvantageSection from "./StatsAndAdvantageSection"
 
 const ServicesMain = () => {
   return (
@@ -9,7 +9,7 @@ const ServicesMain = () => {
       <ServicesHero/>
       <ServiceAboutSection/>
       <EeoxoeServicesPage/>
-      <StatsAndAdvantageSection/>
+      {/* <StatsAndAdvantageSection/> */}
     </>
   )
 }

@@ -127,7 +127,7 @@ const testimonials = [
 ];
 
 // --- Main Component ---
-const EeoxoeCaseStudiesPage: React.FC = () => {
+const   EeoxoeCaseStudiesPage: React.FC = () => {
   return (
     <main className="bg-white text-slate-900">
       {/* animated background accents */}

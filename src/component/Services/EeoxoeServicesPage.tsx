@@ -1,119 +1,228 @@
+"use client";
 
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 
+/* ===============================
+   CONFIG
+=================================*/
+const NAV_HEIGHT = 72;
 
-export const services = [
+/* ===============================
+   SERVICES DATA
+=================================*/
+const SERVICES = [
   {
-    id: "web-application",
-    label: "Service 01",
-    title: "Web Application ",
-    tagline: "From idea to a full-featured, secure web platform.",
+    id: "ecommerce",
+    nav: "eCommerce",
+    title: "eCommerce Development Services",
     description:
-      "Exochos designs and develops custom web applications that match your exact business process.",
-    imageUrl:
-      "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "We design and build scalable eCommerce platforms focused on performance, conversions, and long-term growth.",
+    image:
+      "https://radiancesolution.com/wp-content/uploads/2025/03/Why-Is-Ecommerce-Web-Development-the-Backbone-of-Modern-Online-Businesses.jpg.webp",
+    addons: [
+      "Custom Storefronts",
+      "Payment Gateway Integration",
+      "Marketplace Development",
+      "Performance Optimization",
+    ],
   },
   {
-    id: "mobile-application",
-    label: "Service 02",
-    title: "Mobile Application ",
-    tagline: "Android & iOS apps built around real user journeys.",
+    id: "mobile",
+    nav: "Mobile",
+    title: "Mobile App Development Services",
     description:
-      "We create mobile applications that feel simple for users and powerful for your business.",
-    imageUrl:
-      "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "High-performance mobile applications built around real user journeys and measurable business outcomes.",
+    image:
+      "https://www.chlsoftech.com/images/UploadedImages/thumbs/0000071_Mobile-app-development-company.jpeg",
+    addons: [
+      "iOS & Android Apps",
+      "UI/UX Design",
+      "API Integrations",
+      "App Maintenance",
+    ],
   },
   {
-    id: "odoo",
-    label: "Service 03",
-    title: "Odoo ",
-    tagline: "One system to manage sales, inventory, accounts and more.",
+    id: "fullstack",
+    nav: "Full Stack",
+    title: "Full Stack Development Services",
     description:
-      "Exochos helps you set up Odoo as the central system for your business operations.",
-    imageUrl:
-      "https://images.pexels.com/photos/6476584/pexels-photo-6476584.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "End-to-end web solutions using modern frontend frameworks and scalable backend architectures.",
+    image:
+      "https://www.brainvire.com/blog/wp-content/uploads/2023/10/Pros-and-Cons-of-Hiring-Full-Stack-Developer-1-1024x573.jpg",
+    addons: [
+      "React & Next.js",
+      "Node & Laravel",
+      "Database Architecture",
+      "System Integrations",
+    ],
   },
   {
-    id: "digital-marketing",
-    label: "Service 04",
-    title: "Digital Marketing",
-    tagline: "Strategy, content and campaigns designed to bring results.",
+    id: "ai-ml",
+    nav: "AI & ML",
+    title: "AI & ML Development Services",
     description:
-      "We focus on performance-based digital marketing to grow your brand and leads.",
-    imageUrl:
-      "https://images.pexels.com/photos/6476589/pexels-photo-6476589.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "Transform data into intelligence with AI-powered systems that automate decisions and unlock insights.",
+    image:
+      "https://councils.forbes.com/hs-fs/hubfs/X%20-%20Can%20We%20Delete/Imported_Blog_Media/ai-machine-learning-opportunities-2.jpg?width=788&name=ai-machine-learning-opportunities-2.jpg",
+    addons: [
+      "Predictive Analytics",
+      "AI Automation",
+      "Data Engineering",
+      "Model Deployment",
+    ],
+  },
+  {
+    id: "microsoft",
+    nav: "Microsoft",
+    title: "Microsoft Development Services",
+    description:
+      "Enterprise-grade solutions built on Microsoft technologies for security, performance, and scale.",
+    image:
+      "https://www.ituonline.com/wp-content/uploads/2023/10/What-Does-It-Mean-for-Computers.jpg",
+    addons: [
+      ".NET Applications",
+      "Power BI",
+      "SharePoint Solutions",
+      "Azure Integrations",
+    ],
+  },
+  {
+    id: "cloud",
+    nav: "Cloud",
+    title: "Cloud Services",
+    description:
+      "Modern cloud infrastructure designed for reliability, scalability, and cost efficiency.",
+    image:
+      "https://www.ccsipro.com/wp-content/uploads/2023/04/iStock-943065362-scaled.jpg",
+    addons: [
+      "Cloud Migration",
+      "AWS & Azure",
+      "DevOps Automation",
+      "Cloud Security",
+    ],
   },
 ];
 
-export default function ServicesSection() {
+/* ===============================
+   PAGE
+=================================*/
+export default function ServicesPage() {
+  const [active, setActive] = useState<string>(SERVICES[0].id);
+  const [showNav, setShowNav] = useState<boolean>(false);
+
+  const servicesWrapperRef = useRef<HTMLDivElement | null>(null);
+
+  
+  /* -------- Scroll Spy + Navbar Toggle -------- */
+  useEffect(() => {
+    const onScroll = () => {
+      const wrapperEl = servicesWrapperRef.current;
+      if (!wrapperEl) return;
+
+      setShowNav(wrapperEl.getBoundingClientRect().top <= 80);
+
+      SERVICES.forEach((service) => {
+        const sectionEl = document.getElementById(service.id);
+        if (!sectionEl) return;
+
+        const rect = sectionEl.getBoundingClientRect();
+        const offset = NAV_HEIGHT + 40;
+
+        if (rect.top <= offset && rect.bottom >= offset) {
+          setActive(service.id);
+        }
+      });
+    };
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <section className="bg-[#f4f7fb] py-20">
-      <div className="mx-auto max-w-7xl px-6 md:px-0">
-
-        {/* SECTION HEADER */}
-        <div className="mb-16 text-center">
-          <div className="mb-3 flex items-center justify-center gap-2 text-sm font-semibold text-blue-600">
-            <span className="h-2 w-2 rounded-full bg-blue-600"></span>
-            Our Services
-            <span className="h-2 w-2 rounded-full bg-blue-600"></span>
+    <div className="bg-white text-gray-900 scroll-smooth">
+      <div ref={servicesWrapperRef} className="relative">
+        {/* ===== FLOATING NAV ===== */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{
+            opacity: showNav ? 1 : 0,
+            y: showNav ? 0 : -10,
+          }}
+          transition={{ duration: 0.3 }}
+          className="fixed left-1/5 z-40"
+          style={{ transform: "translateX(-50%)", top: "5rem" }}
+        >
+          <div className="rounded-full bg-blue-950 border shadow-lg px-16 py-3">
+            <nav className="flex gap-10 whitespace-nowrap">
+              {SERVICES.map((s) => (
+                <a
+                  key={s.id}
+                  href={`#${s.id}`}
+                  className={`text-lg font-semibold transition ${active === s.id
+                      ? "text-yellow-400"
+                      : "text-white hover:text-yellow-400"
+                    }`}
+                >
+                  {s.nav}
+                </a>
+              ))}
+            </nav>
           </div>
+        </motion.div>
 
-          <h2 className="text-3xl max-w-5xl mx-auto font-bold text-gray-900 sm:text-4xl">
-            Exochos turns your ideas into working digital systems that connect technology and growth.
-          </h2>
-        </div>
+        {/* ================= SERVICE SECTIONS ================= */}
+        {SERVICES.map((service, index) => (
+          <motion.section
+            key={service.id}
+            id={service.id}
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-120px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className={`
+                py-18 scroll-mt-[140px]
+                ${index % 2 === 0
+                ? "bg-linear-to-r from-[#f8fbff] via-[#e6eeff] to-[#a9c6fc]"
+                : "bg-linear-to-r from-[#e8f0ff] via-[#dbe7ff] to-[#f8fbff]"
+              }
+  `}
+          >
+            <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-10 items-center">
+              {/* TEXT / CARDS */}
+              <div className={`${index % 2 === 0 ? "lg:order-1" : "lg:order-2"}`}>
+                <h2 className="text-3xl font-bold">{service.title}</h2>
+                <p className="mt-4 text-gray-600 max-w-xl">
+                  {service.description}
+                </p>
 
-        {/* SERVICES GRID */}
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-300 hover:-translate-y-3 hover:shadow-xl"
-            >
-              {/* IMAGE */}
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={service.imageUrl}
-                  alt={service.title}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-
-                {/* ICON BADGE */}
-                <div className="absolute -bottom-2 -left-2 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600 text-white shadow-lg transition-transform duration-300 group-hover:rotate-6">
-                  <span className="text-sm font-bold">
-                    {service.label.split(" ")[1]}
-                  </span>
+                <div className="mt-6 grid grid-cols-2 gap-6">
+                  {service.addons.map((addon) => (
+                    <div
+                      key={addon}
+                      className="cursor-pointer rounded-xl bg-linear-to-br from-blue-600 via-indigo-600 to-violet-600 p-px"
+                    >
+                      <div className="rounded-xl  px-4 py-2 text-white  hover:text-black transition">
+                        <p className="font-semibold">{addon}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
 
-              {/* CONTENT */}
-              <div className="px-6 pb-8 pt-10 transition-colors duration-300 group-hover:bg-blue-950">
-                <h3 className="text-lg font-semibold text-gray-900 transition-colors duration-300 group-hover:text-white">
-                  {service.title}
-                </h3>
-
-                <p className="mt-3 text-sm text-gray-600 transition-colors duration-300 group-hover:text-blue-100">
-                  {service.tagline}
-                </p>
-
-                <button className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 transition-all duration-300 group-hover:gap-3 group-hover:text-white">
-                  Learn More
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </button>
+              {/* IMAGE */}
+              <div className={`h-90 w-full ${index % 2 === 0 ? "lg:order-2" : "lg:order-1"}`}>
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="rounded-2xl w-full h-full shadow-lg"
+                />
               </div>
+            </div>
+          </motion.section>
 
-              {/* HOVER BORDER */}
-              <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-transparent transition duration-300 group-hover:ring-blue-400/40"></div>
-            </motion.div>
-
-          ))}
-        </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 }
