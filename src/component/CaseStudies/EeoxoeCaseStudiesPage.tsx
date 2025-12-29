@@ -240,7 +240,6 @@ const CASE_STUDIES: CaseStudy[] = [
   },
 ];
 
-
 /* =====================================================
    COMPONENT
 ===================================================== */
@@ -254,198 +253,197 @@ const OurWork = () => {
     activeIndustry === INDUSTRY_KEYS.ALL
       ? CASE_STUDIES
       : CASE_STUDIES.filter(
-          (item) => item.industry === activeIndustry
-        );
+        (item) => item.industry === activeIndustry
+      );
 
   const getCount = (industry: string) =>
     industry === INDUSTRY_KEYS.ALL
       ? CASE_STUDIES.length
       : CASE_STUDIES.filter(
-          (item) => item.industry === industry
-        ).length;
+        (item) => item.industry === industry
+      ).length;
 
   useEffect(() => {
     document.body.style.overflow = activeCase ? "hidden" : "auto";
   }, [activeCase]);
 
-return (
-  <>
-    {/* MAIN SECTION */}
-    <motion.section
-      variants={container}
-      initial="hidden"
-      animate="visible"
-      className="bg-slate-50 py-20"
-    >
-      <div className="mx-auto max-w-7xl px-4">
-        {/* Heading */}
-        <motion.h2
-          variants={fadeUp}
-          className="text-5xl text-center font-bold text-slate-900"
-        >
-          Our Work
-        </motion.h2>
+  return (
+    <>
+      {/* MAIN SECTION */}
+      <motion.section
+        variants={container}
+        initial="hidden"
+        animate="visible"
+        className="bg-slate-50 py-20"
+      >
+        <div className="mx-auto max-w-7xl px-4">
+          {/* Heading */}
+          <motion.h2
+            variants={fadeUp}
+            className="text-5xl text-center font-bold text-slate-900"
+          >
+            Our Work
+          </motion.h2>
 
-        {/* Industry Tabs – Pill Style */}
-        <motion.div
-          variants={fadeUp}
-          className="mt-16 flex flex-wrap gap-3"
-        >
-          {INDUSTRIES.map((industry) => (
-            <motion.button
-              key={industry}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setActiveIndustry(industry)}
-              className={`rounded-full px-4 py-1.5 text-sm transition ${
-                activeIndustry === industry
-                  ? "bg-blue-900 text-white shadow"
-                  : "bg-white text-slate-700 border hover:bg-slate-100"
-              }`}
-            >
-              {industry} ({getCount(industry)})
-            </motion.button>
-          ))}
-        </motion.div>
+          {/* Industry Tabs – Pill Style */}
+          <motion.div
+            variants={fadeUp}
+            className="mt-16 flex flex-wrap gap-3"
+          >
+            {INDUSTRIES.map((industry) => (
+              <motion.button
+                key={industry}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setActiveIndustry(industry)}
+                className={`rounded-full px-4 py-1.5 text-sm transition ${activeIndustry === industry
+                    ? "bg-blue-900 text-white shadow"
+                    : "bg-white text-slate-700 border hover:bg-slate-100"
+                  }`}
+              >
+                {industry} ({getCount(industry)})
+              </motion.button>
+            ))}
+          </motion.div>
 
-        {/* CARDS */}
-        <motion.div
-          variants={container}
-          className="mt-35 space-y-10"
-        >
-          {filteredData.map((item) => (
-            <motion.div
-              key={item.id}
-              variants={fadeUp}
-              whileHover={{ y: -6 }}
-              onClick={() => setActiveCase(item)}
-              className="group cursor-pointer overflow-hidden rounded-3xl bg-white shadow-sm hover:shadow-xl transition"
-            >
-              <div className="grid lg:grid-cols-5">
-                {/* IMAGE */}
-                <div className="relative lg:col-span-2 h-104">
-                  <img
-                    src={item.image}
-                    alt={item.client}
-                    className="h-full w-full object-cover"
-                  />
-                  {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-linear-to-r from-black/40 to-transparent" />
-                </div>
-
-                {/* CONTENT */}
-                <div className="lg:col-span-3 p-8 flex flex-col justify-between">
-                  <div>
-                    <p className="text-xs font-semibold uppercase text-blue-700">
-                      {item.client}
-                    </p>
-                    <h3 className="mt-2 text-2xl font-bold text-slate-900">
-                      {item.category}
-                    </h3>
-                    <p className="mt-4 text-sm leading-relaxed text-slate-600">
-                      {item.description}
-                    </p>
+          {/* CARDS */}
+          <motion.div
+            variants={container}
+            className="mt-35 space-y-10"
+          >
+            {filteredData.map((item) => (
+              <motion.div
+                key={item.id}
+                variants={fadeUp}
+                whileHover={{ y: -6 }}
+                onClick={() => setActiveCase(item)}
+                className="group cursor-pointer overflow-hidden rounded-3xl bg-white shadow-sm hover:shadow-xl transition"
+              >
+                <div className="grid lg:grid-cols-5">
+                  {/* IMAGE */}
+                  <div className="relative lg:col-span-2 h-104">
+                    <img
+                      src={item.image}
+                      alt={item.client}
+                      className="h-full w-full object-cover"
+                    />
+                    {/* Gradient overlay */}
+                    <div className="absolute inset-0 bg-linear-to-r from-black/40 to-transparent" />
                   </div>
 
-                  {/* Footer */}
-                  <div className="mt-6 flex items-center justify-between">
-                    <div className="flex gap-6 text-sm">
-                      <div>
-                        <p className="font-bold text-slate-900">
-                          {item.users}
-                        </p>
-                        <p className="text-xs text-slate-500">
-                          Monthly Users
-                        </p>
-                      </div>
-                      <div>
-                        <p className="font-bold text-slate-900">
-                          {item.bounceDrop}
-                        </p>
-                        <p className="text-xs text-slate-500">
-                          Bounce Drop
-                        </p>
-                      </div>
+                  {/* CONTENT */}
+                  <div className="lg:col-span-3 p-8 flex flex-col justify-between">
+                    <div>
+                      <p className="text-xs font-semibold uppercase text-blue-700">
+                        {item.client}
+                      </p>
+                      <h3 className="mt-2 text-2xl font-bold text-slate-900">
+                        {item.category}
+                      </h3>
+                      <p className="mt-4 text-sm leading-relaxed text-slate-600">
+                        {item.description}
+                      </p>
                     </div>
 
-                    <span className="text-sm font-semibold text-blue-700 group-hover:underline">
-                      View Case Study →
-                    </span>
+                    {/* Footer */}
+                    <div className="mt-6 flex items-center justify-between">
+                      <div className="flex gap-6 text-sm">
+                        <div>
+                          <p className="font-bold text-slate-900">
+                            {item.users}
+                          </p>
+                          <p className="text-xs text-slate-500">
+                            Monthly Users
+                          </p>
+                        </div>
+                        <div>
+                          <p className="font-bold text-slate-900">
+                            {item.bounceDrop}
+                          </p>
+                          <p className="text-xs text-slate-500">
+                            Bounce Drop
+                          </p>
+                        </div>
+                      </div>
+
+                      <span className="text-sm font-semibold text-blue-700 group-hover:underline">
+                        View Case Study →
+                      </span>
+                    </div>
                   </div>
                 </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* MODAL (UNCHANGED – STABLE) */}
+      <AnimatePresence>
+        {activeCase && (
+          <motion.div
+            variants={modalBackdrop}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+            onClick={() => setActiveCase(null)}
+          >
+            <motion.div
+              variants={modalCard}
+              onClick={(e) => e.stopPropagation()}
+              className="max-w-4xl w-full overflow-hidden rounded-2xl bg-white"
+            >
+              <img
+                src={activeCase.image}
+                alt={activeCase.client}
+                className="h-72 w-full object-cover"
+              />
+
+              <div className="p-6">
+                <p className="text-xs font-semibold uppercase text-slate-500">
+                  {activeCase.client}
+                </p>
+                <h3 className="mt-1 text-2xl font-bold text-slate-900">
+                  {activeCase.category}
+                </h3>
+                <p className="mt-4 text-sm text-slate-600">
+                  {activeCase.description}
+                </p>
+
+                <div className="mt-6 grid grid-cols-2 gap-6">
+                  <div>
+                    <p className="text-2xl font-bold">
+                      {activeCase.users}
+                    </p>
+                    <p className="text-xs text-slate-500">
+                      Monthly Users
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-2xl font-bold">
+                      {activeCase.bounceDrop}
+                    </p>
+                    <p className="text-xs text-slate-500">
+                      Bounce Rate Drop
+                    </p>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => setActiveCase(null)}
+                  className="mt-8 inline-flex rounded-full border px-5 py-2 text-sm font-semibold hover:bg-slate-100"
+                >
+                  Close
+                </button>
               </div>
             </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </motion.section>
-
-    {/* MODAL (UNCHANGED – STABLE) */}
-    <AnimatePresence>
-      {activeCase && (
-        <motion.div
-          variants={modalBackdrop}
-          initial="hidden"
-          animate="visible"
-          exit="exit"
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
-          onClick={() => setActiveCase(null)}
-        >
-          <motion.div
-            variants={modalCard}
-            onClick={(e) => e.stopPropagation()}
-            className="max-w-4xl w-full overflow-hidden rounded-2xl bg-white"
-          >
-            <img
-              src={activeCase.image}
-              alt={activeCase.client}
-              className="h-72 w-full object-cover"
-            />
-
-            <div className="p-6">
-              <p className="text-xs font-semibold uppercase text-slate-500">
-                {activeCase.client}
-              </p>
-              <h3 className="mt-1 text-2xl font-bold text-slate-900">
-                {activeCase.category}
-              </h3>
-              <p className="mt-4 text-sm text-slate-600">
-                {activeCase.description}
-              </p>
-
-              <div className="mt-6 grid grid-cols-2 gap-6">
-                <div>
-                  <p className="text-2xl font-bold">
-                    {activeCase.users}
-                  </p>
-                  <p className="text-xs text-slate-500">
-                    Monthly Users
-                  </p>
-                </div>
-                <div>
-                  <p className="text-2xl font-bold">
-                    {activeCase.bounceDrop}
-                  </p>
-                  <p className="text-xs text-slate-500">
-                    Bounce Rate Drop
-                  </p>
-                </div>
-              </div>
-
-              <button
-                type="button"
-                onClick={() => setActiveCase(null)}
-                className="mt-8 inline-flex rounded-full border px-5 py-2 text-sm font-semibold hover:bg-slate-100"
-              >
-                Close
-              </button>
-            </div>
           </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  </>
-);
+        )}
+      </AnimatePresence>
+    </>
+  );
 
 };
 

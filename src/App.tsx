@@ -6,8 +6,9 @@ import ProjectMain from "./component/projectpage/ProjectMain";
 import ServicesMain from "./component/Services/ServicesMain";
 import CaseStudiesMain from "./component/CaseStudies/CaseStudiesMain";
 import ContactUsMain from "./component/Contact/ContactUsMain";
+import BlogMain from "./component/Blog/BlogMain";
 
-const BlogPage = () => <div className="min-h-[60vh] p-8">Blog Page</div>;
+
 
 export default function App() {
   return (
@@ -19,7 +20,7 @@ export default function App() {
           <Route path="/services" element={<ServicesMain />} />
           <Route path="/product" element={<ProjectMain />} />
           <Route path="/case-Study" element={<CaseStudiesMain />} />
-          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog" element={<BlogMain />} />
           <Route path="/contact-us" element={<ContactUsMain />} />
         </Routes>
       </main>
