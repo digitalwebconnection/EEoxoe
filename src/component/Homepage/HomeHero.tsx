@@ -174,7 +174,7 @@ const HeroSection: React.FC = () => {
                 {/* left: image (fills) */}
                 <div className="col-span-12 w-full h-40 sm:h-36 md:h-44 lg:h-52 overflow-hidden">
                   <img
-                    src="https://blog.planview.com/wp-content/uploads/2020/01/Top-6-Software-Development-Methodologies.jpg"
+                    src="https://img.freepik.com/free-photo/programming-background-with-person-working-with-codes-computer_23-2150010125.jpg?semt=ais_hybrid&w=740&q=80"
                     alt="Illustration"
                     className="w-full h-full object-cover object-center block"
                     loading="lazy"
@@ -239,66 +239,5 @@ const HeroSection: React.FC = () => {
   );
 };
 
-/**
- * Circular text badge with a centered play button.
- */
-// const CircularPlayBadge: React.FC<CircularPlayBadgeProps> = ({
-//   className = "",
-//   variants,
-// }) => {
-//   const text = " THE INTELLIGENCE REVOLUTION WITH AI •";
-//   const repeated = Array(6).fill(text).join("");
-
-//   return (
-//     <motion.div
-//       variants={variants}
-//       initial="hidden"
-//       animate="show"
-//       className={`relative h-40 w-40 ${className}`}
-//     >
-//       {/* circle outline */}
-//       <div className="absolute inset-0 rounded-full bg-white/80 shadow-[0_8px_30px_rgba(0,0,0,0.08)] backdrop-blur" />
-
-//       {/* circular text via SVG */}
-//       <svg
-//         viewBox="0 0 200 200"
-//         className="absolute inset-0 h-full w-full"
-//         style={{ overflow: "visible" }} // <-- important so text isn’t clipped
-//       >
-//         <defs>
-//           {/* slightly smaller radius so text sits further inside */}
-//           <path
-//             id="circlePath"
-//             d="M 100,100 m -70,0 a 70,70 0 1,1 140,0 a 70,70 0 1,1 -140,0"
-//           />
-//         </defs>
-
-//         <motion.text
-//           fill="#1C2250"
-//           fontSize="10"
-//           fontWeight={700}
-//           letterSpacing="1.5"
-//           animate={{ rotate: 360 }}
-//           transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-//         >
-//           <textPath href="#circlePath">{repeated}</textPath>
-//         </motion.text>
-//       </svg>
-
-//       {/* play button */}
-//       <motion.button
-//         whileHover={{
-//           scale: 1.1,
-//           boxShadow: "0 0 20px rgba(59, 130, 246, 0.5)",
-//         }}
-//         whileTap={{ scale: 0.95 }}
-//         className="absolute left-1/2 top-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#262755] text-white shadow-md transition"
-//         aria-label="Play"
-//       >
-//         <Play className="mx-auto h-5 w-5" />
-//       </motion.button>
-//     </motion.div>
-//   );
-// };
 
 export default HeroSection;

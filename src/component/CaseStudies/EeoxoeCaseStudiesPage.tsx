@@ -321,7 +321,7 @@ const OurWork = () => {
               >
                 <div className="grid lg:grid-cols-5">
                   {/* IMAGE */}
-                  <div className="relative lg:col-span-2 h-104">
+                  <div className="relative lg:col-span-2 h-84">
                     <img
                       src={item.image}
                       alt={item.client}
