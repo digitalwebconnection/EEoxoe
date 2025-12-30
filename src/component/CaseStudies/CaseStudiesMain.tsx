@@ -1,10 +1,10 @@
-import CaseStudiesHero from "./CaseStudiesHero"
+// import CaseStudiesHero from "./CaseStudiesHero"
 import EeoxoeCaseStudiesPage from "./EeoxoeCaseStudiesPage"
 
 const CaseStudiesMain = () => {
   return (
     <>
-      <CaseStudiesHero/>
+      {/* <CaseStudiesHero/> */}
       <EeoxoeCaseStudiesPage/>
     </>
   )

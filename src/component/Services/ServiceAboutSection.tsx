@@ -48,9 +48,9 @@ export default function ServiceAboutSection() {
         >
           {/* LEFT – IMAGE */}
           <motion.div variants={imageAnim} className="relative flex justify-center lg:justify-start">
-            <div className="relative h-[500px] overflow-hidden rounded-3xl  group">
+            <div className="relative h-[600px] overflow-hidden rounded-3xl  group">
               <img
-                src="https://bluemoontech.co.uk/wp-content/uploads/2024/12/business-meeting.png"
+                src="https://interworks.com/wp-content/uploads/2023/12/Image_3@3x-954x1024.png"
                 alt="Software team working"
                 className="
                   h-full w-full object-cover
