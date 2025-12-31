@@ -1,12 +1,22 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion ,type Variants } from "framer-motion";
 
 /* ===============================
    CONFIG
 =================================*/
 const NAV_HEIGHT = 72;
+
+
+/* ===============================
+   CARD ANIMATION VARIANTS
+=================================*/
+const cardVariants: Variants = {
+  hiddenLeft: { opacity: 0, x: -40 },
+  hiddenRight: { opacity: 0, x: 40 },
+  visible: { opacity: 1, x: 0 },
+};
 
 /* ===============================
    SERVICES DATA
@@ -151,7 +161,7 @@ export default function ServicesPage() {
           }}
           transition={{ duration: 0.3 }}
           className="fixed left-1/5 z-40"
-          style={{ transform: "translateX(-50%)", top: "5rem" }}
+          style={{ transform: "translateX(-50%)", top: "4rem" }}
         >
           <div className="rounded-full bg-blue-950 border shadow-lg px-16 py-3">
             <nav className="flex gap-10 whitespace-nowrap">
@@ -173,54 +183,87 @@ export default function ServicesPage() {
 
         {/* ================= SERVICE SECTIONS ================= */}
         {SERVICES.map((service, index) => (
-          <motion.section
+        <motion.section
             key={service.id}
             id={service.id}
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-120px" }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className={`
-                py-18 scroll-mt-[140px]
-                ${index % 2 === 0
+            className={`py-14 scroll-mt-[140px] ${
+              index % 2 === 0
                 ? "bg-linear-to-r from-[#f8fbff] via-[#e6eeff] to-[#a9c6fc]"
-                : "bg-linear-to-r from-[#e8f0ff] via-[#dbe7ff] to-[#f8fbff]"
-              }
-  `}
+                : "bg-linear-to-r from-[#bdd4ffd3] via-[#dbe7ff] to-[#f8fbff]"
+            }`}
           >
             <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-10 items-center">
-              {/* TEXT / CARDS */}
-              <div className={`${index % 2 === 0 ? "lg:order-1" : "lg:order-2"}`}>
-                <h2 className="text-3xl font-bold">{service.title}</h2>
-                <p className="mt-4 text-gray-600 max-w-xl">
-                  {service.description}
-                </p>
 
-                <div className="mt-6 grid grid-cols-2 gap-6">
-                  {service.addons.map((addon) => (
-                    <div
-                      key={addon}
-                      className="cursor-pointer rounded-xl bg-linear-to-br from-blue-600 via-indigo-600 to-violet-600 p-px"
-                    >
-                      <div className="rounded-xl  px-4 py-2 text-white  hover:text-black transition">
-                        <p className="font-semibold">{addon}</p>
-                      </div>
-                    </div>
-                  ))}
+              {/* MAIN CARD CONTENT */}
+              <motion.div
+                className={`relative overflow-hidden ${
+                  index % 2 === 0 ? "lg:order-1" : "lg:order-2"
+                }`}
+                whileHover="hover"
+              >
+                {/* HOVER GRADIENT */}
+                <motion.div
+                  variants={{
+                    initial: { x: "-100%" },
+                    hover: { x: "100%" },
+                  }}
+                  initial="initial"
+                  transition={{ duration: 1.1, ease: "easeInOut" }}
+                  className="pointer-events-none absolute inset-0 bg-linear-to-r from-transparent via-[#FDD53D]/35 to-transparent"
+                />
+
+                {/* BIG BACKGROUND NUMBER */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 0.7, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  className="absolute -top-16 -right-2 text-shadow-black text-[100px] lg:text-[160px] font-extrabold text-[#00000050] pointer-events-none select-none"
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </motion.div>
+
+                <div className="relative z-10">
+                  <h2 className="text-3xl font-bold">{service.title}</h2>
+                  <p className="mt-4 text-gray-600 max-w-xl">
+                    {service.description}
+                  </p>
+
+                  <div className="mt-6 grid grid-cols-2 gap-6">
+                    {service.addons.map((addon, i) => (
+                      <motion.div
+                        key={addon}
+                         variants={cardVariants}
+                        initial={i % 2 === 0 ? "hiddenLeft" : "hiddenRight"}
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        className="cursor-pointer rounded-xl bg-[#262755] hover:bg-[#FDD53D] p-px"
+                      >
+                        <div className="rounded-xl px-4 py-2 text-white hover:text-black transition">
+                          <p className="font-semibold">{addon}</p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* IMAGE */}
-              <div className={`h-90 w-full ${index % 2 === 0 ? "lg:order-2" : "lg:order-1"}`}>
+              <div className={index % 2 === 0 ? "lg:order-2" : "lg:order-1"}>
                 <img
                   src={service.image}
                   alt={service.title}
                   className="rounded-2xl w-full h-full shadow-lg"
                 />
               </div>
+
             </div>
           </motion.section>
-
         ))}
       </div>
     </div>

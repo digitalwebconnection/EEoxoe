@@ -280,7 +280,7 @@ const OurWork = () => {
           {/* Heading */}
           <motion.h2
             variants={fadeUp}
-            className="text-5xl text-center font-bold text-slate-900"
+            className="text-5xl text-center font-bold text-[#262755]"
           >
             Our Work
           </motion.h2>
@@ -297,8 +297,8 @@ const OurWork = () => {
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setActiveIndustry(industry)}
                 className={`rounded-full px-4 py-1.5 text-sm transition ${activeIndustry === industry
-                    ? "bg-blue-900 text-white shadow"
-                    : "bg-white text-slate-700 border hover:bg-slate-100"
+                    ? "bg-[#262755] text-white shadow"
+                    : "bg-white text-[#262755] border hover:bg-slate-100"
                   }`}
               >
                 {industry} ({getCount(industry)})
@@ -334,10 +334,10 @@ const OurWork = () => {
                   {/* CONTENT */}
                   <div className="lg:col-span-3 p-8 flex flex-col justify-between">
                     <div>
-                      <p className="text-xs font-semibold uppercase text-blue-700">
+                      <p className="text-xs font-semibold uppercase text-[#262755]">
                         {item.client}
                       </p>
-                      <h3 className="mt-2 text-2xl font-bold text-slate-900">
+                      <h3 className="mt-2 text-2xl font-bold text-[#262755]">
                         {item.category}
                       </h3>
                       <p className="mt-4 text-sm leading-relaxed text-slate-600">
@@ -349,7 +349,7 @@ const OurWork = () => {
                     <div className="mt-6 flex items-center justify-between">
                       <div className="flex gap-6 text-sm">
                         <div>
-                          <p className="font-bold text-slate-900">
+                          <p className="font-bold text-[#262755]">
                             {item.users}
                           </p>
                           <p className="text-xs text-slate-500">
@@ -357,7 +357,7 @@ const OurWork = () => {
                           </p>
                         </div>
                         <div>
-                          <p className="font-bold text-slate-900">
+                          <p className="font-bold text-[#262755]">
                             {item.bounceDrop}
                           </p>
                           <p className="text-xs text-slate-500">
@@ -366,7 +366,7 @@ const OurWork = () => {
                         </div>
                       </div>
 
-                      <span className="text-sm font-semibold text-blue-700 group-hover:underline">
+                      <span className="text-sm font-semibold text-[#262755] group-hover:underline">
                         View Case Study →
                       </span>
                     </div>
@@ -404,7 +404,7 @@ const OurWork = () => {
                 <p className="text-xs font-semibold uppercase text-slate-500">
                   {activeCase.client}
                 </p>
-                <h3 className="mt-1 text-2xl font-bold text-slate-900">
+                <h3 className="mt-1 text-2xl font-bold text-[#262755]">
                   {activeCase.category}
                 </h3>
                 <p className="mt-4 text-sm text-slate-600">

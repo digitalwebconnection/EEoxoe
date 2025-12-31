@@ -188,7 +188,7 @@ export default function BlogPage() {
               ← Back to Blogs
             </button>
 
-            <button className="rounded-lg bg-blue-900 px-6 py-3 text-white font-semibold hover:bg-blue-800 transition">
+            <button className="rounded-lg bg-[#262755] px-6 py-3 text-white font-semibold hover:bg-[#FDD53D] hover:text-black transition">
               Get Expert Advice →
             </button>
           </div>
