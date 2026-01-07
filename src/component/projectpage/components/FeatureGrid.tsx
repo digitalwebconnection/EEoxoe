@@ -79,7 +79,7 @@ const FeatureGrid: React.FC<FeatureGridProps> = ({
             {/* Content */}
             <div className="relative z-10">
               <h3
-                className="mt-12 text-xl font-bold text-gray-900
+                className="mt-20 text-xl font-bold text-gray-900
                 transition-all duration-500
                 group-hover:-translate-y-1 group-hover:text-indigo-600"
               >
@@ -110,10 +110,8 @@ const FeatureGrid: React.FC<FeatureGridProps> = ({
         <div className="mt-16 text-center">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="inline-flex items-center justify-center rounded-full
-            bg-indigo-600 px-8 py-4 text-sm font-semibold text-white
-            transition-all duration-300
-            hover:bg-indigo-700 hover:scale-105"
+            className="inline-flex items-center justify-center py-3
+            rounded-full bg-[#262755] px-9 text-md font-semibold text-white transition-all duration-300 hover:scale-110 hover:bg-[#ffd740] hover:text-[#262755] hover:shadow-lg hover:shadow-[#ffd740]/50"
           >
             {showAll ? "Show Less Features" : "View More Features"}
           </button>

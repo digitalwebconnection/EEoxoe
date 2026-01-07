@@ -65,13 +65,11 @@ const HeroSection: React.FC = () => {
               transition={{ delay: 0.3, duration: 0.7 }}
               className="mt-8 flex flex-wrap items-center gap-4"
             >
-              <button className="rounded-full bg-[#ffd740] px-7 py-3 text-sm font-semibold text-[#262755] shadow-md transition-all hover:-translate-y-0.5 hover:bg-[#ffd740] hover:text-[#262755]">
+              <button className=" px-9 py-3 rounded-full bg-[#262755] text-sm font-semibold text-white transition-all duration-300 hover:scale-110 hover:bg-[#ffd740] hover:text-[#262755] hover:shadow-lg hover:shadow-[#ffd740]/50">
                 View Projects
               </button>
 
-              <button className="rounded-full bg-white px-7 py-3 text-sm font-semibold text-[#262755] ring-1 ring-[#262755] transition-all hover:-translate-y-0.5 ">
-                Get a Quote
-              </button>
+              
             </motion.div>
           </div>
 

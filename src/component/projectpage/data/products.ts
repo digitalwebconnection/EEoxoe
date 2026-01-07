@@ -96,6 +96,13 @@ export const products = [
         desc: "Scheduled backups, secure storage, one-click restore, and minimal downtime.",
       },
     ],
+     images: [
+      { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFCCOmvKgfFYINQGQVaNbOUq8J3ZTjlyiZfg&s" },
+      { src: "https://t4.ftcdn.net/jpg/05/89/42/79/360_F_589427987_DHuYZn4ZIhPQVSA5aoQYiWw5inuKCWig.jpg" },
+      { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlXwEMKIv94rWyrtrWrdvxBzXq9FNKo54BzQ&s" },
+      { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5TAEjs1kgh6Ni-Twbq5xN_YL5ayd3BgkQQA&s" },
+
+    ],
   },
 
   /* =========================
@@ -174,6 +181,12 @@ export const products = [
         title: "Integrations",
         desc: "Biometric devices, accounting systems, and ERP integrations.",
       },
+    ],
+      images: [
+      { src: "https://www.shutterstock.com/image-vector/hrms-human-resources-management-system-260nw-696710560.jpg" },
+      { src: "https://media.istockphoto.com/id/1460907602/photo/handshake-for-the-new-agreement.jpg?s=612x612&w=0&k=20&c=NygBa9i8h-kq4ththlqcMQEsRD2v2kLegFnH4PAQFuQ=" },
+      { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-tmY0K6a34MtO91ZKJO3WqGcfVY2fNBzg4Q&s" },
+      { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV41nkc-1wQsngkDxIsEBPJSy2On3WDuii8A&s" },
     ],
   },
 ];
