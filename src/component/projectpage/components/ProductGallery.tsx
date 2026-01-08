@@ -75,7 +75,7 @@ const ProductGallery: React.FC<ProductGalleryProps> = ({
                 >
                   {/* Radial Expanding Circle */}
                   <div
-                    className="absolute h-0 w-0 rounded-full
+                    className="absolute h-0 w-0 rounded-2xl
           bg-[#262755]/90
           group-hover:h-[160%] group-hover:w-[160%]
           transition-all duration-1000 ease-out"

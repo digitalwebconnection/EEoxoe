@@ -10,3 +10,13 @@ body,
 }
 
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Accessibility support */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

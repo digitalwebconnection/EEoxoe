@@ -13,7 +13,7 @@ import ProductDetailsPage from "./component/projectpage/ProductDetailsPagesma";
 
 export default function App() {
   return (
-    <>
+    <div className="scroll-smooth">
       <Header />  
       <main>
         <Routes>
@@ -23,11 +23,10 @@ export default function App() {
            <Route path="/products/:productId" element={<ProductDetailsPage/>} />
           <Route path="/case-Study" element={<CaseStudiesMain />} />
           <Route path="/blog" element={<BlogMain />} />
-
           <Route path="/contact-us" element={<ContactUsMain />} />
         </Routes>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
