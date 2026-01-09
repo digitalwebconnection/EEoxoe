@@ -58,8 +58,8 @@ const AUTO_DELAY = 2000;
 
 /* ---------------- COMPONENT ---------------- */
 const ProjectSection5: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState<number>(0);
-  const [isPaused, setIsPaused] = useState<boolean>(false);
+    const [activeIndex, setActiveIndex] = useState<number>(0);
+    const [isPaused, setIsPaused] = useState<boolean>(false);
 
   // Correct interval typing for TS
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -104,14 +104,14 @@ const ProjectSection5: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* LEFT FEATURE */}
           <div>
-            <div className="relative overflow-hidden rounded-2xl shadow-md">
+            <div className="relative overflow-hidden ">
               <img
                 key={activeNews.image}
                 src={activeNews.image}
                 alt={activeNews.title}
                 loading="lazy"
                 decoding="async"
-                className="h-[320px] w-full object-cover transition-opacity duration-700"
+                className="h-80 w-full object-cover rounded-2xl transition-opacity duration-700"
               />
             </div>
 
@@ -162,11 +162,11 @@ const NewsListItem = memo(
     return (
       <div
         onClick={onClick}
-        className={`flex cursor-pointer gap-4 rounded-xl border p-4 transition-all duration-300
+        className={`flex cursor-pointer gap-4 rounded-xl border shadow-2xl  p-4 transition-all duration-300
           ${
             isActive
               ? "border-indigo-500 bg-indigo-50 shadow-sm"
-              : "border-gray-200 hover:bg-gray-50"
+              : "border-gray-900/30 hover:bg-gray-50"
           }`}
       >
         <img

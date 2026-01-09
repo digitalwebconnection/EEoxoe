@@ -190,7 +190,7 @@ export default function ServicesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className={`py-14 scroll-mt-[140px] ${
+            className={`py-14 scroll-mt-35 ${
               index % 2 === 0
                 ? "bg-linear-to-r from-[#f8fbff] via-[#e6eeff] to-[#a9c6fc]"
                 : "bg-linear-to-r from-[#bdd4ffd3] via-[#dbe7ff] to-[#f8fbff]"
@@ -233,7 +233,7 @@ export default function ServicesPage() {
                     {service.description}
                   </p>
 
-                  <div className="mt-6 grid grid-cols-2 gap-6">
+                  <div className="mt-6 px-2 grid grid-cols-2 gap-6">
                     {service.addons.map((addon, i) => (
                       <motion.div
                         key={addon}
@@ -242,7 +242,7 @@ export default function ServicesPage() {
                         whileInView="visible"
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
-                        className="cursor-pointer rounded-xl bg-[#262755] hover:bg-[#FDD53D] p-px"
+                        className="cursor-pointer rounded-xl bg-[#262755] p-px text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-[#ffd740] hover:text-[#262755] hover:shadow-lg hover:shadow-[#ffd740]/50"
                       >
                         <div className="rounded-xl px-4 py-2 text-white hover:text-black transition">
                           <p className="font-semibold">{addon}</p>

@@ -11,7 +11,7 @@ const ExcelintFeatureSection = () => {
       <div className="flex flex-col lg:flex-row items-center gap-6">
         
         {/* Left Side: Image Grid */}
-        <div className="w-full lg:w-1/2 relative h-[500px]">
+        <div className="w-full lg:w-1/2 relative h-125">
           {/* Top Left Image */}
           <div className="absolute top-5 left-0 w-3/6 h-64 overflow-hidden rounded-3xl shadow-lg z-10">
             <img 

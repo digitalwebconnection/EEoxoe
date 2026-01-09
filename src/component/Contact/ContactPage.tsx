@@ -323,13 +323,14 @@ const ContactPage: React.FC = () => {
 
       {/* MAP */}
       <section className="w-full">
-        <div className="w-full h-[360px] md:h-[420px] grayscale">
+        <div className="w-full h-90 md:h-105 ">
           <iframe
             title="Office location"
-            src="https://maps.google.com/maps?q=Frankfurt&t=&z=9&ie=UTF8&iwloc=&output=embed"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13798.873440366391!2d73.10316643525714!3d19.165376430247942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7952eb503934d%3A0x3b18994800ae5e02!2sCasa%20Lakeside%20D-Wing%2C%20Lakeshore%20Greens%2C%20LODHA%20Palava%20Phase-2!5e1!3m2!1sen!2sin!4v1767935430771!5m2!1sen!2sin"
             className="w-full h-full border-0"
             loading="lazy"
           />
+
         </div>
       </section>
     </main>

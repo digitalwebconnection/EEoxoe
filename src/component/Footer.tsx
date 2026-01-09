@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
             <div className="md:col-span-1">
               {/* Logo */}
               <Link to="/" className="flex items-center gap-3">
-                <img src={logo} alt="Logo" className="h-[55px] w-auto" />
+                <img src={logo} alt="Logo" className="h-13.75 w-auto" />
               </Link>
 
               {/* Contact details */}

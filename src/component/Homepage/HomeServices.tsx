@@ -144,7 +144,7 @@ export default function ServicesSection() {
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ type: "spring", stiffness: 120, delay: 0.1 }}
-            className="mx-auto mb-5 h-[3px] w-28 rounded-full"
+            className="mx-auto mb-5 h-0.75 w-28 rounded-full"
             style={{
               background: "linear-gradient(90deg, #262755, #ffd740)",
             }}

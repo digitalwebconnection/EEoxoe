@@ -68,7 +68,7 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Logo" className="h-[50px] w-auto" />
+            <img src={logo} alt="Logo" className="h-12.5 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -95,7 +95,7 @@ export default function Header() {
               Job Openings
             </NavLink> */}
             <NavLink to="/contact-us" className={desktopLink}>
-              <div className="rounded-md bg-[#262755] px-4 py-1 text-white">Contact Us</div>
+              <div className="rounded-md bg-[#262755] text-md font-semibold  transition-all duration-300 hover:scale-110 hover:bg-[#ffd740] hover:text-[#262755] hover:shadow-lg hover:shadow-[#ffd740]/50 px-4 py-1 text-white">Contact Us</div>
             </NavLink>
 
 

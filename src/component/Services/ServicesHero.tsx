@@ -124,11 +124,11 @@ export default function ServicesHero() {
         {/* Parallax orbs */}
         <motion.div
           style={{ x: springX, y: springY }}
-          className="absolute top-[10%] -left-[5%] h-[480px] w-[480px] rounded-full bg-indigo-500/20 blur-[140px]"
+          className="absolute top-[10%] -left-[5%] h-120 w-120 rounded-full bg-indigo-500/20 blur-[140px]"
         />
         <motion.div
           style={{ x: reverseX, y: reverseY }}
-          className="absolute bottom-[10%] -right-[5%] h-[420px] w-[420px] rounded-full bg-emerald-400/10 blur-[120px]"
+          className="absolute bottom-[10%] -right-[5%] h-105 w-105 rounded-full bg-emerald-400/10 blur-[120px]"
         />
 
         {/* Light sweep */}

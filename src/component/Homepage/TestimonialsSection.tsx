@@ -65,7 +65,7 @@ const TestimonialsSection: React.FC = () => {
       {/* soft backdrop + accents */}
       <div className="absolute inset-0 -z-10 bg-linear-to-b from-[#fffef6] via-white to-white" />
       <div
-        className="absolute -top-24 -right-24 h-[520px] w-[520px] -z-10 rounded-full blur-3xl"
+        className="absolute -top-24 -right-24 h-130 w-130 -z-10 rounded-full blur-3xl"
         style={{
           background: "radial-gradient(circle,#ffd74055,#ffd74000 60%)",
         }}
