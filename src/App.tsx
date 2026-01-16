@@ -14,13 +14,13 @@ import ProductDetailsPage from "./component/projectpage/ProductDetailsPagesma";
 export default function App() {
   return (
     <div className="scroll-smooth">
-      <Header />  
+      <Header />
       <main>
         <Routes>
           <Route path="/" element={<HomeMain />} />
           <Route path="/services" element={<ServicesMain />} />
           <Route path="/product" element={<ProjectMain />} />
-           <Route path="/products/:productId" element={<ProductDetailsPage/>} />
+          <Route path="/products/:productId" element={<ProductDetailsPage />} />
           <Route path="/case-Study" element={<CaseStudiesMain />} />
           <Route path="/blog" element={<BlogMain />} />
           <Route path="/contact-us" element={<ContactUsMain />} />

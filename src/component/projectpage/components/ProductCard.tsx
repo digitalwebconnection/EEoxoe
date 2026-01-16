@@ -95,8 +95,6 @@ const ProductCard: React.FC<Props> = ({
 
         <div className="mx-auto my-4 h-1 w-10 bg-linear-to-r from-[#2563EB] to-[#7C3AED] rounded-full" />
 
-     
-
         <p className="mt-8 text-gray-600 text-sm leading-relaxed">
           {shortDesc}
         </p>
