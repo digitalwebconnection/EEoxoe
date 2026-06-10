@@ -9,6 +9,7 @@ import { cacheGetStale, cacheSet } from "../../lib/dataCache";
 import { staticBlogs } from "../../lib/staticBlogs";
 
 interface Blog {
+  isStatic: any;
   _id: string;
   slug: string;
   title: string;
