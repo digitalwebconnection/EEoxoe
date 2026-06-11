@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Footer from "./component/Footer";
 import Header from "./component/Header";
@@ -17,6 +18,10 @@ import AdminDashboard from "./component/admin/AdminDashboard";
 export default function App() {
   const location = useLocation();
   const isAdminPath = location.pathname.startsWith('/admin');
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <div className="scroll-smooth relative">

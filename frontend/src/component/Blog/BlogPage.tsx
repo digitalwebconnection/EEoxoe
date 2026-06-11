@@ -168,7 +168,7 @@ const BlogPage = () => {
             {[1, 2, 3, 4, 5, 6].map((i) => (
               <div
                 key={i}
-                className="rounded-xl border border-gray-200 bg-white shadow-md h-full flex flex-col overflow-hidden animate-pulse"
+                className="rounded-md border border-gray-200 bg-white shadow-md h-full flex flex-col overflow-hidden animate-pulse"
               >
                 <div className="h-56 w-full bg-gray-200" />
                 <div className="p-6 flex flex-col grow gap-3">
@@ -227,7 +227,7 @@ const BlogPage = () => {
                     }
                   }}
                 >
-                  <article className="relative h-full overflow-hidden rounded-[28px] border border-slate-200/80 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.08)] transition-all duration-300 group-hover:-translate-y-1 group-hover:border-[#262755]/25 group-hover:shadow-[0_28px_60px_rgba(38,39,85,0.16)]">
+                  <article className="relative h-full overflow-hidden rounded-xl border border-slate-200/80 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.08)] transition-all duration-300 group-hover:-translate-y-1 group-hover:border-[#262755]/25 group-hover:shadow-[0_28px_60px_rgba(38,39,85,0.16)]">
                     <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#262755] via-blue-500 to-emerald-400 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
                     <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
