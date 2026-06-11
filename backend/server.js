@@ -14,17 +14,28 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // ─── CORS ─────────────────────────────────────────────────────────────────────
-// FRONTEND_URL can be a comma-separated list, e.g.
-// FRONTEND_URL=http://localhost:5173,https://eeoxoe.vercel.app,https://eeoxoe.in
-const allowedOrigins = (process.env.FRONTEND_URL || 'http://localhost:5173')
+const envOrigins = (process.env.FRONTEND_URL || '')
   .split(',')
   .map(u => u.trim())
   .filter(Boolean);
+
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://localhost:3000',
+  'https://eeoxoe.vercel.app',
+  'https://eeoxoe.in',
+  'https://www.eeoxoe.in',
+  ...envOrigins
+];
 
 app.use(cors({
   origin: (origin, cb) => {
     // Allow server-to-server / curl requests (no Origin header) and whitelisted origins
     if (!origin || allowedOrigins.includes(origin)) return cb(null, true);
+    
+    // Allow any Vercel preview deployments
+    if (origin.endsWith('.vercel.app')) return cb(null, true);
+
     cb(new Error(`CORS: origin "${origin}" is not allowed`));
   },
   credentials: true,
