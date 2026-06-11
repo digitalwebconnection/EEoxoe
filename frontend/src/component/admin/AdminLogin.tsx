@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Sun, Eye, EyeOff, Lock, User } from 'lucide-react';
+import { Eye, EyeOff, Lock, User } from 'lucide-react';
 import { apiUrl } from '../../lib/api';
 
 /* ── Styles ─────────────────────────────── */
 const S: Record<string, React.CSSProperties> = {
   page: {
     minHeight: '100vh',
-    background: 'linear-gradient(135deg, #0f0c17 0%, #1a1533 50%, #0f2027 100%)',
+    background: 'linear-gradient(135deg, #111332 0%, #262755 50%, #1a1b3d 100%)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -35,11 +35,11 @@ const S: Record<string, React.CSSProperties> = {
     width: 44,
     height: 44,
     borderRadius: '50%',
-    background: 'linear-gradient(135deg, #FC763A, #FEC24A)',
+    background: 'linear-gradient(135deg, #ffd740, #f8e915)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    boxShadow: '0 4px 15px rgba(252,118,58,0.4)',
+    boxShadow: '0 4px 15px rgba(255,215,64,0.4)',
   },
   brand: {
     fontSize: '1.4rem',
@@ -47,7 +47,7 @@ const S: Record<string, React.CSSProperties> = {
     color: '#fff',
     letterSpacing: '-0.5px',
   },
-  brandOrange: { color: '#FC763A' },
+  brandHighlight: { color: '#ffd740' },
   subtitle: {
     textAlign: 'center',
     color: 'rgba(255,255,255,0.45)',
@@ -114,17 +114,17 @@ const S: Record<string, React.CSSProperties> = {
   btn: {
     width: '100%',
     padding: '0.75rem',
-    background: 'linear-gradient(135deg, #FC763A, #FEC24A)',
+    background: 'linear-gradient(135deg, #ffd740, #f8e915)',
     border: 'none',
     borderRadius: '10px',
-    color: '#fff',
+    color: '#262755',
     fontSize: '0.95rem',
     fontWeight: 700,
     cursor: 'pointer',
     letterSpacing: '0.05em',
     transition: 'opacity 0.2s, transform 0.1s',
     marginTop: '0.5rem',
-    boxShadow: '0 4px 15px rgba(252,118,58,0.35)',
+    boxShadow: '0 4px 15px rgba(255,215,64,0.35)',
   },
   hint: {
     marginTop: '1.5rem',
@@ -182,10 +182,10 @@ export default function AdminLogin() {
         {/* Logo */}
         <div style={S.logoRow}>
           <div style={S.logoCircle}>
-            <Sun size={20} color="#fff" strokeWidth={2.5} />
+            <Lock size={20} color="#262755" strokeWidth={2.5} />
           </div>
           <span style={S.brand}>
-            True<span style={S.brandOrange}>Sun</span>
+            eeox<span style={S.brandHighlight}>oe</span>
           </span>
         </div>
         <p style={S.subtitle}>Admin Panel</p>
@@ -204,7 +204,7 @@ export default function AdminLogin() {
               placeholder="Enter username"
               required
               style={S.input}
-              onFocus={e => (e.currentTarget.style.borderColor = 'rgba(252,118,58,0.6)')}
+              onFocus={e => (e.currentTarget.style.borderColor = 'rgba(255,215,64,0.6)')}
               onBlur={e => (e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)')}
             />
           </div>
@@ -222,7 +222,7 @@ export default function AdminLogin() {
               placeholder="Enter password"
               required
               style={S.input}
-              onFocus={e => (e.currentTarget.style.borderColor = 'rgba(252,118,58,0.6)')}
+              onFocus={e => (e.currentTarget.style.borderColor = 'rgba(255,215,64,0.6)')}
               onBlur={e => (e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)')}
             />
             <button

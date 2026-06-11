@@ -19,7 +19,7 @@ export default function App() {
   const isAdminPath = location.pathname.startsWith('/admin');
 
   return (
-    <div className="scroll-smooth">
+    <div className="scroll-smooth relative">
       {!isAdminPath && <Header />}
       <main>
         <Routes>

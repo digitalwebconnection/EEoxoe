@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  Sun, LogOut, PlusCircle, Pencil, Trash2, FolderOpen, AlertCircle, Loader2,
-  FileText
+  LogOut, PlusCircle, Pencil, Trash2, FolderOpen, AlertCircle, Loader2,
+  FileText, Lock
 } from 'lucide-react';
 import BlogForm, { type Blog } from './BlogForm';
 import { apiUrl, getImageUrl } from '../../lib/api';
 
 /* ── Palette ──────────────────────────────────────────────── */
 const CLR = {
-  primary: '#FC763A',
-  accent: '#FEC24A',
-  sidebarBg: '#111827',
+  primary: '#ffd740',
+  accent: '#f8e915',
+  sidebarBg: '#262755',
   sidebarTx: 'rgba(255,255,255,0.65)',
   mainBg: '#f1f5f9',
   cardBg: '#ffffff',
@@ -46,7 +46,7 @@ const S: Record<string, React.CSSProperties> = {
   },
   logoCircle: {
     width: 36, height: 36, borderRadius: '50%',
-    background: 'linear-gradient(135deg, #FC763A, #FEC24A)',
+    background: 'linear-gradient(135deg, #ffd740, #f8e915)',
     display: 'flex', alignItems: 'center', justifyContent: 'center',
     flexShrink: 0,
   },
@@ -62,7 +62,7 @@ const S: Record<string, React.CSSProperties> = {
   },
   navItemActive: {
     color: '#fff',
-    background: 'rgba(252,118,58,0.12)',
+    background: 'rgba(255,215,64,0.12)',
     borderLeftColor: CLR.primary,
   },
   sidebarSpacer: { flex: 1 },
@@ -88,10 +88,10 @@ const S: Record<string, React.CSSProperties> = {
   addBtn: {
     display: 'flex', alignItems: 'center', gap: '0.45rem',
     padding: '0.55rem 1.1rem',
-    background: 'linear-gradient(135deg, #FC763A, #FEC24A)',
+    background: 'linear-gradient(135deg, #ffd740, #f8e915)',
     border: 'none', borderRadius: '8px', cursor: 'pointer',
-    color: '#fff', fontWeight: 700, fontSize: '0.85rem',
-    boxShadow: '0 3px 10px rgba(252,118,58,0.35)',
+    color: '#262755', fontWeight: 700, fontSize: '0.85rem',
+    boxShadow: '0 3px 10px rgba(255,215,64,0.35)',
     transition: 'opacity 0.15s',
   },
   content: { flex: 1, padding: '1.5rem 1.75rem', overflowY: 'auto' },
@@ -105,7 +105,7 @@ const S: Record<string, React.CSSProperties> = {
   },
   statVal: { fontSize: '1.6rem', fontWeight: 800, color: CLR.textDark, lineHeight: 1.2 },
   statLabel: { fontSize: '0.73rem', color: CLR.textMuted, textTransform: 'uppercase', letterSpacing: '0.1em', marginTop: '0.3rem' },
-  statAccent: { width: 4, height: 36, borderRadius: 4, background: 'linear-gradient(180deg,#FC763A,#FEC24A)', marginRight: '0.9rem', flexShrink: 0 },
+  statAccent: { width: 4, height: 36, borderRadius: 4, background: 'linear-gradient(180deg,#ffd740,#f8e915)', marginRight: '0.9rem', flexShrink: 0 },
   /* Table card */
   tableCard: {
     background: CLR.cardBg, borderRadius: '14px',
@@ -129,7 +129,7 @@ const S: Record<string, React.CSSProperties> = {
   badge: {
     display: 'inline-block', padding: '0.22rem 0.6rem',
     borderRadius: '99px', fontSize: '0.7rem', fontWeight: 600,
-    background: 'rgba(252,118,58,0.1)', color: CLR.primary,
+    background: 'rgba(255,215,64,0.1)', color: '#262755',
   },
   imgThumb: {
     width: 52, height: 40, objectFit: 'cover',
@@ -324,7 +324,7 @@ export default function AdminDashboard() {
       <aside style={S.sidebar}>
         <div style={S.sidebarLogo}>
           <div style={S.logoCircle}>
-            <Sun size={17} color="#fff" strokeWidth={2.5} />
+            <Lock size={17} color="#262755" strokeWidth={2.5} />
           </div>
           <div>
             <div style={S.logoText}>eeoxoe</div>

@@ -108,13 +108,13 @@ const Footer: React.FC = () => {
               © {new Date().getFullYear()} Exochos Technologies LLP
               Innovating Tomorrow, Today . All rights reserved.
             </p>
-            <p className="flex px-0 me-0 md:me-25 md:px-10 items-center  gap-2    text-white text-[13px] md:text-sm">
+            <div className="flex px-0 me-0 md:me-25 md:px-10 items-center  gap-2    text-white text-[13px] md:text-sm">
               <Code2 className="w-6 h-6 text-[#f8e915]" />
-              <p>
+              <span>
                 Developed by <a href="https://digitalwebconnection.com/" target="_blank" className="text-[#f8e915] font-semibold">Digital Web Connection</a>
-              </p>
+              </span>
 
-            </p>
+            </div>
           </div>
         </div>
       </footer>

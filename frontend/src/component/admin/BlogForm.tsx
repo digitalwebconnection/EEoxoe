@@ -67,15 +67,15 @@ const S: Record<string, React.CSSProperties> = {
     marginTop: 'auto', marginBottom: 'auto',
   },
   header: {
-    background: 'linear-gradient(135deg, #FC763A, #FEC24A)',
+    background: 'linear-gradient(135deg, #ffd740, #f8e915)',
     padding: '1.25rem 1.75rem',
     display: 'flex', alignItems: 'center', justifyContent: 'space-between',
   },
-  headerTitle: { color: '#fff', fontWeight: 700, fontSize: '1.1rem', margin: 0 },
+  headerTitle: { color: '#262755', fontWeight: 700, fontSize: '1.1rem', margin: 0 },
   closeBtn: {
-    background: 'rgba(255,255,255,0.25)', border: 'none',
+    background: 'rgba(38,39,85,0.15)', border: 'none',
     borderRadius: '8px', width: 32, height: 32, cursor: 'pointer',
-    color: '#fff', fontSize: '1.1rem', display: 'flex', alignItems: 'center', justifyContent: 'center',
+    color: '#262755', fontSize: '1.1rem', display: 'flex', alignItems: 'center', justifyContent: 'center',
   },
   body: { padding: '1.5rem 1.75rem', display: 'flex', flexDirection: 'column', gap: '1.25rem', background: '#f8f9fb' },
   section: {
@@ -97,8 +97,8 @@ const S: Record<string, React.CSSProperties> = {
     color: '#94a3b8', transition: 'all 0.2s',
   },
   activeTab: {
-    color: '#FC763A',
-    borderBottom: '2px solid #FC763A',
+    color: '#262755',
+    borderBottom: '2px solid #262755',
     fontWeight: 600,
   },
   grid2: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' },
@@ -138,10 +138,10 @@ const S: Record<string, React.CSSProperties> = {
   },
   saveBtn: {
     padding: '0.55rem 1.5rem',
-    background: 'linear-gradient(135deg, #FC763A, #FEC24A)',
+    background: 'linear-gradient(135deg, #ffd740, #f8e915)',
     border: 'none', borderRadius: '8px', cursor: 'pointer',
-    fontSize: '0.85rem', color: '#fff', fontWeight: 700,
-    boxShadow: '0 3px 10px rgba(252,118,58,0.35)',
+    fontSize: '0.85rem', color: '#262755', fontWeight: 700,
+    boxShadow: '0 3px 10px rgba(255,215,64,0.35)',
   },
   errBanner: {
     background: '#fff5f5', border: '1px solid #fca5a5',
@@ -170,7 +170,7 @@ function TextInput({ id, value, onChange, placeholder = '' }: {
       onChange={e => onChange(e.target.value)}
       placeholder={placeholder}
       style={S.input}
-      onFocus={e => (e.currentTarget.style.borderColor = '#FC763A')}
+      onFocus={e => (e.currentTarget.style.borderColor = '#ffd740')}
       onBlur={e => (e.currentTarget.style.borderColor = '#cbd5e1')}
     />
   );
@@ -187,7 +187,7 @@ function TextArea({ id, value, onChange, placeholder = '', rows = 3 }: {
       onChange={e => onChange(e.target.value)}
       placeholder={placeholder}
       style={S.textarea}
-      onFocus={e => (e.currentTarget.style.borderColor = '#FC763A')}
+      onFocus={e => (e.currentTarget.style.borderColor = '#ffd740')}
       onBlur={e => (e.currentTarget.style.borderColor = '#cbd5e1')}
     />
   );
@@ -336,7 +336,7 @@ export default function BlogForm({ blog, onSuccess, onClose }: Props) {
                         borderRadius: '7px', padding: '0.6rem 0.75rem',
                       }}>
                         <span style={{ color: '#94a3b8', fontSize: '0.85rem', whiteSpace: 'nowrap' }}>/Knowledge/</span>
-                        <span style={{ color: '#FC763A', fontSize: '0.9rem', fontWeight: 600, wordBreak: 'break-all' }}>
+                        <span style={{ color: '#262755', fontSize: '0.9rem', fontWeight: 600, wordBreak: 'break-all' }}>
                           {form.title ? slugify(form.title) : <span style={{ color: '#cbd5e1' }}>your-blog-title</span>}
                         </span>
                       </div>
