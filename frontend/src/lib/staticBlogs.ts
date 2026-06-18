@@ -1,78 +1,17 @@
 // src/lib/staticBlogs.ts
-import dummyImg1 from "../assets/blog/dummy_blog_img1.jpg";
-import dummyImg2 from "../assets/blog/dummy_blog_img2.png";
+import dummyImg1 from "../assets/blog/staticblog_img.jpg";
 
 export const staticBlogs = [
   {
     _id: "static-1",
-    slug: "benefits-of-solar-energy",
-    title: "The Benefits of Solar Energy",
-    categories: "Solar 101",
+    slug: "what-services-should-the-best-software-development-company-in-mumbai-offer",
+    title: " What Services Should the Best Software Development Company in Mumbai Offer?",
+    categories: "software development company in mumbai ",
     readTime: "5 min read",
-    date: "Jun 1, 2026",
-    excerpt: "Discover the top reasons why transitioning to solar energy is the right move for your home and the environment.",
+    date: "Jun 17, 2026",
+    excerpt: "Looking for the best software development company in Mumbai? Discover custom software, web development, CRM, HRMS, mobile app solutions, and expert support for business growth.",
     image: dummyImg1,
-    content: "<p>Solar power provides significant long-term savings...</p>",
+    content: "<p>With the current competition in today’s digital environment, your decision to opt for the best software development company in Mumbai could make all the difference in the effective growth and functioning of your business. No matter whether you run a startup or have already established an enterprise, it is essential for you to ensure that you invest in the right software solutions.</p><p>Since technology has become such an integral aspect of running successful businesses, organizations are now looking out for a Software Development Company near me to identify partners who will provide scalable and localized software solutions.</p><p>However, what services should an ideal software development company provide you? Let us find out the various services offered by such a software development company.</p><p><strong>Custom Software Development</strong></p><p>Every company operates with its own objectives, process, and difficulties. This is why custom software development continues to be one of the most useful services provided by top-notch software firms.</p><p>Rather than utilizing ready-made software, custom software is created specially according to the needs of the business and enhances its efficiency.</p><p>Advantages of custom software development are:</p><ul><li>Customized business processes</li><li>Enhanced efficiency</li><li>Effective data management and reporting</li><li>Scalability as the business expands</li><li>Security and flexibility in the long run</li></ul><p>For companies in need of custom software development services, using customized software platforms will help minimize manual effort.</p><p><strong>Website &amp; Web Application Development</strong></p><p>Not only does a contemporary business require a web presence; they need to offer digital experiences to turn visitors into clients.</p><p>Some of the best software development firms offer full-service website and web application development to assist businesses in creating robust and responsive websites.</p><p>Website and web application development usually include:</p><ul><li>Designing responsive websites</li><li>Creating custom business portals</li><li>E-commerce integration</li><li>Customer self-service portals</li><li>Optimizing performance and SEO</li></ul><p>Web applications can help automate business processes by integrating customers, employees, and internal systems into a unified whole.</p><p>Finding a good software development firm requires evaluating their web development experience.</p><p><strong>CRM &amp; HRMS Solutions</strong></p><p>As an organization expands, managing its customers and employees manually becomes complicated. That's where CRM and HRMS systems come into play.</p><p>A good software development firm will ensure that all business management systems they offer will make operations easier and enhance decision making.</p><p><strong>CRM System Enables Businesses To:</strong></p><ul><li>Facilitate monitoring of customer interaction</li><li>Ensure effective lead management</li><li>Boost sales efficiency</li><li>Retain more customers</li></ul><p><strong>HRMS System Enables Businesses To:</strong></p><ul><li>Manage employee records</li><li>Manage employee attendance and payroll management</li><li>Recruit better employees</li><li>Enable performance tracking</li></ul><p>Businesses that invest in automated business management systems usually see improvements in their productivity and communications within the organization.</p>",
     isStatic: true
   },
-  {
-    _id: "static-2",
-    slug: "understanding-solar-payback",
-    title: "Understanding Solar Payback Periods",
-    categories: "Economics",
-    readTime: "8 min read",
-    date: "Jun 5, 2026",
-    excerpt: "A comprehensive guide on how to calculate the ROI on your solar installation and understand payback metrics.",
-    image: dummyImg2,
-    content: "<p>The payback period is a critical metric...</p>",
-    isStatic: true
-  },
-  {
-    _id: "static-3",
-    slug: "future-of-solar-technology",
-    title: "The Future of Solar Technology",
-    categories: "Innovation",
-    readTime: "6 min read",
-    date: "Jun 10, 2026",
-    excerpt: "Explore the cutting-edge advancements in solar panels and energy storage systems.",
-    image: dummyImg1,
-    content: "<p>New technologies are making solar panels more efficient...</p>",
-    isStatic: true
-  },
-  {
-    _id: "static-4",
-    slug: "solar-maintenance-tips",
-    title: "Essential Solar Panel Maintenance Tips",
-    categories: "Guides",
-    readTime: "4 min read",
-    date: "Jun 12, 2026",
-    excerpt: "Keep your solar system running at peak efficiency with these simple maintenance strategies.",
-    image: dummyImg2,
-    content: "<p>Regular cleaning and inspections can significantly increase...</p>",
-    isStatic: true
-  },
-  {
-    _id: "static-5",
-    slug: "solar-vs-traditional-energy",
-    title: "Solar Power vs. Traditional Energy",
-    categories: "Comparison",
-    readTime: "7 min read",
-    date: "Jun 15, 2026",
-    excerpt: "An in-depth comparison of costs, environmental impact, and reliability between solar and fossil fuels.",
-    image: dummyImg1,
-    content: "<p>When comparing solar power to traditional fossil fuels...</p>",
-    isStatic: true
-  },
-  {
-    _id: "static-6",
-    slug: "commercial-solar-benefits",
-    title: "Why Businesses Are Switching to Solar",
-    categories: "Commercial",
-    readTime: "9 min read",
-    date: "Jun 18, 2026",
-    excerpt: "Learn how commercial solar installations are helping businesses cut costs and achieve sustainability goals.",
-    image: dummyImg2,
-    content: "<p>More businesses than ever are recognizing the financial and...</p>",
-    isStatic: true
-  }
 ];

@@ -157,7 +157,7 @@ const BlogPage = () => {
               />
             )}
           </div>
-          <p className="text-slate-500 text-sm md:text-base text-center font-light max-w-5xl mt-1">
+          <p className="text-slate-900 text-sm md:text-base text-center font-light max-w-5xl mt-1">
             Stay updated with the latest insights, implementation guides, and technological trends in CRM & HRMS platforms.
           </p>
         </div>

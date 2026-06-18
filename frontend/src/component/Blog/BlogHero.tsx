@@ -1,6 +1,5 @@
 import {
     BookOpen,
-    TrendingUp,
     Laptop,
     Users,
     ShieldCheck
@@ -34,10 +33,10 @@ export default function SolarBlogPage() {
                         <div className="space-y-3">
                             <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#262755] leading-[1.15] tracking-tight">
                                 Demystifying Tech. <br className="hidden md:block" />
-                                <span className="text-blue-600 relative inline-block">
+                                <span className="text-[#FDD53D] relative inline-block">
                                     Simple & Practical
-                                    <svg className="absolute -bottom-1.5 left-0 w-full h-2 text-blue-600/20" viewBox="0 0 100 10" preserveAspectRatio="none">
-                                        <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="6" fill="none" strokeLinecap="round" />
+                                    <svg className="absolute -bottom-1.5 left-0 w-full h-2 text-[#FDD53D]/20" viewBox="0 0 100 10" preserveAspectRatio="none">
+                                        <path d="M0 5 Q 50 10 100 5" stroke="#FDD53D" strokeWidth="6" fill="none" strokeLinecap="round" />
                                     </svg>
                                 </span>{" "}
                                 Solutions.
@@ -54,7 +53,7 @@ export default function SolarBlogPage() {
                                     icon: Laptop, 
                                     title: "Education CRM", 
                                     desc: "Student & Agent portals", 
-                                    color: "border-[#262755]/10 hover:border-[#262755]/30 text-[#262755] bg-[#262755]/5" 
+                                    color: "border-blue-100 hover:border-blue-300 text-blue-600 bg-blue-50/25" 
                                 },
                                 { 
                                     icon: Users, 
@@ -66,7 +65,7 @@ export default function SolarBlogPage() {
                                     icon: ShieldCheck, 
                                     title: "Enterprise Solutions", 
                                     desc: "Scaling digital systems", 
-                                    color: "border-[#262755]/10 hover:border-[#262755]/30 text-[#262755] bg-[#262755]/5" 
+                                    color: "border-blue-100 hover:border-blue-300 text-blue-600 bg-blue-50/25" 
                                 },
                             ].map((card, idx) => (
                                 <div 
@@ -98,17 +97,6 @@ export default function SolarBlogPage() {
 
                         {/* Outer Ring Accent to mimic other page images */}
                         <div className="absolute -inset-2 rounded-[30%_70%_70%_30%_/_50%_30%_70%_50%] border-[6px] border-slate-200/60 pointer-events-none -z-10" />
-
-                        {/* Overlay Stat Card (Website Color themed) */}
-                        <div className="absolute -top-3 -right-3 bg-white rounded-2xl p-2.5 sm:p-3 shadow-md border border-slate-50 flex items-center gap-2 sm:gap-2.5 hidden sm:flex">
-                            <div className="h-7 w-7 sm:h-8 sm:w-8 rounded-lg bg-[#262755]/10 flex items-center justify-center text-[#262755]">
-                                <TrendingUp className="h-4.5 w-4.5" />
-                            </div>
-                            <div>
-                                <p className="text-[8px] sm:text-[9px] font-semibold text-slate-400 uppercase tracking-wider">Average ROI</p>
-                                <p className="text-xs sm:text-sm font-black text-[#262755]">3x Growth</p>
-                            </div>
-                        </div>
 
                         {/* Floating Highlight Card (Compacted and Styled in Website Color) */}
                         <div className="absolute -bottom-3 -left-4 z-20 rounded-2xl border border-white/60 bg-white/90 p-3 sm:p-3.5 backdrop-blur-md shadow-md max-w-[200px] sm:max-w-[220px] hidden sm:flex">
